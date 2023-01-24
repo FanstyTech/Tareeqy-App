@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+   
+}
+@model List<MessageDto>
+
+
+
+    <div class="container">
+        <div class="row">&nbsp;</div>
+        <div class="row">
+            <div class="col-2">User</div>
+            <div class="col-4"><input type="text" id="userInput"  value="@ViewBag.UserId"/></div>
+        </div>
+        <div class="row">
+            <div class="col-2">Message</div>
+            <div class="col-4"><input type="text" id="messageInput" /></div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="row">
+            <div class="col-6">
+                <input type="button" id="sendButton" value="Send Message" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            
+            
+            <ul id="messagesList">
+
+            @{
+                if(Model != null)
+                {
+                     foreach (var item in Model)
+                    {
+                        <li >@item.FromUserName says @item.MessageText?.ToString()</li>
+                    }
+                }
+                }
+               
+            </ul>
+
+
+        </div>
+    </div>

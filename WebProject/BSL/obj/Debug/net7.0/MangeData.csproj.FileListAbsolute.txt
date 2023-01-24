@@ -1,0 +1,17 @@
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\bin\Debug\net7.0\MangeData.deps.json
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\bin\Debug\net7.0\MangeData.dll
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\bin\Debug\net7.0\MangeData.pdb
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\bin\Debug\net7.0\Constant.dll
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\bin\Debug\net7.0\DAL.dll
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\bin\Debug\net7.0\Constant.pdb
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\bin\Debug\net7.0\DAL.pdb
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\MangeData.csproj.AssemblyReference.cache
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\MangeData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\MangeData.AssemblyInfoInputs.cache
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\MangeData.AssemblyInfo.cs
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\MangeData.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\MangeData.csproj.CopyComplete
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\MangeData.dll
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\refint\MangeData.dll
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\MangeData.pdb
+C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\ref\MangeData.dll

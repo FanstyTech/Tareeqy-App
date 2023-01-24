@@ -1,0 +1,32 @@
+{
+  "Root" : [
+    {
+      "Namespace": "Product",
+      "Entities": [
+        {
+          "TableName": "Products",
+          "Fields": [
+            {
+              "FieldsNo": 0,
+              "FieldsName": "ProductName",
+              "Type": "String",
+              "IsRequired": true
+
+            },
+            {
+              "FieldsNo": 1,
+              "FieldsName": "ProductPrice",
+              "Type": "decimal",
+              "IsRequired": true
+            }
+          ]
+        }
+
+      ]
+
+    }
+
+
+
+  ]
+}

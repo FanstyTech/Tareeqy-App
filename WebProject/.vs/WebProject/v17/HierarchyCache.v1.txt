@@ -1,0 +1,368 @@
+﻿++Solution 'WebProject' ‎(6 of 6 projects)
+i:{00000000-0000-0000-0000-000000000000}:WebProject.sln
+++Web.DAL
+i:{00000000-0000-0000-0000-000000000000}:Web.DAL
+++DAL
+i:{1cb92011-36f4-4b26-a196-174f9770384c}:DAL
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\dal\bin\debug\net5.0\dal.dll
+++Dependencies
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:>772
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:>771
+i:{961e1ac4-dcab-4427-89ab-ef86601f0e70}:>774
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:>770
+i:{40b7c313-ea13-4267-a478-3f5c80092ab3}:>773
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:>1095
+++Context
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\context\
+++ApplicationDbContext.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\context\applicationdbcontext.cs
+++Dto
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\dto\
+++Message
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\dto\message\
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\model\message\
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\interface\message\
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\sqlrepository\message\
+++User
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\dto\user\
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\model\user\
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\interface\user\
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\sqlrepository\user\
+++ConnectionDto.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\dto\user\connectiondto.cs
+++CreateAccountDto.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\dto\user\createaccountdto.cs
+++LoginDto.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\dto\user\logindto.cs
+++UserDataDto.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\dto\user\userdatadto.cs
+++UserDto.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\dto\user\userdto.cs
+++Interface
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\interface\
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\interface\
+++Migrations
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\migrations\
+++20221023091428_init.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\migrations\20221023091428_init.cs
+++20221023091428_init.Designer.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\migrations\20221023091428_init.designer.cs
+++ApplicationDbContextModelSnapshot.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\migrations\applicationdbcontextmodelsnapshot.cs
+++Model
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\model\
+++Message.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\model\message\message.cs
+++Notification.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\model\message\notification.cs
+++ApplicationUser.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\model\user\applicationuser.cs
+++Connection.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\model\user\connection.cs
+++SQLRepository
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\sqlrepository\
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\sqlrepository\
+++Analyzers
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:analyzers
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:analyzers
+i:{961e1ac4-dcab-4427-89ab-ef86601f0e70}:analyzers
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:analyzers
+i:{40b7c313-ea13-4267-a478-3f5c80092ab3}:analyzers
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:analyzers
+++Frameworks
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:frameworks
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:frameworks
+i:{961e1ac4-dcab-4427-89ab-ef86601f0e70}:frameworks
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:frameworks
+i:{40b7c313-ea13-4267-a478-3f5c80092ab3}:frameworks
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:frameworks
+++Packages
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:packages
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:packages
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:packages
+++MessageDto.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\dto\message\messagedto.cs
+++NotificationDto.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\dto\message\notificationdto.cs
+++IGenericRepository.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\interface\igenericrepository.cs
+++SQLGenericRepository.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\sqlrepository\sqlgenericrepository.cs
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{961e1ac4-dcab-4427-89ab-ef86601f0e70}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{40b7c313-ea13-4267-a478-3f5c80092ab3}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{961e1ac4-dcab-4427-89ab-ef86601f0e70}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{40b7c313-ea13-4267-a478-3f5c80092ab3}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:c:\users\fis\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.13\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:c:\users\fis\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.13\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:c:\users\fis\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.13\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:c:\users\fis\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.13\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.NETCore.App
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\microsoft.netcore.app
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\microsoft.netcore.app
+i:{961e1ac4-dcab-4427-89ab-ef86601f0e70}:e:\my work\projects\main\webproject\constant\microsoft.netcore.app
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:e:\my work\projects\main\webproject\managesignalr\microsoft.netcore.app
+i:{40b7c313-ea13-4267-a478-3f5c80092ab3}:e:\my work\projects\main\webproject\generator\microsoft.netcore.app
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\microsoft.netcore.app
+++Microsoft.AspNetCore.Identity.EntityFrameworkCore (5.0.13)
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:>1139
+++Microsoft.EntityFrameworkCore (5.0.13)
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:>1135
+++Microsoft.EntityFrameworkCore.Design (5.0.13)
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:>1137
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:>1155
+++Microsoft.EntityFrameworkCore.InMemory (5.0.13)
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:>1140
+++Microsoft.EntityFrameworkCore.SqlServer (5.0.13)
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:>1136
+++Microsoft.EntityFrameworkCore.Tools (5.0.13)
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:>1141
+++Swashbuckle.AspNetCore (6.2.3)
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:>1138
+++Web.BSL
+i:{00000000-0000-0000-0000-000000000000}:Web.BSL
+++BSL
+i:{2d1cca33-acc5-4c3e-ba8d-d213e86adc3c}:BSL
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:e:\my work\projects\main\webproject\bsl\bin\debug\net5.0\bsl.dll
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\bsl\bin\debug\net5.0\bsl.dll
+++IMessageRepository.cs
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\interface\message\imessagerepository.cs
+++IUserRepository.cs
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\interface\user\iuserrepository.cs
+++MessageRepository.cs
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\sqlrepository\message\messagerepository.cs
+++UserRepository.cs
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\bsl\sqlrepository\user\userrepository.cs
+++Projects
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:projects
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:projects
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:projects
+++Constant
+i:{aad9c7a0-2642-4096-aa40-d8e2acede1e8}:e:\my work\projects\main\webproject\constant\bin\debug\net5.0\constant.dll
+i:{2d1cca33-acc5-4c3e-ba8d-d213e86adc3c}:Constant
+++ResponseActions.cs
+i:{961e1ac4-dcab-4427-89ab-ef86601f0e70}:e:\my work\projects\main\webproject\constant\responseactions.cs
+++Utils.cs
+i:{961e1ac4-dcab-4427-89ab-ef86601f0e70}:e:\my work\projects\main\webproject\constant\utils.cs
+++ManageSignalR
+i:{2d1cca33-acc5-4c3e-ba8d-d213e86adc3c}:ManageSignalR
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\managesignalr\managesignalr.csproj
+++Hubs
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:e:\my work\projects\main\webproject\managesignalr\hubs\
+++ChatHub.cs
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:e:\my work\projects\main\webproject\managesignalr\hubs\chathub.cs
+++ConnectionMapping.cs
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:e:\my work\projects\main\webproject\managesignalr\hubs\connectionmapping.cs
+++IChatClient.cs
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:e:\my work\projects\main\webproject\managesignalr\hubs\ichatclient.cs
+++Microsoft.AspNetCore.SignalR (1.1.0)
+i:{81d06b73-b5b0-4924-b36e-b8ff6cac50b0}:>1105
+++CodeGenerator
+i:{00000000-0000-0000-0000-000000000000}:CodeGenerator
+++Generator
+i:{dbd68886-90fe-4fd2-a306-6160af35f513}:Generator
+++Templates
+i:{40b7c313-ea13-4267-a478-3f5c80092ab3}:e:\my work\projects\main\webproject\generator\templates\
+++ModelTemplate.txt
+i:{40b7c313-ea13-4267-a478-3f5c80092ab3}:e:\my work\projects\main\webproject\generator\templates\modeltemplate.txt
+++System.Text.Json.SourceGeneration
+i:{40b7c313-ea13-4267-a478-3f5c80092ab3}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.5\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++WebProject
+i:{00000000-0000-0000-0000-000000000000}:WebProject
+++Connected Services 
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:>1096
+++Properties
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\properties\
+++wwwroot
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\
+++Controllers
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\controllers\
+++AccountController.cs
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\controllers\accountcontroller.cs
+++HomeController.cs
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\controllers\homecontroller.cs
+++UserController.cs
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\controllers\usercontroller.cs
+++Models
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\models\
+++Views
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\
+++Account
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\account\
+++Home
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\home\
+++Index.cshtml
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\home\index.cshtml
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\account\index.cshtml
+++Privacy.cshtml
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\home\privacy.cshtml
+++Shared
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\shared\
+++_Layout.cshtml
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\shared\_layout.cshtml
+++_ValidationScriptsPartial.cshtml
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\shared\_validationscriptspartial.cshtml
+++Error.cshtml
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\shared\error.cshtml
+++_ViewImports.cshtml
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\_viewimports.cshtml
+++_ViewStart.cshtml
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\_viewstart.cshtml
+++appsettings.Development.json
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\appsettings.development.json
+++appsettings.json
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\appsettings.json
+++libman.json
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\libman.json
+++Program.cs
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\program.cs
+++Startup.cs
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\startup.cs
+++No service dependencies discovered
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:>1097
+++launchSettings.json
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\properties\launchsettings.json
+++css
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\css\
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\
+++js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\js\
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\js\
+++lib
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\
+++favicon.ico
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\favicon.ico
+++ErrorViewModel.cs
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\models\errorviewmodel.cs
+++CreateAccount.cshtml
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\account\createaccount.cshtml
+++Login.cshtml
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\views\account\login.cshtml
+++Microsoft.AspNetCore.Analyzers
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.CodeAnalysis.Analyzers
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:c:\users\fis\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0\analyzers\dotnet\cs\microsoft.codeanalysis.analyzers.dll
+++Microsoft.CodeAnalysis.CSharp.Analyzers
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:c:\users\fis\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0\analyzers\dotnet\cs\microsoft.codeanalysis.csharp.analyzers.dll
+++Microsoft.AspNetCore.App
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\microsoft.aspnetcore.app
+++Microsoft.AspNetCore.Mvc.NewtonsoftJson (5.0.13)
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:>1156
+++Microsoft.VisualStudio.Web.CodeGeneration.Design (5.0.2)
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:>1157
+++site.css
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\css\site.css
+++chat.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\js\chat.js
+++site.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\js\site.js
+++bootstrap
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\
+++jquery
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery\
+++jquery-validation
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation\
+++jquery-validation-unobtrusive
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation-unobtrusive\
+++microsoft
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\microsoft\
+++dist
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery\dist\
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation\dist\
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\microsoft\signalr\dist\
+++LICENSE
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\license
+++LICENSE.txt
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery\license.txt
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation-unobtrusive\license.txt
+++LICENSE.md
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation\license.md
+++jquery.validate.unobtrusive.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
+++jquery.validate.unobtrusive.min.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
+++signalr
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\microsoft\signalr\
+++jquery.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery\dist\jquery.js
+++jquery.min.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery\dist\jquery.min.js
+++jquery.min.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery\dist\jquery.min.map
+++additional-methods.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation\dist\additional-methods.js
+++additional-methods.min.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+++jquery.validate.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+++jquery.validate.min.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+++bootstrap.css
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+++bootstrap.css.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+++bootstrap.min.css
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+++bootstrap.min.css.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+++bootstrap-grid.css
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+++bootstrap-grid.css.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+++bootstrap-grid.min.css
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+++bootstrap-grid.min.css.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+++bootstrap-reboot.css
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+++bootstrap-reboot.css.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+++bootstrap-reboot.min.css
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+++bootstrap-reboot.min.css.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+++bootstrap.bundle.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+++bootstrap.bundle.js.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+++bootstrap.bundle.min.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+++bootstrap.bundle.min.js.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+++bootstrap.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+++bootstrap.js.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+++bootstrap.min.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+++bootstrap.min.js.map
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+++browser
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\microsoft\signalr\dist\browser\
+++signalr.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\microsoft\signalr\dist\browser\signalr.js
+++signalr.min.js
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\wwwroot\lib\microsoft\signalr\dist\browser\signalr.min.js
+++20221023094905_init32.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\migrations\20221023094905_init32.cs
+++20221023094905_init32.Designer.cs
+i:{b8438e89-8afc-4c01-b964-3530301e2daa}:e:\my work\projects\main\webproject\dal\migrations\20221023094905_init32.designer.cs
+++UserController - Copy.cs
+++ChatController.cs
+i:{bf488e0f-f728-4afc-9cff-4bf19f2ad1cc}:e:\my work\projects\main\webproject\webproject\controllers\chatcontroller.cs
+++Chat1Controller.cs

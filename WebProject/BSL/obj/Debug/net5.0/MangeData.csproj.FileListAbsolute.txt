@@ -1,0 +1,17 @@
+E:\My Work\Projects\main\WebProject\BSL\bin\Debug\net5.0\MangeData.deps.json
+E:\My Work\Projects\main\WebProject\BSL\bin\Debug\net5.0\MangeData.dll
+E:\My Work\Projects\main\WebProject\BSL\bin\Debug\net5.0\MangeData.pdb
+E:\My Work\Projects\main\WebProject\BSL\bin\Debug\net5.0\Constant.dll
+E:\My Work\Projects\main\WebProject\BSL\bin\Debug\net5.0\DAL.dll
+E:\My Work\Projects\main\WebProject\BSL\bin\Debug\net5.0\Constant.pdb
+E:\My Work\Projects\main\WebProject\BSL\bin\Debug\net5.0\DAL.pdb
+E:\My Work\Projects\main\WebProject\BSL\obj\Debug\net5.0\MangeData.csproj.AssemblyReference.cache
+E:\My Work\Projects\main\WebProject\BSL\obj\Debug\net5.0\MangeData.GeneratedMSBuildEditorConfig.editorconfig
+E:\My Work\Projects\main\WebProject\BSL\obj\Debug\net5.0\MangeData.AssemblyInfoInputs.cache
+E:\My Work\Projects\main\WebProject\BSL\obj\Debug\net5.0\MangeData.AssemblyInfo.cs
+E:\My Work\Projects\main\WebProject\BSL\obj\Debug\net5.0\MangeData.csproj.CoreCompileInputs.cache
+E:\My Work\Projects\main\WebProject\BSL\obj\Debug\net5.0\MangeData.csproj.CopyComplete
+E:\My Work\Projects\main\WebProject\BSL\obj\Debug\net5.0\MangeData.dll
+E:\My Work\Projects\main\WebProject\BSL\obj\Debug\net5.0\refint\MangeData.dll
+E:\My Work\Projects\main\WebProject\BSL\obj\Debug\net5.0\MangeData.pdb
+E:\My Work\Projects\main\WebProject\BSL\obj\Debug\net5.0\ref\MangeData.dll
