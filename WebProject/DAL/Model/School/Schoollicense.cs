@@ -10,7 +10,7 @@ namespace DAL.Model.School
 {
     public class Schoollicense
     {
-        public license_Type MyProperty { get; set; }
+        public licenseTypeEnum MyProperty { get; set; }
         [DataType("decimal(16,3)")]
         public decimal Cost { get; set; } = decimal.Zero;
     }

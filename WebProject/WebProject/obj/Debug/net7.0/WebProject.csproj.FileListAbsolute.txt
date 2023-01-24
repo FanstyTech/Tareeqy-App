@@ -169,3 +169,15 @@ C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\WebProject\obj\Debug\net
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\WebProject\obj\Debug\net7.0\WebProject.pdb
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\WebProject\obj\Debug\net7.0\WebProject.genruntimeconfig.cache
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\WebProject\obj\Debug\net7.0\ref\WebProject.dll
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.csproj.AssemblyReference.cache
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.AssemblyInfoInputs.cache
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.AssemblyInfo.cs
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.csproj.CoreCompileInputs.cache
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.MvcApplicationPartsAssemblyInfo.cs
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.MvcApplicationPartsAssemblyInfo.cache
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.RazorAssemblyInfo.cache
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.RazorAssemblyInfo.cs
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.dll
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\refint\WebProject.dll
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.pdb

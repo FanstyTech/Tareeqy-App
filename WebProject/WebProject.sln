@@ -17,10 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Constant", "Constant\Consta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManageSignalR", "ManageSignalR\ManageSignalR.csproj", "{81D06B73-B5B0-4924-B36E-B8FF6CAC50B0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web.Generator", "Web.Generator", "{6E56410E-34EB-4DAC-A7A6-684E1EC0DD57}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeGenerator", "CodeGenerator\CodeGenerator.csproj", "{82E70BAF-72C5-45BD-8AA5-4B1FD0D89A6D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +43,6 @@ Global
 		{81D06B73-B5B0-4924-B36E-B8FF6CAC50B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81D06B73-B5B0-4924-B36E-B8FF6CAC50B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81D06B73-B5B0-4924-B36E-B8FF6CAC50B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82E70BAF-72C5-45BD-8AA5-4B1FD0D89A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82E70BAF-72C5-45BD-8AA5-4B1FD0D89A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82E70BAF-72C5-45BD-8AA5-4B1FD0D89A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82E70BAF-72C5-45BD-8AA5-4B1FD0D89A6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,7 +52,6 @@ Global
 		{AAD9C7A0-2642-4096-AA40-D8E2ACEDE1E8} = {2D1CCA33-ACC5-4C3E-BA8D-D213E86ADC3C}
 		{961E1AC4-DCAB-4427-89AB-EF86601F0E70} = {2D1CCA33-ACC5-4C3E-BA8D-D213E86ADC3C}
 		{81D06B73-B5B0-4924-B36E-B8FF6CAC50B0} = {2D1CCA33-ACC5-4C3E-BA8D-D213E86ADC3C}
-		{82E70BAF-72C5-45BD-8AA5-4B1FD0D89A6D} = {6E56410E-34EB-4DAC-A7A6-684E1EC0DD57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83B40AD2-4518-4609-AADF-A75DF7FE6125}

@@ -17,3 +17,22 @@ C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\ManageSignalR\obj\Debug\
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\ManageSignalR\obj\Debug\net7.0\refint\ManageSignalR.dll
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\ManageSignalR\obj\Debug\net7.0\ManageSignalR.pdb
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\ManageSignalR\obj\Debug\net7.0\ref\ManageSignalR.dll
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\bin\Debug\net7.0\ManageSignalR.deps.json
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\bin\Debug\net7.0\ManageSignalR.dll
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\bin\Debug\net7.0\ManageSignalR.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\bin\Debug\net7.0\Constant.dll
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\bin\Debug\net7.0\DAL.dll
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\bin\Debug\net7.0\MangeData.dll
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\bin\Debug\net7.0\MangeData.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\bin\Debug\net7.0\Constant.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\bin\Debug\net7.0\DAL.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\obj\Debug\net7.0\ManageSignalR.csproj.AssemblyReference.cache
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\obj\Debug\net7.0\ManageSignalR.GeneratedMSBuildEditorConfig.editorconfig
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\obj\Debug\net7.0\ManageSignalR.AssemblyInfoInputs.cache
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\obj\Debug\net7.0\ManageSignalR.AssemblyInfo.cs
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\obj\Debug\net7.0\ManageSignalR.csproj.CoreCompileInputs.cache
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\obj\Debug\net7.0\ManageSignalR.csproj.CopyComplete
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\obj\Debug\net7.0\ManageSignalR.dll
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\obj\Debug\net7.0\refint\ManageSignalR.dll
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\obj\Debug\net7.0\ManageSignalR.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\ManageSignalR\obj\Debug\net7.0\ref\ManageSignalR.dll

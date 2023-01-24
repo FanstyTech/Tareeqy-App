@@ -10,3 +10,15 @@ C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\Constant\obj\Debug\net7.
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\Constant\obj\Debug\net7.0\refint\Constant.dll
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\Constant\obj\Debug\net7.0\Constant.pdb
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\Constant\obj\Debug\net7.0\ref\Constant.dll
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\bin\Debug\net7.0\Constant.deps.json
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\bin\Debug\net7.0\Constant.dll
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\bin\Debug\net7.0\Constant.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\obj\Debug\net7.0\Constant.csproj.AssemblyReference.cache
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\obj\Debug\net7.0\Constant.GeneratedMSBuildEditorConfig.editorconfig
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\obj\Debug\net7.0\Constant.AssemblyInfoInputs.cache
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\obj\Debug\net7.0\Constant.AssemblyInfo.cs
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\obj\Debug\net7.0\Constant.csproj.CoreCompileInputs.cache
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\obj\Debug\net7.0\Constant.dll
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\obj\Debug\net7.0\refint\Constant.dll
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\obj\Debug\net7.0\Constant.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\Constant\obj\Debug\net7.0\ref\Constant.dll

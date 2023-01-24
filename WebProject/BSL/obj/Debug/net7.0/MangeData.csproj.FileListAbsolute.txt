@@ -15,3 +15,20 @@ C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\Man
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\refint\MangeData.dll
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\MangeData.pdb
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\BSL\obj\Debug\net7.0\ref\MangeData.dll
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\bin\Debug\net7.0\MangeData.deps.json
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\bin\Debug\net7.0\MangeData.dll
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\bin\Debug\net7.0\MangeData.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\bin\Debug\net7.0\Constant.dll
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\bin\Debug\net7.0\DAL.dll
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\bin\Debug\net7.0\Constant.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\bin\Debug\net7.0\DAL.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\obj\Debug\net7.0\MangeData.csproj.AssemblyReference.cache
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\obj\Debug\net7.0\MangeData.GeneratedMSBuildEditorConfig.editorconfig
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\obj\Debug\net7.0\MangeData.AssemblyInfoInputs.cache
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\obj\Debug\net7.0\MangeData.AssemblyInfo.cs
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\obj\Debug\net7.0\MangeData.csproj.CoreCompileInputs.cache
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\obj\Debug\net7.0\MangeData.csproj.CopyComplete
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\obj\Debug\net7.0\MangeData.dll
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\obj\Debug\net7.0\refint\MangeData.dll
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\obj\Debug\net7.0\MangeData.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\BSL\obj\Debug\net7.0\ref\MangeData.dll
