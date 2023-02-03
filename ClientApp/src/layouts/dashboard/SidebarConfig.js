@@ -29,7 +29,7 @@ const sidebarConfig = [
   // GENERAL
   // ----------------------------------------------------------------------
   {
-    subheader: 'general',
+    subheader: 'عام',
     items: [
       {
         title: 'app',
@@ -46,11 +46,11 @@ const sidebarConfig = [
   // MANAGEMENT
   // ----------------------------------------------------------------------
   {
-    subheader: 'management',
+    subheader: 'إدارة',
     items: [
       // MANAGEMENT : USER
       {
-        title: 'user',
+        title: 'المستخدمين',
         path: PATH_DASHBOARD.user.root,
         icon: ICONS.user,
         children: [
@@ -62,7 +62,13 @@ const sidebarConfig = [
           { title: 'account', path: PATH_DASHBOARD.user.account }
         ]
       },
-
+      // MANAGEMENT : General settings
+      {
+        title: 'إعدادات عامة',
+        path: PATH_DASHBOARD.generalSetting.root,
+        icon: ICONS.user,
+        children: [{ title: 'الدول', path: PATH_DASHBOARD.generalSetting.countries }]
+      },
       // MANAGEMENT : E-COMMERCE
       {
         title: 'e-commerce',
