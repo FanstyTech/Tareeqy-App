@@ -10,6 +10,7 @@ using AutoMapper;
 using DAL.Model;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
+using System.Net;
 
 namespace WebProject.Controllers
 {
@@ -18,7 +19,7 @@ namespace WebProject.Controllers
     public class UserController : Controller
     {
         private readonly IUserRepository _userRepository;
- 
+
 
 
         public UserController(IUserRepository userRepository, IMapper mapper)
@@ -35,7 +36,7 @@ namespace WebProject.Controllers
                 UserDataDto data = await _userRepository.Login(login);
                 return new ResponseActions()
                 {
-                    code = Utils.Success,
+                    code = HttpStatusCode.OK,
                     message = "Sucsses",
                     status = true,
                     data = data
@@ -46,7 +47,7 @@ namespace WebProject.Controllers
 
                 return new ResponseActions
                 {
-                    code = Utils.BadRequest,
+                    code = HttpStatusCode.BadRequest,
                     status = false,
                     message = e.Message,
                     data = { }
@@ -63,7 +64,7 @@ namespace WebProject.Controllers
                 var data = new List<String>() { "husam", "mohammed" };
                 return new ResponseActions()
                 {
-                    code = Utils.Success,
+                    code = HttpStatusCode.OK,
                     message = "Sucsses",
                     status = true,
                     data = data
@@ -74,7 +75,7 @@ namespace WebProject.Controllers
 
                 return new ResponseActions
                 {
-                    code = Utils.BadRequest,
+                    code = HttpStatusCode.BadRequest,
                     status = false,
                     message = e.Message,
                     data = { }
@@ -88,10 +89,10 @@ namespace WebProject.Controllers
 
             try
             {
-                UserDataDto data =  await _userRepository.CreateAccount(obj);
+                UserDataDto data = await _userRepository.CreateAccount(obj);
                 return new ResponseActions()
                 {
-                    code = Utils.Success,
+                    code = HttpStatusCode.OK,
                     message = "Sucsses",
                     status = true,
                     data = data
@@ -102,7 +103,7 @@ namespace WebProject.Controllers
             {
                 return new ResponseActions
                 {
-                    code = Utils.BadRequest,
+                    code = HttpStatusCode.BadRequest,
                     status = false,
                     message = e.Message,
                     data = { }

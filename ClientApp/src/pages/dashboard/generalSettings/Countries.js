@@ -26,7 +26,7 @@ import {
 // redux
 
 import { useDispatch, useSelector } from '../../../redux/store';
-import { getCountriesList } from '../../../redux/slices/generalSetting';
+import { getCountriesList, attachmentDownload } from '../../../redux/slices/generalSetting';
 
 // routes
 import { PATH_DASHBOARD } from '../../../routes/paths';
@@ -77,7 +77,7 @@ function applySortFilter(array, comparator, query) {
     return a[1] - b[1];
   });
   if (query) {
-    return filter(array, (_user) => _user.name.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+    return filter(array, (_user) => _user.Name.toLowerCase().indexOf(query.toLowerCase()) !== -1);
   }
   return stabilizedThis.map((el) => el[0]);
 }
@@ -91,7 +91,7 @@ export default function Countries() {
   const [page, setPage] = useState(0);
 
   const [order, setOrder] = useState('asc');
-  const [orderBy, setOrderBy] = useState('name');
+  const [orderBy, setOrderBy] = useState('Name');
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(false);
 
@@ -124,7 +124,7 @@ export default function Countries() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = countriesList.map((n) => n.name);
+      const newSelecteds = countriesList.map((n) => n.Id);
       setSelected(newSelecteds);
       return;
     }
@@ -190,42 +190,46 @@ export default function Countries() {
                 />
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, role, status, company, avatarUrl, isVerified } = row;
-                    const isItemSelected = selected.indexOf(name) !== -1;
+                    const { Id, Name, Currency, Code, IsActive, avatarUrl } = row;
+                    const status = true;
+                    const isItemSelected = selected.indexOf(Id) !== -1;
 
                     return (
                       <TableRow
                         hover
-                        key={id}
+                        key={Id}
                         tabIndex={-1}
                         role="checkbox"
                         selected={isItemSelected}
                         aria-checked={isItemSelected}
                       >
                         <TableCell padding="checkbox">
-                          <Checkbox checked={isItemSelected} onChange={(event) => handleClick(event, name)} />
+                          <Checkbox checked={isItemSelected} onChange={(event) => handleClick(event, Id)} />
                         </TableCell>
                         <TableCell component="th" scope="row" padding="none">
                           <Stack direction="row" alignItems="center" spacing={2}>
-                            <Avatar alt={name} src={avatarUrl} />
+                            <Avatar
+                              alt={Name}
+                              src={`${process.env.REACT_APP_LOCAL_BASE_URl}Attachment/AttachmentDownload?PrimeryTableId=${Id}&AttatchmentTypeId=1`}
+                            />
                             <Typography variant="subtitle2" noWrap>
-                              {name}
+                              {Name}
                             </Typography>
                           </Stack>
                         </TableCell>
-                        <TableCell align="left">{company}</TableCell>
-                        <TableCell align="left">{role}</TableCell>
+                        <TableCell align="left">{Code}</TableCell>
+                        <TableCell align="left">{Currency}</TableCell>
                         <TableCell align="left">
                           <Label
                             variant={theme.palette.mode === 'light' ? 'ghost' : 'filled'}
-                            color={(status === 'banned' && 'error') || 'success'}
+                            color={(IsActive === false && 'error') || 'success'}
                           >
-                            {sentenceCase(status)}
+                            {IsActive ? 'فعال' : 'غير فعال'}
                           </Label>
                         </TableCell>
 
                         <TableCell align="right">
-                          <UserMoreMenu onDelete={() => handleDeleteUser(id)} userName={name} />
+                          <UserMoreMenu onDelete={() => handleDeleteUser(Id)} userName={Name} />
                         </TableCell>
                       </TableRow>
                     );

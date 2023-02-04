@@ -24,9 +24,9 @@ using DAL.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using MangeData.Interface.Message;
-// namespace here !
-using MangeData.SQLRepository.Product;
-using MangeData.Interface.Product;
+using MangeData.Interface.Common;
+using MangeData.SQLRepository.Common;
+using Microsoft.AspNetCore.Rewrite;
 
 namespace WebProject
 {
@@ -43,6 +43,8 @@ namespace WebProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddMvc();
+
             services.AddDbContext<ApplicationDbContext>(options
                   => options.UseSqlServer(Configuration["Connections:ConnectionString"]));
 
@@ -60,9 +62,8 @@ namespace WebProject
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IMessageRepository, MessageRepository>();
-            //Auto Generate services here !
-			services.AddScoped<IProductsRepository, ProductsRepository>();
-
+            services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<IAttachmentRepository, AttachmentRepository>();
 
             //services.AddCors(c =>
             //{
@@ -82,7 +83,7 @@ namespace WebProject
                 {
                     Version = "v1",
                     Title = "Wep project API",
-                   
+
                 });
             });
 
@@ -110,7 +111,7 @@ namespace WebProject
                 opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-               
+
 
 
             }).AddJwtBearer(options =>
@@ -166,7 +167,7 @@ namespace WebProject
 
             app.UseRouting();
             app.UseCors(options =>
-                        options.WithOrigins("http://localhost:8051")
+                        options.WithOrigins("http://localhost:3000")
                         .AllowAnyHeader()
                         .WithMethods("GET", "POST")
                         .AllowCredentials());
@@ -179,10 +180,17 @@ namespace WebProject
             });
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.)
-            app.UseSwaggerUI();
+            app.UseSwaggerUI(c =>
+            {
+
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My service");
+                c.RoutePrefix = string.Empty;  // Set Swagger UI at apps root
+
+            });
 
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -193,6 +201,9 @@ namespace WebProject
 
 
             });
+
+
+
         }
     }
 }

@@ -8,14 +8,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-// namespace here !
-using DAL.Dto.Product;
-using DAL.Model.Product;
-
+using DAL.Model.Common;
+using DAL.Dto.Common;
 
 namespace DAL.Model
 {
-    public class MappingProfile :Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {
@@ -23,15 +21,17 @@ namespace DAL.Model
             CreateMap<ApplicationUser, UserDataDto>();
             CreateMap<UserDataDto, ApplicationUser>();
 
-            CreateMap<Connection, UserConnectionDto > ();
+            CreateMap<Connection, UserConnectionDto>();
             CreateMap<UserConnectionDto, Connection>();
 
             CreateMap<DAL.Model.Message.Message, MessageDto>();
-            CreateMap<MessageDto,DAL.Model.Message.Message>();
+            CreateMap<MessageDto, DAL.Model.Message.Message>();
 
-            //Auto Generate auto mapping profile here !
-			CreateMap<Products, ProductsDto>();
-			CreateMap<ProductsDto, Products>();
+            CreateMap<CountryDto, Country>();
+            CreateMap<Country, CountryDto>();
+
+            CreateMap<AttachmentDto, Attachment>();
+            CreateMap<Attachment, AttachmentDto>();
 
         }
     }

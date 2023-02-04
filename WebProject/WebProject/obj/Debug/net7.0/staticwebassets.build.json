@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Gxvncc1988PCiM2Lum6WFuMU5Km9YZ6JyzGJLwRATm4=",
+  "Hash": "0OUAog19uLn02NTZS0y1fZjN1An3cPgZOTQRVzmRgQc=",
   "Source": "WebProject",
   "BasePath": "_content/WebProject",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "WebProject\\wwwroot",
       "Source": "WebProject",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\css\\site.css",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\css\\site.css",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\favicon.ico",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\favicon.ico",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -51,10 +51,112 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\js\\chat.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\29d6753b-fa35-4b1d-a888-9eb8bd463acf.jpg",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "FileUpload/29d6753b-fa35-4b1d-a888-9eb8bd463acf.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\29d6753b-fa35-4b1d-a888-9eb8bd463acf.jpg"
+    },
+    {
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\3f19c039-9aa5-4c76-9611-c5b27c242e87.png",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "FileUpload/3f19c039-9aa5-4c76-9611-c5b27c242e87.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\3f19c039-9aa5-4c76-9611-c5b27c242e87.png"
+    },
+    {
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\5a439440-45ba-49b4-b804-de65924d445a.png",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "FileUpload/5a439440-45ba-49b4-b804-de65924d445a.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\5a439440-45ba-49b4-b804-de65924d445a.png"
+    },
+    {
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\6f462620-a4ab-430e-855b-5bd052e341e8.png",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "FileUpload/6f462620-a4ab-430e-855b-5bd052e341e8.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\6f462620-a4ab-430e-855b-5bd052e341e8.png"
+    },
+    {
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\82d2a43b-6dc5-40f4-9544-3617d38ecb7f.png",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "FileUpload/82d2a43b-6dc5-40f4-9544-3617d38ecb7f.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\82d2a43b-6dc5-40f4-9544-3617d38ecb7f.png"
+    },
+    {
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\95dced2a-aa55-4dfe-aa9e-9023602e056b.png",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "FileUpload/95dced2a-aa55-4dfe-aa9e-9023602e056b.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\95dced2a-aa55-4dfe-aa9e-9023602e056b.png"
+    },
+    {
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\js\\chat.js",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "js/chat.js",
       "AssetKind": "All",
@@ -68,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\js\\chat.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\js\\site.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\js\\site.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -85,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -102,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -119,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -136,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -153,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -170,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -187,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -204,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -221,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -238,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -255,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -272,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -289,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -306,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -323,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -340,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -357,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -374,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -391,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -408,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -425,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -442,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -459,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -476,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -493,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -510,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -527,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -544,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -561,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -578,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -595,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -612,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -629,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -646,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/microsoft/signalr/dist/browser/signalr.js",
       "AssetKind": "All",
@@ -663,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.min.js",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.min.js",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\Fantazy\\Projects2\\WebProject\\WebProject\\wwwroot\\",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
       "RelativePath": "lib/microsoft/signalr/dist/browser/signalr.min.js",
       "AssetKind": "All",

@@ -12,11 +12,13 @@ using System.Threading.Tasks;
 
 // namespace here !
 using DAL.Model.Product;
+using DAL.Model.Common;
+
 namespace DAL.Context
 {
-    public class ApplicationDbContext  : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions options) :base(options)
+        public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
 
@@ -25,14 +27,16 @@ namespace DAL.Context
         {
             base.OnModelCreating(builder);
             new UserSeedData(builder);
-          
+
 
         }
         // public DbSet<ModelNamedel> ModelNames { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Connection> Connections { get; set; }
-   
+        public DbSet<Attachment> Attachments { get; set; }
+        public DbSet<Country> Countries { get; set; }
+
     }
 }
 

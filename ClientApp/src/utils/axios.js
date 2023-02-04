@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // ----------------------------------------------------------------------
-axios.defaults.baseURL = 'https://github.com/prettier/eslint-plugin-prettier/issues/219';
+axios.defaults.baseURL = process.env.REACT_APP_LOCAL_BASE_URl;
 const axiosInstance = axios.create();
 axiosInstance.interceptors.response.use(
   (response) => response,

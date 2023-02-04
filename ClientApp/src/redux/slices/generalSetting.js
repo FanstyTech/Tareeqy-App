@@ -29,6 +29,12 @@ const slice = createSlice({
     getCountriesListuccess(state, action) {
       state.isLoading = false;
       state.countriesList = action.payload;
+    },
+    // CREATE EVENT
+    createCountryEvent(state, action) {
+      const newEvent = action.payload;
+      state.isLoading = false;
+      state.events = [...state.events, newEvent];
     }
   }
 });
@@ -45,12 +51,52 @@ export function getCountriesList() {
   return async (dispatch) => {
     dispatch(slice.actions.startLoading());
     try {
-      const response = await axios.get('/api/user/manage-users');
-      console.log(response);
-      dispatch(slice.actions.getCountriesListuccess(response.data.users));
+      const response = await axios.get('Country/GetAll');
+      dispatch(slice.actions.getCountriesListuccess(response.data.data));
     } catch (error) {
       console.log(error);
 
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+
+// ----------------------------------------------------------------------
+
+export function createCountryEvent(newEvent) {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const formdata = new FormData();
+      formdata.append('Code', newEvent.Code);
+      formdata.append('Currency', newEvent.Currency);
+      formdata.append('IsActive', newEvent.IsActive);
+      formdata.append('Name', newEvent.Name);
+      formdata.append('File', newEvent?.avatarUrl);
+      const response = await axios.post('Country/Save', formdata, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      //   console.log(response);
+
+      dispatch(getCountriesList());
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+
+export function attachmentDownload(ref) {
+  console.log(ref);
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const data = {
+        PrimeryTableId: 16,
+        AttatchmentTypeId: 1
+      };
+      const response = await axios.post('Attachment/AttachmentDownload', data);
+      console.log(response);
+    } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
   };

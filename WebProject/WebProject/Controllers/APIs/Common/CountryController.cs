@@ -1,35 +1,33 @@
-using Constant;
+﻿using Constant;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
-using MangeData.Interface.Product;
-using DAL.Dto.Product;
+using System;
+using MangeData.Interface.Common;
+using DAL.Dto.Common;
 
-namespace WebProject.Controllers
+namespace WebProject.Controllers.APIs.Common
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
-    public class ProductsController : Controller
+    public class CountryController : ControllerBase
     {
-        private readonly IProductsRepository _ProductsRepository;
-
-        public ProductsController(IProductsRepository ProductsRepository, IMapper mapper)
+        private readonly ICountryRepository _countryRepository;
+        public CountryController(ICountryRepository countryRepository)
         {
-            _ProductsRepository = ProductsRepository;
+            _countryRepository = countryRepository;
         }
-
         [HttpGet("GetAll")]
         public async Task<ResponseActions> GetAll()
         {
             try
             {
-                var data = await _ProductsRepository.GetAll();
+                var data = await _countryRepository.GetAll();
                 return new ResponseActions()
                 {
-                    code = Utils.Success,
+                    code = HttpStatusCode.OK,
                     message = "Sucsses",
                     status = true,
                     data = data
@@ -40,7 +38,7 @@ namespace WebProject.Controllers
 
                 return new ResponseActions
                 {
-                    code = Utils.BadRequest,
+                    code = HttpStatusCode.BadRequest,
                     status = false,
                     message = e.Message,
                     data = { }
@@ -48,41 +46,69 @@ namespace WebProject.Controllers
             }
         }
 
-
-        [HttpPost("Save")]
-        public async Task<ResponseActions> Save([FromBody] ProductsDto dto)
+        [HttpGet("GetById")]
+        public async Task<ResponseActions> GetById(int Id)
         {
             try
             {
-                await _ProductsRepository.Save(dto);
+                var data = await _countryRepository.GetById(Id);
                 return new ResponseActions()
                 {
-                    code = Utils.Success,
+                    code = HttpStatusCode.OK,
                     message = "Sucsses",
                     status = true,
-                    data = { }
+                    data = data
                 };
             }
             catch (Exception e)
             {
+
                 return new ResponseActions
                 {
-                    code = Utils.BadRequest,
+                    code = HttpStatusCode.BadRequest,
                     status = false,
                     message = e.Message,
                     data = { }
                 };
             }
         }
+
+        [HttpPost("Save")]
+        public async Task<ResponseActions> Save([FromForm] CountryDto obj)
+        {
+            try
+            {
+                var data = await _countryRepository.Save(obj);
+                return new ResponseActions()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = { }
+                };
+            }
+        }
+
         [HttpDelete("Delete")]
         public async Task<ResponseActions> Delete(int Id)
         {
             try
             {
-                await _ProductsRepository.Delete(Id);
+                await _countryRepository.Delete(Id);
                 return new ResponseActions()
                 {
-                    code = Utils.Success,
+                    code = HttpStatusCode.OK,
                     message = "Sucsses",
                     status = true,
                     data = { }
@@ -90,14 +116,16 @@ namespace WebProject.Controllers
             }
             catch (Exception e)
             {
+
                 return new ResponseActions
                 {
-                    code = Utils.BadRequest,
+                    code = HttpStatusCode.BadRequest,
                     status = false,
                     message = e.Message,
                     data = { }
                 };
             }
         }
+
     }
 }

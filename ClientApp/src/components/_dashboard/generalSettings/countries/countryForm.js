@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 import { merge } from 'lodash';
 import PropTypes from 'prop-types';
@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import { useFormik, Form, FormikProvider } from 'formik';
 import { Icon } from '@iconify/react';
 import trash2Fill from '@iconify/icons-eva/trash-2-fill';
+import { useSnackbar } from 'notistack5';
 
 // material
 import {
@@ -22,6 +23,10 @@ import {
   FormHelperText
 } from '@material-ui/core';
 import { LoadingButton } from '@material-ui/lab';
+// redux
+import { useDispatch } from '../../../../redux/store';
+import { createCountryEvent } from '../../../../redux/slices/generalSetting';
+
 //
 import { UploadAvatar } from '../../../upload';
 // utils
@@ -52,6 +57,9 @@ CountryForm.propTypes = {
 };
 export default function CountryForm({ event, range, onCancel }) {
   const isCreating = !event;
+  const dispatch = useDispatch();
+  const { enqueueSnackbar } = useSnackbar();
+  const [uploadFile, SetUploadFile] = useState();
   const handleDelete = async () => {
     try {
       onCancel();
@@ -65,13 +73,7 @@ export default function CountryForm({ event, range, onCancel }) {
     name: Yup.string().max(255).required('حقل الاسم اجباري'),
     code: Yup.string().max(255).required('حقل الرمز اجباري'),
     currency: Yup.string().max(255).required('حقل العملة اجباري'),
-    avatarUrl: Yup.mixed().required('العلم اجباري'),
-
-    end: Yup.date().when(
-      'start',
-      (start, schema) => start && schema.min(start, 'End date must be later than start date')
-    ),
-    start: Yup.date()
+    avatarUrl: Yup.mixed().required('العلم اجباري')
   });
 
   const formik = useFormik({
@@ -80,20 +82,19 @@ export default function CountryForm({ event, range, onCancel }) {
     onSubmit: async (values, { resetForm, setSubmitting }) => {
       try {
         const newEvent = {
-          name: values.name,
-          code: values.code,
-          currency: values.currency,
-          avatarUrl: values.avatarUrl,
-          status: values.status
+          Name: values.name,
+          Code: values.code,
+          Currency: values.currency,
+          avatarUrl: uploadFile,
+          IsActive: values.status
         };
 
-        console.log('newEvent', newEvent);
         if (event) {
           // dispatch(updateEvent(event.id, newEvent));
           // enqueueSnackbar('Update event success', { variant: 'success' });
         } else {
-          // dispatch(createEvent(newEvent));
-          // enqueueSnackbar('Create event success', { variant: 'success' });
+          dispatch(createCountryEvent(newEvent));
+          enqueueSnackbar('تمت العملية بنجاح', { variant: 'success' });
         }
         resetForm();
         onCancel();
@@ -108,6 +109,7 @@ export default function CountryForm({ event, range, onCancel }) {
     (acceptedFiles) => {
       const file = acceptedFiles[0];
       if (file) {
+        SetUploadFile(file);
         setFieldValue('avatarUrl', {
           ...file,
           preview: URL.createObjectURL(file)

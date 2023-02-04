@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DAL.Dto.Message;
 using MangeData.Interface.Message;
+using System.Net;
 
 namespace WebProject.Controllers
 {
@@ -51,7 +52,7 @@ namespace WebProject.Controllers
             }
             return new ResponseActions()
             {
-                code = Utils.Success,
+                code = HttpStatusCode.OK,
                 message = "Sucsses",
                 status = true,
                 data = { }

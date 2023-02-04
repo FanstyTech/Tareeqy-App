@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Common
 {
-    public class Attachment:AppModelBase
+    public class Attachment : AppModelBase
     {
         public int PrimeryTableId { get; set; }
         public string ContentType { get; set; }
         public int AttatchmentTypeId { get; set; }
-
         public string Extension { get; set; }
         public string Name { get; set; }
         public string OriginalName { get; set; }
+        public string FileSize { get; set; }
 
     }
 

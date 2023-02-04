@@ -72,14 +72,52 @@ function AuthProvider({ children }) {
         if (accessToken && isValidToken(accessToken)) {
           setSession(accessToken);
 
-          const response = await axios.get('/api/account/my-account');
-          const { user } = response.data;
+          // const response = await axios.get('User/MyAccount');
+          // try {
+          //   const { Authorization } = config.headers;
+
+          //   if (!Authorization) {
+          //     return [401, { message: 'Authorization token missing' }];
+          //   }
+
+          //   const accessToken = Authorization.split(' ')[1];
+          //   const data = verify(accessToken, JWT_SECRET);
+          //   const userId = typeof data === 'object' ? data?.userId : '';
+          //   const user = users.find((_user) => _user.id === userId);
+
+          //   if (!user) {
+          //     return [401, { message: 'Invalid authorization token' }];
+          //   }
+
+          //   return [200, { user }];
+          // } catch (error) {
+          //   console.error(error);
+          //   return [500, { message: 'Internal server error' }];
+          // }
+          const user2 = {
+            id: 'c1c07e5a-31ad-4e62-a9c7-539c704196c1',
+            displayName: 'حسام فرج الله',
+            email: 'mrhusamfa@gmail.com',
+            password: 'P@ssw0rd',
+            photoURL: '/static/mock-images/avatars/avatar_default.jpg',
+            phoneNumber: '+40 777666555',
+            country: 'United States',
+            address: '90210 Broadway Blvd',
+            state: 'California',
+            city: 'San Francisco',
+            zipCode: '94116',
+            about: 'Praesent turpis. Phasellus viverra nulla ut metus varius laoreet. Phasellus tempus.',
+            role: 'admin',
+            isPublic: true
+          };
+
+          // const { user } = response.data;
 
           dispatch({
             type: 'INITIALIZE',
             payload: {
               isAuthenticated: true,
-              user
+              user: user2
             }
           });
         } else {
@@ -107,19 +145,41 @@ function AuthProvider({ children }) {
   }, []);
 
   const login = async (email, password) => {
-    const response = await axios.post('/api/account/login', {
-      email,
-      password
+    const response = await axios.post('User/Login', {
+      Email: email,
+      Password: password
     });
-    const { accessToken, user } = response.data;
+    const { code, data, message, status } = response.data;
+    if (!status) {
+      console.log('message', message);
+      throw new Error(message);
+    } else {
+      // const { TokenKey, user } = data;
 
-    setSession(accessToken);
-    dispatch({
-      type: 'LOGIN',
-      payload: {
-        user
-      }
-    });
+      const user = {
+        id: data?.Id,
+        displayName: data?.NickName,
+        email: data?.Email,
+        password: 'P@ssw0rd',
+        photoURL: '/static/mock-images/avatars/avatar_default.jpg',
+        phoneNumber: '+40 777666555',
+        country: 'United States',
+        address: '90210 Broadway Blvd',
+        state: 'California',
+        city: 'San Francisco',
+        zipCode: '94116',
+        about: 'Praesent turpis. Phasellus viverra nulla ut metus varius laoreet. Phasellus tempus.',
+        role: 'admin',
+        isPublic: true
+      };
+      setSession(data.TokenKey);
+      dispatch({
+        type: 'LOGIN',
+        payload: {
+          user
+        }
+      });
+    }
   };
 
   const register = async (email, password, firstName, lastName) => {

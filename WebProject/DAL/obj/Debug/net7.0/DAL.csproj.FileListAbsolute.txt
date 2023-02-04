@@ -20,3 +20,9 @@ D:\husam\My Work\Tareeqy-App\WebProject\DAL\obj\Debug\net7.0\DAL.csproj.CoreComp
 D:\husam\My Work\Tareeqy-App\WebProject\DAL\obj\Debug\net7.0\DAL.dll
 D:\husam\My Work\Tareeqy-App\WebProject\DAL\obj\Debug\net7.0\refint\DAL.dll
 D:\husam\My Work\Tareeqy-App\WebProject\DAL\obj\Debug\net7.0\DAL.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\DAL\bin\Debug\net7.0\DAL.deps.json
+D:\husam\My Work\Tareeqy-App\WebProject\DAL\bin\Debug\net7.0\DAL.runtimeconfig.json
+D:\husam\My Work\Tareeqy-App\WebProject\DAL\bin\Debug\net7.0\DAL.dll
+D:\husam\My Work\Tareeqy-App\WebProject\DAL\bin\Debug\net7.0\DAL.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\DAL\obj\Debug\net7.0\DAL.genruntimeconfig.cache
+D:\husam\My Work\Tareeqy-App\WebProject\DAL\obj\Debug\net7.0\ref\DAL.dll
