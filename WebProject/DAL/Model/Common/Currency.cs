@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Common
 {
-    internal class Currency : AppModelBase
+    public class Currency : AppModelBase
     {
-       
+
         public string Name { get; set; }
         public string CurrencySymbol { get; set; }
-        
+        public ICollection<Country> Countries { get; set; }
 
     }
 }

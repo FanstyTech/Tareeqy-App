@@ -5,6 +5,7 @@ using DAL.Dto.Common;
 using DAL.Model.Common;
 using MangeData.Interface.Common;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -53,6 +54,20 @@ namespace MangeData.SQLRepository.Common
 
             if (obj.Files != null)
             {
+
+                var exsistFile = await _context.Attachments.Where(c => c.PrimeryTableId == obj.PrimeryTableId && c.AttatchmentTypeId == obj.AttatchmentTypeId).ToListAsync();
+                if (exsistFile.Count > 0)
+                {
+                    foreach (var item in exsistFile.Select(c => Path.Combine(_env.WebRootPath, "FileUpload", c.Name).ToString()))
+                    {
+                        if (System.IO.File.Exists(item))
+                        {
+                            System.IO.File.Delete(item);
+                        }
+                    }
+                    _context.Attachments.RemoveRange(exsistFile);
+                }
+
                 foreach (var file in obj.Files)
                 {
 

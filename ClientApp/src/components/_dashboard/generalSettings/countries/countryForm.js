@@ -25,75 +25,75 @@ import {
 import { LoadingButton } from '@material-ui/lab';
 // redux
 import { useDispatch } from '../../../../redux/store';
-import { createCountryEvent } from '../../../../redux/slices/generalSetting';
+import { saveCountryEvent } from '../../../../redux/slices/generalSetting';
 
 //
 import { UploadAvatar } from '../../../upload';
 // utils
 import { fData } from '../../../../utils/formatNumber';
 //
-const getInitialValues = (event, range) => {
+const getInitialValues = (event) => {
   const _event = {
-    name: '',
-    code: '',
-    status: false,
-    currency: '',
+    Id: null,
+    Name: '',
+    Code: '',
+    IsActive: false,
+    Currency: '',
     avatarUrl: null,
     textColor: '#1890FF'
   };
-
-  if (event || range) {
-    return merge({}, _event, event);
+  if (event !== null) {
+    // _event.Code = event.Code;
+    // _event.Name = event.Name;
+    // _event.IsActive = true;
+    // _event.Currency = event.Currency;
+    _event.avatarUrl = `${process.env.REACT_APP_LOCAL_BASE_URl}Attachment/AttachmentDownload?PrimeryTableId=${event.Id}&AttatchmentTypeId=1`;
+    const _newEevent = merge({}, _event, event);
+    _newEevent.Currency = event.Currency.Id;
+    return _newEevent;
   }
-
   return _event;
 };
 // ----------------------------------------------------------------------
 
 CountryForm.propTypes = {
   event: PropTypes.object,
-  range: PropTypes.object,
-  onCancel: PropTypes.func
+  currenciesSelectList: PropTypes.array,
+  onCancel: PropTypes.func,
+  handleDelete: PropTypes.func
 };
-export default function CountryForm({ event, range, onCancel }) {
+export default function CountryForm({ event, onCancel, handleDelete, currenciesSelectList }) {
   const isCreating = !event;
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const [uploadFile, SetUploadFile] = useState();
-  const handleDelete = async () => {
-    try {
-      onCancel();
-      // dispatch(deleteEvent(event.id));
-      // enqueueSnackbar('Delete event success', { variant: 'success' });
-    } catch (error) {
-      console.error(error);
-    }
-  };
+
   const EventSchema = Yup.object().shape({
-    name: Yup.string().max(255).required('حقل الاسم اجباري'),
-    code: Yup.string().max(255).required('حقل الرمز اجباري'),
-    currency: Yup.string().max(255).required('حقل العملة اجباري'),
+    Name: Yup.string().max(255).required('حقل الاسم اجباري'),
+    Code: Yup.string().max(255).required('حقل الرمز اجباري'),
+    Currency: Yup.string().max(255).required('حقل العملة اجباري'),
     avatarUrl: Yup.mixed().required('العلم اجباري')
   });
 
   const formik = useFormik({
-    initialValues: getInitialValues(event, range),
+    initialValues: getInitialValues(event),
     validationSchema: EventSchema,
     onSubmit: async (values, { resetForm, setSubmitting }) => {
       try {
         const newEvent = {
-          Name: values.name,
-          Code: values.code,
-          Currency: values.currency,
+          Id: values.Id,
+          Name: values.Name,
+          Code: values.Code,
+          CurrencyId: values.Currency,
           avatarUrl: uploadFile,
-          IsActive: values.status
+          IsActive: values.IsActive
         };
 
         if (event) {
-          // dispatch(updateEvent(event.id, newEvent));
-          // enqueueSnackbar('Update event success', { variant: 'success' });
+          dispatch(saveCountryEvent(newEvent));
+          enqueueSnackbar('تمت العملية بنجاح', { variant: 'success' });
         } else {
-          dispatch(createCountryEvent(newEvent));
+          dispatch(saveCountryEvent(newEvent));
           enqueueSnackbar('تمت العملية بنجاح', { variant: 'success' });
         }
         resetForm();
@@ -118,10 +118,7 @@ export default function CountryForm({ event, range, onCancel }) {
     },
     [setFieldValue]
   );
-  const currency = [
-    { id: '1', label: 'شيكل' },
-    { id: '2', label: 'دولار' }
-  ];
+
   return (
     <FormikProvider value={formik}>
       <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
@@ -156,36 +153,39 @@ export default function CountryForm({ event, range, onCancel }) {
           <TextField
             fullWidth
             label="الاسم"
-            {...getFieldProps('name')}
-            error={Boolean(touched.name && errors.name)}
-            helperText={touched.name && errors.name}
+            {...getFieldProps('Name')}
+            error={Boolean(touched.Name && errors.Name)}
+            helperText={touched.Name && errors.Name}
           />
           <TextField
             fullWidth
             label="الرمز"
-            {...getFieldProps('code')}
-            error={Boolean(touched.code && errors.code)}
-            helperText={touched.code && errors.code}
+            {...getFieldProps('Code')}
+            error={Boolean(touched.Code && errors.Code)}
+            helperText={touched.Code && errors.Code}
           />
           <TextField
             select
             fullWidth
             label="العملة"
             placeholder="العملة"
-            {...getFieldProps('currency')}
+            {...getFieldProps('Currency')}
             SelectProps={{ native: true }}
-            error={Boolean(touched.currency && errors.currency)}
-            helperText={touched.currency && errors.currency}
+            error={Boolean(touched.Currency && errors.Currency)}
+            helperText={touched.Currency && errors.Currency}
           >
             <option value="" />
-            {currency.map((option) => (
-              <option key={option.id} value={option.label}>
-                {option.label}
+            {currenciesSelectList?.map((option) => (
+              <option key={option.Id} value={option.Id}>
+                {option.Label}
               </option>
             ))}
           </TextField>
 
-          <FormControlLabel control={<Switch checked={values.status} {...getFieldProps('status')} />} label="الحالة" />
+          <FormControlLabel
+            control={<Switch checked={values.IsActive} {...getFieldProps('IsActive')} />}
+            label="الحالة"
+          />
         </Stack>
         <DialogActions>
           {!isCreating && (

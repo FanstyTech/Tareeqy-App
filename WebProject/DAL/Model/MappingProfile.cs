@@ -30,6 +30,9 @@ namespace DAL.Model
             CreateMap<CountryDto, Country>();
             CreateMap<Country, CountryDto>();
 
+            CreateMap<CurrencyDto, Currency>();
+            CreateMap<Currency, CurrencyDto>();
+
             CreateMap<AttachmentDto, Attachment>();
             CreateMap<Attachment, AttachmentDto>();
 

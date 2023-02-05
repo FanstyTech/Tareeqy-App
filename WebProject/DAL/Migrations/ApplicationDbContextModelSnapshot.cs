@@ -106,17 +106,17 @@ namespace DAL.Migrations
                         {
                             Id = "02174cf0–9412–4cfe-afbf-59f706d72cf6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4736ab42-405a-425b-9f75-923f351d2e1a",
+                            ConcurrencyStamp = "23873f26-b000-4ccf-b602-f7f0e0538af1",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             IsActive = true,
                             LockoutEnabled = false,
                             NickName = "Admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGHWPRh9teZRr7dZQcnWO8dNanza+R/3knvmH0cuV0AgFvp5YFXzxk9HVanzaNq4Eg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDVhHAWtXqPtmOkP+LgTFF6wJyS7kOpqAFHuLeeo9v9dJYHzytGGBbgFPar68BEcQw==",
                             PhoneNumber = "",
                             PhoneNumberConfirmed = false,
                             RegisterDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SecurityStamp = "ddb7cfa0-f594-40de-b589-0e8e5cb12e71",
+                            SecurityStamp = "d2c9bc67-5abb-44dc-b817-1b5f6b1cfe27",
                             TwoFactorEnabled = false,
                             UserName = "admin@admin.com",
                             UserType = 0
@@ -195,8 +195,8 @@ namespace DAL.Migrations
                     b.Property<string>("CreatorUserId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Currency")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CurrencyId")
+                        .HasColumnType("int");
 
                     b.Property<string>("DeleterUserId")
                         .HasColumnType("nvarchar(max)");
@@ -218,7 +218,75 @@ namespace DAL.Migrations
 
                     b.HasIndex("AttachmentId");
 
+                    b.HasIndex("CurrencyId");
+
                     b.ToTable("Countries");
+                });
+
+            modelBuilder.Entity("DAL.Model.Common.Currency", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatorUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CurrencySymbol")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeleterUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Currencies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreationTime = new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6465),
+                            CurrencySymbol = "₪",
+                            IsActive = false,
+                            IsDeleted = false,
+                            Name = "شيكل"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreationTime = new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6478),
+                            CurrencySymbol = "$",
+                            IsActive = false,
+                            IsDeleted = false,
+                            Name = "دولار"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreationTime = new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6479),
+                            CurrencySymbol = "€",
+                            IsActive = false,
+                            IsDeleted = false,
+                            Name = "يورو"
+                        });
                 });
 
             modelBuilder.Entity("DAL.Model.Message.Message", b =>
@@ -502,7 +570,15 @@ namespace DAL.Migrations
                         .WithMany()
                         .HasForeignKey("AttachmentId");
 
+                    b.HasOne("DAL.Model.Common.Currency", "Currency")
+                        .WithMany("Countries")
+                        .HasForeignKey("CurrencyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Attachment");
+
+                    b.Navigation("Currency");
                 });
 
             modelBuilder.Entity("DAL.Model.Message.Message", b =>
@@ -598,6 +674,11 @@ namespace DAL.Migrations
             modelBuilder.Entity("DAL.Model.ApplicationUser", b =>
                 {
                     b.Navigation("Connections");
+                });
+
+            modelBuilder.Entity("DAL.Model.Common.Currency", b =>
+                {
+                    b.Navigation("Countries");
                 });
 #pragma warning restore 612, 618
         }

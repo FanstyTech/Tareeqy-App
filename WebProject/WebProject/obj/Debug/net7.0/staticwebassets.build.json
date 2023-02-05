@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0OUAog19uLn02NTZS0y1fZjN1An3cPgZOTQRVzmRgQc=",
+  "Hash": "PirkaCqtJU0S2hHZWOEfq+3RdDPVKMV3QTQmntS8LYQ=",
   "Source": "WebProject",
   "BasePath": "_content/WebProject",
   "Mode": "Default",
@@ -51,12 +51,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\29d6753b-fa35-4b1d-a888-9eb8bd463acf.jpg",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\0eeeba63-c33e-40ea-bc22-308ad238ebdc.png",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
-      "RelativePath": "FileUpload/29d6753b-fa35-4b1d-a888-9eb8bd463acf.jpg",
+      "RelativePath": "FileUpload/0eeeba63-c33e-40ea-bc22-308ad238ebdc.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,15 +65,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FileUpload\\29d6753b-fa35-4b1d-a888-9eb8bd463acf.jpg"
+      "OriginalItemSpec": "wwwroot\\FileUpload\\0eeeba63-c33e-40ea-bc22-308ad238ebdc.png"
     },
     {
-      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\3f19c039-9aa5-4c76-9611-c5b27c242e87.png",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\2d6e4efb-945d-4c6b-aa8a-874f128c9ad8.png",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
-      "RelativePath": "FileUpload/3f19c039-9aa5-4c76-9611-c5b27c242e87.png",
+      "RelativePath": "FileUpload/2d6e4efb-945d-4c6b-aa8a-874f128c9ad8.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -82,15 +82,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FileUpload\\3f19c039-9aa5-4c76-9611-c5b27c242e87.png"
+      "OriginalItemSpec": "wwwroot\\FileUpload\\2d6e4efb-945d-4c6b-aa8a-874f128c9ad8.png"
     },
     {
-      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\5a439440-45ba-49b4-b804-de65924d445a.png",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\41ead906-4100-4877-a580-a8b634db0709.png",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
-      "RelativePath": "FileUpload/5a439440-45ba-49b4-b804-de65924d445a.png",
+      "RelativePath": "FileUpload/41ead906-4100-4877-a580-a8b634db0709.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,15 +99,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FileUpload\\5a439440-45ba-49b4-b804-de65924d445a.png"
+      "OriginalItemSpec": "wwwroot\\FileUpload\\41ead906-4100-4877-a580-a8b634db0709.png"
     },
     {
-      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\6f462620-a4ab-430e-855b-5bd052e341e8.png",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\611a96bd-13fd-447b-bfb6-ccea72733fb2.png",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
-      "RelativePath": "FileUpload/6f462620-a4ab-430e-855b-5bd052e341e8.png",
+      "RelativePath": "FileUpload/611a96bd-13fd-447b-bfb6-ccea72733fb2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,15 +116,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FileUpload\\6f462620-a4ab-430e-855b-5bd052e341e8.png"
+      "OriginalItemSpec": "wwwroot\\FileUpload\\611a96bd-13fd-447b-bfb6-ccea72733fb2.png"
     },
     {
-      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\82d2a43b-6dc5-40f4-9544-3617d38ecb7f.png",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\62d277a3-3bf5-4daf-ae23-a733d2049233.png",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
-      "RelativePath": "FileUpload/82d2a43b-6dc5-40f4-9544-3617d38ecb7f.png",
+      "RelativePath": "FileUpload/62d277a3-3bf5-4daf-ae23-a733d2049233.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,15 +133,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FileUpload\\82d2a43b-6dc5-40f4-9544-3617d38ecb7f.png"
+      "OriginalItemSpec": "wwwroot\\FileUpload\\62d277a3-3bf5-4daf-ae23-a733d2049233.png"
     },
     {
-      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\95dced2a-aa55-4dfe-aa9e-9023602e056b.png",
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\78c52bef-7daa-4e09-9684-573f6f443174.png",
       "SourceId": "WebProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
       "BasePath": "_content/WebProject",
-      "RelativePath": "FileUpload/95dced2a-aa55-4dfe-aa9e-9023602e056b.png",
+      "RelativePath": "FileUpload/78c52bef-7daa-4e09-9684-573f6f443174.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -150,7 +150,58 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FileUpload\\95dced2a-aa55-4dfe-aa9e-9023602e056b.png"
+      "OriginalItemSpec": "wwwroot\\FileUpload\\78c52bef-7daa-4e09-9684-573f6f443174.png"
+    },
+    {
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\7b73e14a-21b0-4113-9cca-8d59e638f21b.png",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "FileUpload/7b73e14a-21b0-4113-9cca-8d59e638f21b.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\7b73e14a-21b0-4113-9cca-8d59e638f21b.png"
+    },
+    {
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\a98f0359-a4f3-49e6-a618-a93541d54874.png",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "FileUpload/a98f0359-a4f3-49e6-a618-a93541d54874.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\a98f0359-a4f3-49e6-a618-a93541d54874.png"
+    },
+    {
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\ac64cc09-4b08-4aaf-b42e-21b84443cf74.png",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "FileUpload/ac64cc09-4b08-4aaf-b42e-21b84443cf74.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\ac64cc09-4b08-4aaf-b42e-21b84443cf74.png"
     },
     {
       "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\js\\chat.js",

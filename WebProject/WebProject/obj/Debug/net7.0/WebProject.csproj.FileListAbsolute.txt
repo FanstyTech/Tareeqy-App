@@ -169,18 +169,6 @@ C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\WebProject\obj\Debug\net
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\WebProject\obj\Debug\net7.0\WebProject.pdb
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\WebProject\obj\Debug\net7.0\WebProject.genruntimeconfig.cache
 C:\Users\DELL\Source\Repos\Fantazy\Projects2\WebProject\WebProject\obj\Debug\net7.0\ref\WebProject.dll
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.csproj.AssemblyReference.cache
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.GeneratedMSBuildEditorConfig.editorconfig
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.AssemblyInfoInputs.cache
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.AssemblyInfo.cs
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.csproj.CoreCompileInputs.cache
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.MvcApplicationPartsAssemblyInfo.cs
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.MvcApplicationPartsAssemblyInfo.cache
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.RazorAssemblyInfo.cache
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.RazorAssemblyInfo.cs
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.dll
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\refint\WebProject.dll
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.pdb
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\appsettings.Development.json
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\appsettings.json
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\libman.json
@@ -215,6 +203,7 @@ D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.En
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.InMemory.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.Identity.Client.dll
@@ -236,11 +225,13 @@ D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.Vi
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Mono.TextTemplating.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Newtonsoft.Json.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\System.CodeDom.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\System.Composition.AttributedModel.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\System.Composition.Convention.dll
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\System.Composition.Hosting.dll
@@ -329,6 +320,15 @@ D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\MangeData.pd
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\ManageSignalR.pdb
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Constant.pdb
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\DAL.pdb
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.csproj.AssemblyReference.cache
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.AssemblyInfoInputs.cache
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.AssemblyInfo.cs
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.csproj.CoreCompileInputs.cache
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.MvcApplicationPartsAssemblyInfo.cs
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.MvcApplicationPartsAssemblyInfo.cache
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.RazorAssemblyInfo.cache
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.RazorAssemblyInfo.cs
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\staticwebassets\msbuild.WebProject.Microsoft.AspNetCore.StaticWebAssets.props
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\staticwebassets\msbuild.build.WebProject.props
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.WebProject.props
@@ -338,8 +338,8 @@ D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\staticwebass
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\staticwebassets.development.json
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\scopedcss\bundle\WebProject.styles.css
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.csproj.CopyComplete
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.dll
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\refint\WebProject.dll
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.pdb
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.genruntimeconfig.cache
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\ref\WebProject.dll
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\Mono.TextTemplating.dll
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\bin\Debug\net7.0\System.CodeDom.dll

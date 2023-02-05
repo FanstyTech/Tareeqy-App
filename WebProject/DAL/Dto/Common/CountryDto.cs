@@ -13,9 +13,10 @@ namespace DAL.Dto.Common
         public int? Id { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
-        public string Currency { get; set; }
         public int? AttachmentId { get; set; }
         public bool IsActive { get; set; }
+        public int CurrencyId { get; set; }
+        public CurrencyDto Currency { get; set; }
         public IFormFile File { get; set; }
 
     }

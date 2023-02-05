@@ -26,8 +26,7 @@ namespace DAL.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            new UserSeedData(builder);
-
+            new DAL.SeedData.SeedData(builder);
 
         }
         // public DbSet<ModelNamedel> ModelNames { get; set; }
@@ -35,6 +34,7 @@ namespace DAL.Context
         public DbSet<Message> Messages { get; set; }
         public DbSet<Connection> Connections { get; set; }
         public DbSet<Attachment> Attachments { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
         public DbSet<Country> Countries { get; set; }
 
     }

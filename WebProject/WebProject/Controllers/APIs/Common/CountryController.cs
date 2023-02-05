@@ -78,6 +78,7 @@ namespace WebProject.Controllers.APIs.Common
         {
             try
             {
+                //throw new Exception("حدثت مشكلة ما");
                 var data = await _countryRepository.Save(obj);
                 return new ResponseActions()
                 {
@@ -100,12 +101,12 @@ namespace WebProject.Controllers.APIs.Common
             }
         }
 
-        [HttpDelete("Delete")]
-        public async Task<ResponseActions> Delete(int Id)
+        [HttpPost("Delete")]
+        public async Task<ResponseActions> Delete(List<int> Ids)
         {
             try
             {
-                await _countryRepository.Delete(Id);
+                await _countryRepository.Delete(Ids);
                 return new ResponseActions()
                 {
                     code = HttpStatusCode.OK,

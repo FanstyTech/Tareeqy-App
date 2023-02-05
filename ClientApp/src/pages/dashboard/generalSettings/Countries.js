@@ -26,7 +26,7 @@ import {
 // redux
 
 import { useDispatch, useSelector } from '../../../redux/store';
-import { getCountriesList, attachmentDownload } from '../../../redux/slices/generalSetting';
+import { deleteCountry, getCountriesList, getCurrenciesSelectList } from '../../../redux/slices/generalSetting';
 
 // routes
 import { PATH_DASHBOARD } from '../../../routes/paths';
@@ -35,12 +35,12 @@ import useSettings from '../../../hooks/useSettings';
 // components
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
-import { UserListHead, UserListToolbar, UserMoreMenu } from '../../../components/_dashboard/user/list';
+import { UserListHead, UserListToolbar } from '../../../components/_dashboard/user/list';
 import SearchNotFound from '../../../components/SearchNotFound';
 import Scrollbar from '../../../components/Scrollbar';
 import Label from '../../../components/Label';
 import { DialogAnimate } from '../../../components/animate';
-import { CountryForm } from '../../../components/_dashboard/generalSettings/countries';
+import { CountryForm, MoreMenu } from '../../../components/_dashboard/generalSettings/countries';
 
 // ----------------------------------------------------------------------
 const TABLE_HEAD = [
@@ -86,20 +86,21 @@ export default function Countries() {
 
   const [selected, setSelected] = useState([]);
   const [filterName, setFilterName] = useState('');
-  const { countriesList } = useSelector((state) => state.generalSetting);
+  const { countriesList, currenciesSelectList } = useSelector((state) => state.generalSetting);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [page, setPage] = useState(0);
 
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState('Name');
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState(false);
-
+  const [itemForEdit, setItemForEdit] = useState(null);
   const { themeStretch } = useSettings();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCountriesList());
+    dispatch(getCurrenciesSelectList());
   }, [dispatch]);
 
   const handleFilterByName = (event) => {
@@ -113,8 +114,20 @@ export default function Countries() {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-  const handleDeleteUser = (userId) => {
-    dispatch(getCountriesList(userId));
+  const handleDeleteItem = (Id) => {
+    setIsOpenModal(false);
+    dispatch(deleteCountry([Id]));
+  };
+
+  const handleDeleteSelected = () => {
+    dispatch(deleteCountry(selected));
+    setSelected([]);
+  };
+
+  const handleEditItem = (Id) => {
+    const country = countriesList.filter((item) => item.Id === Id);
+    setItemForEdit(country[0]);
+    setIsOpenModal(true);
   };
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -146,6 +159,7 @@ export default function Countries() {
     setSelected(newSelected);
   };
   const handleCloseModal = (e) => {
+    setItemForEdit(null);
     setIsOpenModal(false);
   };
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - countriesList.length) : 0;
@@ -174,6 +188,7 @@ export default function Countries() {
             numSelected={selected.length}
             filterName={filterName}
             onFilterName={handleFilterByName}
+            handleDelete={handleDeleteSelected}
           />
 
           <Scrollbar>
@@ -218,7 +233,7 @@ export default function Countries() {
                           </Stack>
                         </TableCell>
                         <TableCell align="left">{Code}</TableCell>
-                        <TableCell align="left">{Currency}</TableCell>
+                        <TableCell align="left">{Currency.Name}</TableCell>
                         <TableCell align="left">
                           <Label
                             variant={theme.palette.mode === 'light' ? 'ghost' : 'filled'}
@@ -229,7 +244,7 @@ export default function Countries() {
                         </TableCell>
 
                         <TableCell align="right">
-                          <UserMoreMenu onDelete={() => handleDeleteUser(Id)} userName={Name} />
+                          <MoreMenu onDelete={() => handleDeleteItem(Id)} onEdit={() => handleEditItem(Id)} />
                         </TableCell>
                       </TableRow>
                     );
@@ -266,9 +281,14 @@ export default function Countries() {
       </Container>
 
       <DialogAnimate open={isOpenModal} onClose={handleCloseModal}>
-        <DialogTitle>{selectedEvent ? 'تعديل' : 'إضافة'}</DialogTitle>
+        <DialogTitle>{itemForEdit !== null ? 'تعديل' : 'إضافة'}</DialogTitle>
 
-        <CountryForm onCancel={handleCloseModal} />
+        <CountryForm
+          onCancel={handleCloseModal}
+          event={itemForEdit}
+          currenciesSelectList={currenciesSelectList}
+          handleDelete={() => handleDeleteItem(itemForEdit?.Id)}
+        />
       </DialogAnimate>
     </Page>
   );

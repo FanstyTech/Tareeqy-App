@@ -14,7 +14,9 @@ namespace DAL.Model.Common
         [Required]
         public string Name { get; set; }
         public string Code { get; set; }
-        public string Currency { get; set; }
+        public int CurrencyId { get; set; }
+        [ForeignKey(nameof(CurrencyId))]
+        public Currency Currency { get; set; }
         public int? AttachmentId { get; set; }
         [ForeignKey(nameof(AttachmentId))]
         public Attachment Attachment { get; set; }

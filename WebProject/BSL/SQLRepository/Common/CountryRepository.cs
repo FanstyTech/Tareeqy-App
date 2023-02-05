@@ -28,21 +28,23 @@ namespace MangeData.SQLRepository.Common
             _attachmentRepository = attachmentRepository;
         }
 
-        public async Task Delete(int Id)
+        public async Task Delete(List<int> Ids)
         {
-            var country = await GetById(Id);
-            _context.Countries.Remove(_mapper.Map<Country>(country));
+            var Countries = await _context.Countries.Where(c => Ids.Contains(c.Id)).ToListAsync();
+
+            _context.Countries.RemoveRange(Countries);
+            _context.SaveChanges();
         }
 
         public async Task<List<CountryDto>> GetAll()
         {
-            var dbList = await _context.Countries.Select(c => _mapper.Map<CountryDto>(c)).ToListAsync();
+            var dbList = await _context.Countries.Include(c => c.Currency).Select(c => _mapper.Map<CountryDto>(c)).ToListAsync();
             return dbList;
         }
 
         public async Task<CountryDto> GetById(int Id)
         {
-            var oldCountry = await _context.Countries.FirstOrDefaultAsync(c => c.Id == Id);
+            var oldCountry = await _context.Countries.Include(c => c.Currency).AsNoTracking().FirstOrDefaultAsync(c => c.Id == Id);
             return _mapper.Map<CountryDto>(oldCountry);
         }
 
@@ -51,7 +53,7 @@ namespace MangeData.SQLRepository.Common
             if (!obj.Id.HasValue)
                 return await Create(_mapper.Map<Country>(obj), obj.File);
             else
-                return await Update(_mapper.Map<Country>(obj));
+                return await Update(_mapper.Map<Country>(obj), obj.File);
         }
 
         private async Task<int> Create(Country obj, IFormFile file)
@@ -76,16 +78,37 @@ namespace MangeData.SQLRepository.Common
 
         }
 
-        private async Task<int> Update(Country obj)
+        private async Task<int> Update(Country obj, IFormFile file)
         {
-            var oldCountry = await GetById(obj.Id);
-            var country = _mapper.Map<Country>(oldCountry);
 
-            country.Name = obj.Name;
-            country.Code = obj.Code;
+            // Begin context transaction
+            using var trans = _context.Database.BeginTransaction();
 
-            _context.Countries.Update(country);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var oldCountry = await GetById(obj.Id);
+                var country = _mapper.Map<Country>(oldCountry);
+
+                country.Name = obj.Name;
+                country.Code = obj.Code;
+                country.Currency = obj.Currency;
+                country.IsActive = obj.IsActive;
+
+                _context.Countries.Update(country);
+                _context.SaveChanges();
+
+                if (file != null)
+                {
+                    await _attachmentRepository.SaveAttachment(new AttachmentDto { Files = new List<IFormFile> { file }, AttatchmentTypeId = 1, PrimeryTableId = obj.Id });
+                }
+                trans.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                trans.Rollback();
+                throw new Exception(ex.Message);
+            }
             return obj.Id;
         }
     }

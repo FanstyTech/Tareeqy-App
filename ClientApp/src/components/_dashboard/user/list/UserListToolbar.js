@@ -35,10 +35,11 @@ UserListToolbar.propTypes = {
   numSelected: PropTypes.number,
   filterName: PropTypes.string,
   onFilterName: PropTypes.func,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  handleDelete: PropTypes.func
 };
 
-export default function UserListToolbar({ numSelected, filterName, onFilterName, placeholder }) {
+export default function UserListToolbar({ numSelected, filterName, onFilterName, placeholder, handleDelete }) {
   const theme = useTheme();
   const isLight = theme.palette.mode === 'light';
 
@@ -70,7 +71,7 @@ export default function UserListToolbar({ numSelected, filterName, onFilterName,
 
       {numSelected > 0 ? (
         <Tooltip title="حذف">
-          <IconButton>
+          <IconButton onClick={() => handleDelete()}>
             <Icon icon={trash2Fill} />
           </IconButton>
         </Tooltip>

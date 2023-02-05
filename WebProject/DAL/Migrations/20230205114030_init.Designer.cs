@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230203203808_addCountry")]
-    partial class addCountry
+    [Migration("20230205114030_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -109,17 +109,17 @@ namespace DAL.Migrations
                         {
                             Id = "02174cf0–9412–4cfe-afbf-59f706d72cf6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3e8c8dc0-3dfc-4fc6-9009-1474d3c0079a",
+                            ConcurrencyStamp = "23873f26-b000-4ccf-b602-f7f0e0538af1",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             IsActive = true,
                             LockoutEnabled = false,
                             NickName = "Admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKWf67bhekcilHNmb3e0H1cmpnymWzY06n9KqM20JQEqP0NQ2LWDKU9Kykb94HCBRQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDVhHAWtXqPtmOkP+LgTFF6wJyS7kOpqAFHuLeeo9v9dJYHzytGGBbgFPar68BEcQw==",
                             PhoneNumber = "",
                             PhoneNumberConfirmed = false,
                             RegisterDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SecurityStamp = "64e2d376-291d-424a-8837-0c23f150fa47",
+                            SecurityStamp = "d2c9bc67-5abb-44dc-b817-1b5f6b1cfe27",
                             TwoFactorEnabled = false,
                             UserName = "admin@admin.com",
                             UserType = 0
@@ -155,6 +155,9 @@ namespace DAL.Migrations
                     b.Property<string>("Extension")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FileSize")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
@@ -183,7 +186,7 @@ namespace DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AttachmentId")
+                    b.Property<int?>("AttachmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Code")
@@ -195,8 +198,8 @@ namespace DAL.Migrations
                     b.Property<string>("CreatorUserId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Currency")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CurrencyId")
+                        .HasColumnType("int");
 
                     b.Property<string>("DeleterUserId")
                         .HasColumnType("nvarchar(max)");
@@ -218,7 +221,75 @@ namespace DAL.Migrations
 
                     b.HasIndex("AttachmentId");
 
+                    b.HasIndex("CurrencyId");
+
                     b.ToTable("Countries");
+                });
+
+            modelBuilder.Entity("DAL.Model.Common.Currency", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatorUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CurrencySymbol")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeleterUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Currencies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreationTime = new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6465),
+                            CurrencySymbol = "₪",
+                            IsActive = false,
+                            IsDeleted = false,
+                            Name = "شيكل"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreationTime = new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6478),
+                            CurrencySymbol = "$",
+                            IsActive = false,
+                            IsDeleted = false,
+                            Name = "دولار"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreationTime = new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6479),
+                            CurrencySymbol = "€",
+                            IsActive = false,
+                            IsDeleted = false,
+                            Name = "يورو"
+                        });
                 });
 
             modelBuilder.Entity("DAL.Model.Message.Message", b =>
@@ -500,11 +571,17 @@ namespace DAL.Migrations
                 {
                     b.HasOne("DAL.Model.Common.Attachment", "Attachment")
                         .WithMany()
-                        .HasForeignKey("AttachmentId")
+                        .HasForeignKey("AttachmentId");
+
+                    b.HasOne("DAL.Model.Common.Currency", "Currency")
+                        .WithMany("Countries")
+                        .HasForeignKey("CurrencyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Attachment");
+
+                    b.Navigation("Currency");
                 });
 
             modelBuilder.Entity("DAL.Model.Message.Message", b =>
@@ -600,6 +677,11 @@ namespace DAL.Migrations
             modelBuilder.Entity("DAL.Model.ApplicationUser", b =>
                 {
                     b.Navigation("Connections");
+                });
+
+            modelBuilder.Entity("DAL.Model.Common.Currency", b =>
+                {
+                    b.Navigation("Countries");
                 });
 #pragma warning restore 612, 618
         }

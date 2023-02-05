@@ -151,7 +151,6 @@ function AuthProvider({ children }) {
     });
     const { code, data, message, status } = response.data;
     if (!status) {
-      console.log('message', message);
       throw new Error(message);
     } else {
       // const { TokenKey, user } = data;

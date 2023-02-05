@@ -64,6 +64,7 @@ namespace WebProject
             services.AddScoped<IMessageRepository, MessageRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<IAttachmentRepository, AttachmentRepository>();
+            services.AddScoped<ICurrencyRepository, CurrencyRepository>();
 
             //services.AddCors(c =>
             //{
@@ -169,7 +170,7 @@ namespace WebProject
             app.UseCors(options =>
                         options.WithOrigins("http://localhost:3000")
                         .AllowAnyHeader()
-                        .WithMethods("GET", "POST")
+                        .WithMethods("GET", "POST", "DELETE")
                         .AllowCredentials());
 
 

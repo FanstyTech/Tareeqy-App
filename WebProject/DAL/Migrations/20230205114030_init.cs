@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class addCountry : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -69,6 +69,7 @@ namespace DAL.Migrations
                     Extension = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OriginalName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FileSize = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     DeleterUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -79,6 +80,26 @@ namespace DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Attachments", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Currencies",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CurrencySymbol = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeleterUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DeletionTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatorUserId = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Currencies", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -280,8 +301,8 @@ namespace DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Code = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Currency = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AttachmentId = table.Column<int>(type: "int", nullable: false),
+                    CurrencyId = table.Column<int>(type: "int", nullable: false),
+                    AttachmentId = table.Column<int>(type: "int", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     DeleterUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -296,6 +317,11 @@ namespace DAL.Migrations
                         name: "FK_Countries_Attachments_AttachmentId",
                         column: x => x.AttachmentId,
                         principalTable: "Attachments",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Countries_Currencies_CurrencyId",
+                        column: x => x.CurrencyId,
+                        principalTable: "Currencies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -312,7 +338,17 @@ namespace DAL.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "IsActive", "LockoutEnabled", "LockoutEnd", "NickName", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "RegisterDate", "SecurityStamp", "TokenKey", "TwoFactorEnabled", "UserName", "UserType" },
-                values: new object[] { "02174cf0–9412–4cfe-afbf-59f706d72cf6", 0, "3e8c8dc0-3dfc-4fc6-9009-1474d3c0079a", "admin@admin.com", false, true, false, null, "Admin", null, null, "AQAAAAIAAYagAAAAEKWf67bhekcilHNmb3e0H1cmpnymWzY06n9KqM20JQEqP0NQ2LWDKU9Kykb94HCBRQ==", "", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "64e2d376-291d-424a-8837-0c23f150fa47", null, false, "admin@admin.com", 0 });
+                values: new object[] { "02174cf0–9412–4cfe-afbf-59f706d72cf6", 0, "23873f26-b000-4ccf-b602-f7f0e0538af1", "admin@admin.com", false, true, false, null, "Admin", null, null, "AQAAAAIAAYagAAAAEDVhHAWtXqPtmOkP+LgTFF6wJyS7kOpqAFHuLeeo9v9dJYHzytGGBbgFPar68BEcQw==", "", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "d2c9bc67-5abb-44dc-b817-1b5f6b1cfe27", null, false, "admin@admin.com", 0 });
+
+            migrationBuilder.InsertData(
+                table: "Currencies",
+                columns: new[] { "Id", "CreationTime", "CreatorUserId", "CurrencySymbol", "DeleterUserId", "DeletionTime", "IsActive", "IsDeleted", "Name" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6465), null, "₪", null, null, false, false, "شيكل" },
+                    { 2, new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6478), null, "$", null, null, false, false, "دولار" },
+                    { 3, new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6479), null, "€", null, null, false, false, "يورو" }
+                });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -367,6 +403,11 @@ namespace DAL.Migrations
                 name: "IX_Countries_AttachmentId",
                 table: "Countries",
                 column: "AttachmentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Countries_CurrencyId",
+                table: "Countries",
+                column: "CurrencyId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Message_FromUserId",
@@ -424,6 +465,9 @@ namespace DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Attachments");
+
+            migrationBuilder.DropTable(
+                name: "Currencies");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

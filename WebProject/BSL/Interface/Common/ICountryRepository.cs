@@ -12,6 +12,6 @@ namespace MangeData.Interface.Common
         Task<List<CountryDto>> GetAll();
         Task<CountryDto> GetById(int Id);
         Task<int> Save(CountryDto obj);
-        Task Delete(int Id);
+        Task Delete(List<int> Ids);
     }
 }
