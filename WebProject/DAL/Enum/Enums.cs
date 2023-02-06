@@ -8,6 +8,11 @@ namespace DAL.Enum
 {
     public class Enums
     {
+        public enum AttatchmentTypeEnum
+        {
+            UserPhoto,
+            CountryFlag
+        }
         public enum DurationTypeEnum
         {
             Year,

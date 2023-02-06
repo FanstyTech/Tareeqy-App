@@ -35,7 +35,7 @@ namespace MangeData.SQLRepository.Common
             try
             {
                 var file = _context.Attachments.FirstOrDefault(c => c.PrimeryTableId == obj.PrimeryTableId && c.AttatchmentTypeId == obj.AttatchmentTypeId);
-                string filePath = Path.Combine(_env.WebRootPath, "FileUpload", file.Name);
+                string filePath = Path.Combine(_env.WebRootPath, "FileUpload", obj.AttatchmentTypeId.ToString(), file.Name);
                 using var stream = new MemoryStream(System.IO.File.ReadAllBytes(filePath).ToArray());
                 fileContent.ContentType = file.ContentType;
                 fileContent.FileContent = stream.ToArray();
@@ -75,7 +75,17 @@ namespace MangeData.SQLRepository.Common
                     string type = System.IO.Path.GetExtension(file.FileName);
                     string name = file.FileName;
                     string fileName = Guid.NewGuid().ToString() + type;
-                    string filePath = Path.Combine(_env.WebRootPath, "FileUpload", fileName);
+
+
+                    string rootPath = Path.Combine(_env.WebRootPath, "FileUpload", obj.AttatchmentTypeId.ToString(), fileName);
+
+                    // If directory does not exist, create one
+                    if (!Directory.Exists(rootPath))
+                        Directory.CreateDirectory(rootPath);
+
+                    string filePath = Path.Combine(rootPath, fileName);
+
+
                     using (FileStream FS = new FileStream(filePath, FileMode.Create))
                     {
                         await file.CopyToAsync(FS);

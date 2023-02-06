@@ -1,6 +1,9 @@
-﻿using System;
+﻿using DAL.Model.Common;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +13,15 @@ namespace DAL.Model.Agreement
 {
     public class Agreement : AppModelBase
     {
-
-        public int Title { get; set; }
-        public  string Details { get; set; }
-        [DataType("decimal(16 ,3)")]
-        public decimal Cost { get; set; } = Decimal.Zero;
-
+        public string Title { get; set; }
+        public string Description { get; set; }
         public int Duration { get; set; }
-        public DurationTypeEnum Duration_Type { get; set; }
-
-        public int Att_SoftCopy { get; set; }
+        public DurationTypeEnum DurationType { get; set; }
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal Price { get; set; }
+        public int CurrencyId { get; set; }
+        [ForeignKey(nameof(CurrencyId))]
+        public Currency Currency { get; set; }
 
     }
 }

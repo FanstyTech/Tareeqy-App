@@ -58,16 +58,16 @@ export default function Login() {
   return (
     <RootStyle title="Login | Minimal-UI">
       <AuthLayout>
-        Don’t have an account? &nbsp;
+        لا تمتلك حساب?&nbsp;
         <Link underline="none" variant="subtitle2" component={RouterLink} to={PATH_AUTH.register}>
-          Get started
+          ابدأ الان
         </Link>
       </AuthLayout>
 
       <MHidden width="mdDown">
         <SectionStyle>
           <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-            Hi, Welcome Back
+            مرحبا بعودتك
           </Typography>
           <img src="/static/illustrations/illustration_login.png" alt="login" />
         </SectionStyle>
@@ -78,35 +78,35 @@ export default function Login() {
           <Stack direction="row" alignItems="center" sx={{ mb: 5 }}>
             <Box sx={{ flexGrow: 1 }}>
               <Typography variant="h4" gutterBottom>
-                Sign in to Minimal
+                سجّل الدخول إلى طريقي
               </Typography>
-              <Typography sx={{ color: 'text.secondary' }}>Enter your details below.</Typography>
+              <Typography sx={{ color: 'text.secondary' }}>أدخل التفاصيل الخاصة بك أدناه.</Typography>
             </Box>
 
-            <Tooltip title={capitalCase(method)}>
+            {/* <Tooltip title={capitalCase(method)}>
               <Box component="img" src={`/static/auth/ic_${method}.png`} sx={{ width: 32, height: 32 }} />
-            </Tooltip>
+            </Tooltip> */}
           </Stack>
 
           {method === 'firebase' && <AuthFirebaseSocials />}
 
           <Alert severity="info" sx={{ mb: 3 }}>
-            Use email : <strong>demo@minimals.cc</strong> / password :<strong>&nbsp;demo1234</strong>
+            Use email : <strong>mrhusamfa@gmail.com</strong> / password :<strong>&nbsp;P@ssw0rd</strong>
           </Alert>
 
           {method !== 'auth0' ? (
             <LoginForm />
           ) : (
             <Button fullWidth size="large" type="submit" variant="contained" onClick={handleLoginAuth0}>
-              Login
+              تسجيل الدخول
             </Button>
           )}
 
           <MHidden width="smUp">
             <Typography variant="body2" align="center" sx={{ mt: 3 }}>
-              Don’t have an account?&nbsp;
+              لا تمتلك حساب?&nbsp;
               <Link variant="subtitle2" component={RouterLink} to={PATH_AUTH.register}>
-                Get started
+                ابدأ الان
               </Link>
             </Typography>
           </MHidden>

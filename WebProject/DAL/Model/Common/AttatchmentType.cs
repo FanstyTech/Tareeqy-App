@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Model.Common
 {
-    internal class AttatchmentType:AppModelBase
+    public class AttatchmentType : AppModelBase
     {
         public string Name { get; set; }
     }

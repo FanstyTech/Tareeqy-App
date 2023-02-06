@@ -3,6 +3,7 @@ using MangeData.Interface.Common;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using static DAL.Enum.Enums;
 
 namespace WebProject.Controllers.APIs.Common
 {
@@ -17,7 +18,7 @@ namespace WebProject.Controllers.APIs.Common
             _attachmentRepository = attachmentRepository;
         }
         [HttpGet("AttachmentDownload")]
-        public async Task<IActionResult> AttachmentDownload(int PrimeryTableId, int AttatchmentTypeId)
+        public async Task<IActionResult> AttachmentDownload(int PrimeryTableId, AttatchmentTypeEnum AttatchmentTypeId)
         {
             var file = _attachmentRepository.AttachmentDownload(new AttachmentDto { AttatchmentTypeId = AttatchmentTypeId, PrimeryTableId = PrimeryTableId });
             return File(file.FileContent, file.ContentType, file.FileName);

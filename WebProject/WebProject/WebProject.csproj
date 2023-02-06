@@ -28,8 +28,4 @@
     <ProjectReference Include="..\ManageSignalR\ManageSignalR.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\FileUpload\" />
-  </ItemGroup>
-
 </Project>

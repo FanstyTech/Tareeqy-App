@@ -34,6 +34,13 @@ namespace DAL.SeedData.Comon
                     CurrencySymbol ="€",
                     IsActive= true,
                 },
+                new Model.Common.Currency
+                {
+                    Id= 4,
+                    Name ="دينار",
+                    CurrencySymbol ="د",
+                    IsActive= true,
+                },
             };
             builder.Entity<DAL.Model.Common.Currency>().HasData(list);
 

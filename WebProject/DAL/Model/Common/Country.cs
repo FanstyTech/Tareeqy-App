@@ -17,9 +17,7 @@ namespace DAL.Model.Common
         public int CurrencyId { get; set; }
         [ForeignKey(nameof(CurrencyId))]
         public Currency Currency { get; set; }
-        public int? AttachmentId { get; set; }
-        [ForeignKey(nameof(AttachmentId))]
-        public Attachment Attachment { get; set; }
+        public ICollection<City> Cities { get; set; }
 
     }
 }

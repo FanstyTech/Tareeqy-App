@@ -325,7 +325,6 @@ D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.G
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.AssemblyInfoInputs.cache
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.AssemblyInfo.cs
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.csproj.CoreCompileInputs.cache
-D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.MvcApplicationPartsAssemblyInfo.cs
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.MvcApplicationPartsAssemblyInfo.cache
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.RazorAssemblyInfo.cache
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.RazorAssemblyInfo.cs

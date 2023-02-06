@@ -13,6 +13,7 @@ using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DAL.Enum.Enums;
 
 namespace MangeData.SQLRepository.Common
 {
@@ -65,7 +66,7 @@ namespace MangeData.SQLRepository.Common
             {
                 await _context.Countries.AddAsync(obj);
                 await _context.SaveChangesAsync();
-                await _attachmentRepository.SaveAttachment(new AttachmentDto { Files = new List<IFormFile> { file }, AttatchmentTypeId = 1, PrimeryTableId = obj.Id });
+                await _attachmentRepository.SaveAttachment(new AttachmentDto { Files = new List<IFormFile> { file }, AttatchmentTypeId = AttatchmentTypeEnum.CountryFlag, PrimeryTableId = obj.Id });
                 trans.Commit();
 
             }
@@ -99,7 +100,7 @@ namespace MangeData.SQLRepository.Common
 
                 if (file != null)
                 {
-                    await _attachmentRepository.SaveAttachment(new AttachmentDto { Files = new List<IFormFile> { file }, AttatchmentTypeId = 1, PrimeryTableId = obj.Id });
+                    await _attachmentRepository.SaveAttachment(new AttachmentDto { Files = new List<IFormFile> { file }, AttatchmentTypeId = AttatchmentTypeEnum.CountryFlag, PrimeryTableId = obj.Id });
                 }
                 trans.Commit();
 

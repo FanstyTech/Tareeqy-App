@@ -22,6 +22,72 @@ namespace DAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DAL.Model.Agreement.Agreement", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatorUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CurrencyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DeleterUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DurationType")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CurrencyId");
+
+                    b.ToTable("Agreements");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1354),
+                            CurrencyId = 1,
+                            Description = "افتراضي",
+                            Duration = 1,
+                            DurationType = 0,
+                            IsActive = true,
+                            IsDeleted = false,
+                            Price = 100m,
+                            Title = "افتراضي"
+                        });
+                });
+
             modelBuilder.Entity("DAL.Model.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -106,17 +172,17 @@ namespace DAL.Migrations
                         {
                             Id = "02174cf0–9412–4cfe-afbf-59f706d72cf6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "23873f26-b000-4ccf-b602-f7f0e0538af1",
+                            ConcurrencyStamp = "3098d6b7-9930-4c78-bb12-9ddd62aeff98",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             IsActive = true,
                             LockoutEnabled = false,
                             NickName = "Admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDVhHAWtXqPtmOkP+LgTFF6wJyS7kOpqAFHuLeeo9v9dJYHzytGGBbgFPar68BEcQw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEK/H9KNKc91nxX2/C+eYnVPk/GwaVS6RdhN96tHKvpAHLqjwEkeoK7bhr6y1PlI7Qg==",
                             PhoneNumber = "",
                             PhoneNumberConfirmed = false,
                             RegisterDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SecurityStamp = "d2c9bc67-5abb-44dc-b817-1b5f6b1cfe27",
+                            SecurityStamp = "c8225be4-cd5b-40d5-ac8d-ea02570b59a7",
                             TwoFactorEnabled = false,
                             UserName = "admin@admin.com",
                             UserType = 0
@@ -173,6 +239,122 @@ namespace DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Attachments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AttatchmentTypeId = 1,
+                            ContentType = "image/png",
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1339),
+                            Extension = ".png",
+                            FileSize = "1.8 KB",
+                            IsActive = false,
+                            IsDeleted = false,
+                            Name = "62d277a3-3bf5-4daf-ae23-a733d2049233.png",
+                            OriginalName = "palestine_flag.png",
+                            PrimeryTableId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AttatchmentTypeId = 1,
+                            ContentType = "image/png",
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1343),
+                            Extension = ".png",
+                            FileSize = "1.8 KB",
+                            IsActive = false,
+                            IsDeleted = false,
+                            Name = "a98f0359-a4f3-49e6-a618-a93541d54874.png",
+                            OriginalName = "jordan_flag.png",
+                            PrimeryTableId = 2
+                        });
+                });
+
+            modelBuilder.Entity("DAL.Model.Common.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatorUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeleterUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.ToTable("Cities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CountryId = 1,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1295),
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "غزة"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CountryId = 1,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1298),
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "بيت لحم"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CountryId = 1,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1299),
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "بئر السبع"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CountryId = 1,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1300),
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "القدس"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CountryId = 1,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1301),
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "رام الله"
+                        });
                 });
 
             modelBuilder.Entity("DAL.Model.Common.Country", b =>
@@ -182,9 +364,6 @@ namespace DAL.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("AttachmentId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Code")
                         .HasColumnType("nvarchar(max)");
@@ -216,11 +395,31 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AttachmentId");
-
                     b.HasIndex("CurrencyId");
 
                     b.ToTable("Countries");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Code = "00972",
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1288),
+                            CurrencyId = 1,
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "فلسطين"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Code = "00962",
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1291),
+                            CurrencyId = 4,
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "الاردن"
+                        });
                 });
 
             modelBuilder.Entity("DAL.Model.Common.Currency", b =>
@@ -263,29 +462,115 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreationTime = new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6465),
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1252),
                             CurrencySymbol = "₪",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             Name = "شيكل"
                         },
                         new
                         {
                             Id = 2,
-                            CreationTime = new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6478),
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1265),
                             CurrencySymbol = "$",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             Name = "دولار"
                         },
                         new
                         {
                             Id = 3,
-                            CreationTime = new DateTime(2023, 2, 5, 13, 40, 30, 174, DateTimeKind.Local).AddTicks(6479),
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1266),
                             CurrencySymbol = "€",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             Name = "يورو"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1267),
+                            CurrencySymbol = "د",
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "دينار"
+                        });
+                });
+
+            modelBuilder.Entity("DAL.Model.Common.Governorate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatorUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DeleterUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CityId");
+
+                    b.ToTable("Governorates");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CityId = 1,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1306),
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "غزة"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CityId = 1,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1308),
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "الوسطى"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityId = 1,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1309),
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "شمال"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CityId = 1,
+                            CreationTime = new DateTime(2023, 2, 6, 12, 55, 35, 272, DateTimeKind.Local).AddTicks(1310),
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "جنوب"
                         });
                 });
 
@@ -390,6 +675,103 @@ namespace DAL.Migrations
                     b.HasIndex("ToUserId");
 
                     b.ToTable("Notifications");
+                });
+
+            modelBuilder.Entity("DAL.Model.School.SchoolProfile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("AgreementEndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("AgreementId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("AgreementPrice")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime?>("AgreementStartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ContactNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatorUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CurrencyId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DeleterUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FacebookPageURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("GovernorateId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("InstagramPageURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<double>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<string>("LicensedOperatorNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("float");
+
+                    b.Property<string>("NameF")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SchoolIdentificationKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TwitterPageURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WhatsAppNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AgreementId");
+
+                    b.HasIndex("CountryId");
+
+                    b.HasIndex("CurrencyId");
+
+                    b.ToTable("SchoolProfiles");
                 });
 
             modelBuilder.Entity("DAL.Model.User.Connection", b =>
@@ -564,21 +946,48 @@ namespace DAL.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("DAL.Model.Agreement.Agreement", b =>
+                {
+                    b.HasOne("DAL.Model.Common.Currency", "Currency")
+                        .WithMany()
+                        .HasForeignKey("CurrencyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Currency");
+                });
+
+            modelBuilder.Entity("DAL.Model.Common.City", b =>
+                {
+                    b.HasOne("DAL.Model.Common.Country", "Country")
+                        .WithMany("Cities")
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Country");
+                });
+
             modelBuilder.Entity("DAL.Model.Common.Country", b =>
                 {
-                    b.HasOne("DAL.Model.Common.Attachment", "Attachment")
-                        .WithMany()
-                        .HasForeignKey("AttachmentId");
-
                     b.HasOne("DAL.Model.Common.Currency", "Currency")
                         .WithMany("Countries")
                         .HasForeignKey("CurrencyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Attachment");
-
                     b.Navigation("Currency");
+                });
+
+            modelBuilder.Entity("DAL.Model.Common.Governorate", b =>
+                {
+                    b.HasOne("DAL.Model.Common.City", "City")
+                        .WithMany("Governorates")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
                 });
 
             modelBuilder.Entity("DAL.Model.Message.Message", b =>
@@ -609,6 +1018,49 @@ namespace DAL.Migrations
                     b.Navigation("FromUser");
 
                     b.Navigation("ToUser");
+                });
+
+            modelBuilder.Entity("DAL.Model.School.SchoolProfile", b =>
+                {
+                    b.HasOne("DAL.Model.Agreement.Agreement", "Agreement")
+                        .WithMany()
+                        .HasForeignKey("AgreementId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DAL.Model.Common.City", "City")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("DAL.Model.Common.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("DAL.Model.Common.Governorate", "Governorate")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("DAL.Model.Common.Currency", "Currency")
+                        .WithMany()
+                        .HasForeignKey("CurrencyId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Agreement");
+
+                    b.Navigation("City");
+
+                    b.Navigation("Country");
+
+                    b.Navigation("Currency");
+
+                    b.Navigation("Governorate");
                 });
 
             modelBuilder.Entity("DAL.Model.User.Connection", b =>
@@ -674,6 +1126,16 @@ namespace DAL.Migrations
             modelBuilder.Entity("DAL.Model.ApplicationUser", b =>
                 {
                     b.Navigation("Connections");
+                });
+
+            modelBuilder.Entity("DAL.Model.Common.City", b =>
+                {
+                    b.Navigation("Governorates");
+                });
+
+            modelBuilder.Entity("DAL.Model.Common.Country", b =>
+                {
+                    b.Navigation("Cities");
                 });
 
             modelBuilder.Entity("DAL.Model.Common.Currency", b =>

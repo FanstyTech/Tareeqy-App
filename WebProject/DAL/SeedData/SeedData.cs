@@ -1,4 +1,5 @@
-﻿using DAL.SeedData.Comon;
+﻿using DAL.SeedData.Agreement;
+using DAL.SeedData.Comon;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,9 @@ namespace DAL.SeedData
         {
             #region common seed data
             new CurrencySeedData(builder);
+            new LocationSeedData(builder);
+            new AttachmentSeedData(builder);
+            new AgreementSeedData(builder);
             #endregion
 
             #region user seed data
