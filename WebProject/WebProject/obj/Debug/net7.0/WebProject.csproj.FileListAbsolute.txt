@@ -342,3 +342,4 @@ D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\refint\WebPr
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.pdb
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.genruntimeconfig.cache
 D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\ref\WebProject.dll
+D:\husam\My Work\Tareeqy-App\WebProject\WebProject\obj\Debug\net7.0\WebProject.MvcApplicationPartsAssemblyInfo.cs

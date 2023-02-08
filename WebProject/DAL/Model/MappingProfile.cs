@@ -10,6 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.Model.Common;
 using DAL.Dto.Common;
+using DAL.SeedData.Agreement;
+using DAL.SeedData.Comon;
+using DAL.Dto.Agreement;
 
 namespace DAL.Model
 {
@@ -27,6 +30,13 @@ namespace DAL.Model
             CreateMap<DAL.Model.Message.Message, MessageDto>();
             CreateMap<MessageDto, DAL.Model.Message.Message>();
 
+
+            #region Agreement
+            CreateMap<AgreementDto, DAL.Model.Agreement.Agreement>();
+            CreateMap<DAL.Model.Agreement.Agreement, AgreementDto>();
+            #endregion
+
+            #region common
             CreateMap<CountryDto, Country>();
             CreateMap<Country, CountryDto>();
 
@@ -35,6 +45,14 @@ namespace DAL.Model
 
             CreateMap<AttachmentDto, Attachment>();
             CreateMap<Attachment, AttachmentDto>();
+
+            CreateMap<CityDto, City>();
+            CreateMap<City, CityDto>();
+
+            CreateMap<GovernorateDto, Governorate>();
+            CreateMap<Governorate, GovernorateDto>();
+            #endregion
+
 
         }
     }

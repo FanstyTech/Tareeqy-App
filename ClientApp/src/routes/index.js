@@ -110,7 +110,14 @@ export default function Router() {
             { path: 'account', element: <UserAccount /> }
           ]
         },
-
+        {
+          path: 'school-setting',
+          children: [
+            { path: '/', element: <Navigate to="/dashboard/school-setting/list" replace /> },
+            { path: 'list', element: <SchoolList /> },
+            { path: 'new', element: <SchoolCreate /> }
+          ]
+        },
         {
           path: 'general-setting',
           children: [
@@ -264,6 +271,9 @@ const Chat = Loadable(lazy(() => import('../pages/dashboard/Chat')));
 const Mail = Loadable(lazy(() => import('../pages/dashboard/Mail')));
 const Calendar = Loadable(lazy(() => import('../pages/dashboard/Calendar')));
 const Kanban = Loadable(lazy(() => import('../pages/dashboard/Kanban')));
+// School setting
+const SchoolList = Loadable(lazy(() => import('../pages/dashboard/schoolSettings/SchoolList')));
+const SchoolCreate = Loadable(lazy(() => import('../pages/dashboard/schoolSettings/SchoolAccount')));
 // GeneralSetting;
 const Countries = Loadable(lazy(() => import('../pages/dashboard/generalSettings/Countries')));
 

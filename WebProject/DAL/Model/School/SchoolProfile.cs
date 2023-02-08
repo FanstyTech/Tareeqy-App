@@ -15,16 +15,20 @@ namespace DAL.Model.School
         public string NameL { get; set; }
         public string NameF { get; set; }
         public string LicensedOperatorNumber { get; set; }
+        public string? Bio { get; set; }
+
+
         public string Address { get; set; }
-        public double Longitude { get; set; }
-        public double Latitude { get; set; }
+        public double? Longitude { get; set; }
+        public double? Latitude { get; set; }
         public string SchoolIdentificationKey { get; set; }
         // Social Links
-        public string ContactNumber { get; set; }
-        public string WhatsAppNumber { get; set; }
-        public string FacebookPageURL { get; set; }
-        public string InstagramPageURL { get; set; }
-        public string TwitterPageURL { get; set; }
+        public string? ContactNumber { get; set; }
+        public string? WhatsAppNumber { get; set; }
+        public string? FacebookPageURL { get; set; }
+        public string? InstagramPageURL { get; set; }
+        public string? TwitterPageURL { get; set; }
+        public string? LinkedinPageURL { get; set; }
         // Agreement Details
         public DateTime? AgreementStartDate { get; set; }
         public DateTime? AgreementEndDate { get; set; }
@@ -35,13 +39,13 @@ namespace DAL.Model.School
         public DAL.Model.Agreement.Agreement Agreement { get; set; }
 
         // Address Details
-        public int CountryId { get; set; }
+        public int? CountryId { get; set; }
         [ForeignKey(nameof(CountryId))]
         public Country Country { get; set; }
-        public int GovernorateId { get; set; }
+        public int? GovernorateId { get; set; }
         [ForeignKey(nameof(CountryId))]
         public Governorate Governorate { get; set; }
-        public int CityId { get; set; }
+        public int? CityId { get; set; }
         [ForeignKey(nameof(CountryId))]
         public City City { get; set; }
         public int CurrencyId { get; set; }

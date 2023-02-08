@@ -27,6 +27,8 @@ using MangeData.Interface.Message;
 using MangeData.Interface.Common;
 using MangeData.SQLRepository.Common;
 using Microsoft.AspNetCore.Rewrite;
+using MangeData.Interface.Agreement;
+using MangeData.SQLRepository.Agreement;
 
 namespace WebProject
 {
@@ -62,9 +64,10 @@ namespace WebProject
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IMessageRepository, MessageRepository>();
-            services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<ILocationRepository, LocationRepository>();
             services.AddScoped<IAttachmentRepository, AttachmentRepository>();
             services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+            services.AddScoped<IAgreementRepository, AgreementRepository>();
 
             //services.AddCors(c =>
             //{

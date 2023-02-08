@@ -10,7 +10,11 @@ const initialState = {
   isLoading: false,
   error: false,
   countriesList: [],
-  currenciesSelectList: []
+  currenciesSelectList: [],
+  agreementForSelect: [],
+  countryForSelect: [],
+  cityForSelect: [],
+  governorateForSelect: []
 };
 
 const slice = createSlice({
@@ -39,6 +43,30 @@ const slice = createSlice({
       state.isLoading = false;
       state.currenciesSelectList = action.payload;
     },
+    // GET AGREEMENT FOR SELECT
+
+    getAgreementForSelectSuccess(state, action) {
+      state.isLoading = false;
+      state.agreementForSelect = action.payload;
+    },
+    // Location
+
+    getCountryForSelectSuccess(state, action) {
+      state.isLoading = false;
+      state.countryForSelect = action.payload;
+      state.cityForSelect = [];
+      state.governorateForSelect = [];
+    },
+    getCityForSelectSuccess(state, action) {
+      state.isLoading = false;
+      state.cityForSelect = action.payload;
+      state.governorateForSelect = [];
+    },
+    getGovernorateForSelectSuccess(state, action) {
+      state.isLoading = false;
+      state.governorateForSelect = action.payload;
+    },
+
     // CREATE EVENT
     createCountryEvent(state, action) {
       const newEvent = action.payload;
@@ -60,11 +88,9 @@ export function getCountriesList() {
   return async (dispatch) => {
     dispatch(slice.actions.startLoading());
     try {
-      const response = await axios.get('Country/GetAll');
+      const response = await axios.get('Location/GetAllCountry');
       dispatch(slice.actions.getCountriesListSuccess(response.data.data));
     } catch (error) {
-      console.log(error);
-
       dispatch(slice.actions.hasError(error));
     }
   };
@@ -82,7 +108,7 @@ export function saveCountryEvent(newEvent) {
       if (newEvent.Id !== null) formdata.append('Id', newEvent.Id);
       if (newEvent?.avatarUrl !== undefined) formdata.append('File', newEvent?.avatarUrl);
 
-      const response = await axios.post('Country/Save', formdata, {
+      const response = await axios.post('Location/SaveCountry', formdata, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       const { code, data, message, status } = response.data;
@@ -107,7 +133,7 @@ export function deleteCountry(Ids) {
   return async (dispatch) => {
     dispatch(slice.actions.startLoading());
     try {
-      const response = await axios.post('Country/Delete', Ids);
+      const response = await axios.post('Location/DeleteCountry', Ids);
       const { code, data, message, status } = response.data;
       if (!status) {
         throw new Error(message);
@@ -145,6 +171,64 @@ export function attachmentDownload(ref) {
       };
       const response = await axios.post('Attachment/AttachmentDownload', data);
       console.log(response);
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+
+// ----------------------------------Agreement------------------------------------
+export function getAgreementForSelect() {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.post('Agreement/GetAgreementForSelect');
+      dispatch(slice.actions.getAgreementForSelectSuccess(response.data.data));
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+// ----------------------------------Location------------------------------------
+export function getCountryForSelect() {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const filter = {
+        MasterId: null
+      };
+      const response = await axios.post('Location/GetCountryForSelect', filter);
+      dispatch(slice.actions.getCountryForSelectSuccess(response.data.data));
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+
+export function getCityForSelect(CountryId) {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const filter = {
+        MasterId: CountryId
+      };
+      const response = await axios.post('Location/GetCityForSelect', filter);
+      dispatch(slice.actions.getCityForSelectSuccess(response.data.data));
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+
+export function getGovernorateForSelect(CityId) {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const filter = {
+        MasterId: CityId
+      };
+      const response = await axios.post('Location/GetGovernorateForSelect', filter);
+      dispatch(slice.actions.getGovernorateForSelectSuccess(response.data.data));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }

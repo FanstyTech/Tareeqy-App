@@ -274,6 +274,7 @@ export default function Countries() {
             count={countriesList.length}
             rowsPerPage={rowsPerPage}
             page={page}
+            labelDisplayedRows={({ from, to, count }) => `عرض الصفحات   ${from}-${to}  من إجمالي ${count} صفحات`}
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
           />

@@ -62,6 +62,16 @@ const sidebarConfig = [
           { title: 'account', path: PATH_DASHBOARD.user.account }
         ]
       },
+      // MANAGEMENT : School setting
+      {
+        title: 'إدارة المدارس',
+        path: PATH_DASHBOARD.schoolSetting.root,
+        icon: ICONS.user,
+        children: [
+          { title: 'المدارس', path: PATH_DASHBOARD.schoolSetting.list },
+          { title: 'إضافة', path: PATH_DASHBOARD.schoolSetting.newSchool }
+        ]
+      },
       // MANAGEMENT : General settings
       {
         title: 'إعدادات عامة',

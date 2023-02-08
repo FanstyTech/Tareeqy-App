@@ -17,7 +17,9 @@ namespace DAL.Dto.Common
         public bool IsActive { get; set; }
         public int CurrencyId { get; set; }
         public CurrencyDto Currency { get; set; }
+        public ICollection<CityDto> Cities { get; set; }
         public IFormFile File { get; set; }
+
 
     }
 }

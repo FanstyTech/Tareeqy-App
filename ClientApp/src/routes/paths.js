@@ -61,6 +61,11 @@ export const PATH_DASHBOARD = {
     editById: path(ROOTS_DASHBOARD, `/user/reece-chung/edit`),
     account: path(ROOTS_DASHBOARD, '/user/account')
   },
+  schoolSetting: {
+    root: path(ROOTS_DASHBOARD, '/school-setting'),
+    list: path(ROOTS_DASHBOARD, '/school-setting/list'),
+    newSchool: path(ROOTS_DASHBOARD, '/school-setting/new')
+  },
   generalSetting: {
     root: path(ROOTS_DASHBOARD, '/general-setting'),
     countries: path(ROOTS_DASHBOARD, '/general-setting/countries')

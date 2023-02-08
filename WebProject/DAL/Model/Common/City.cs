@@ -14,6 +14,6 @@ namespace DAL.Model.Common
         public int CountryId { get; set; }
         [ForeignKey(nameof(CountryId))]
         public Country Country { get; set; }
-        public List<Governorate> Governorates { get; set; }
+        public ICollection<Governorate> Governorates { get; set; }
     }
 }
