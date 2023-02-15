@@ -29,6 +29,8 @@ using MangeData.SQLRepository.Common;
 using Microsoft.AspNetCore.Rewrite;
 using MangeData.Interface.Agreement;
 using MangeData.SQLRepository.Agreement;
+using MangeData.Interface.School;
+using MangeData.SQLRepository.School;
 
 namespace WebProject
 {
@@ -68,6 +70,7 @@ namespace WebProject
             services.AddScoped<IAttachmentRepository, AttachmentRepository>();
             services.AddScoped<ICurrencyRepository, CurrencyRepository>();
             services.AddScoped<IAgreementRepository, AgreementRepository>();
+            services.AddScoped<ISchoolRepository, SchoolRepository>();
 
             //services.AddCors(c =>
             //{

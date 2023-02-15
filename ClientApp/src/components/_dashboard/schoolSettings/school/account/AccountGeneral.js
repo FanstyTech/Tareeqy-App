@@ -34,7 +34,6 @@ const getInitialValues = (event) => {
     Id: null,
     NameL: '',
     NameF: '',
-    Email: '',
     LicensedOperatorNumber: '',
     AgreementPrice: '',
     AgreementId: '',
@@ -72,7 +71,6 @@ export default function AccountGeneral({ schoolData, setSchoolData }) {
   const SaveSchoolSchema = Yup.object().shape({
     NameL: Yup.string().max(255).required('حقل الاسم بالعربية اجباري'),
     NameF: Yup.string().max(255).required('حقل الاسم بالانجليزية اجباري'),
-    Email: Yup.string().max(255).required('حقل البريد الالكتروني اجباري'),
     LicensedOperatorNumber: Yup.string().max(255).required('حقل رقم المشتغل المرخص اجباري'),
     AgreementPrice: Yup.string().max(255).required('حقل سعر الاتفاقية اجباري'),
     AgreementId: Yup.string().max(255).required('حقل الاتفاقية اجباري'),
@@ -196,13 +194,6 @@ export default function AccountGeneral({ schoolData, setSchoolData }) {
                     {...getFieldProps('LicensedOperatorNumber')}
                     error={Boolean(touched.LicensedOperatorNumber && errors.LicensedOperatorNumber)}
                     helperText={touched.LicensedOperatorNumber && errors.LicensedOperatorNumber}
-                  />
-                  <TextField
-                    fullWidth
-                    label="البريد الالكتروني"
-                    {...getFieldProps('Email')}
-                    error={Boolean(touched.Email && errors.Email)}
-                    helperText={touched.Email && errors.Email}
                   />
                 </Stack>
 

@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import shareFill from '@iconify/icons-eva/share-fill';
 import roundVpnKey from '@iconify/icons-ic/round-vpn-key';
 import roundAccountBox from '@iconify/icons-ic/round-account-box';
-
+import schoolIcon from '@iconify/icons-ic/school';
+import locationIcon from '@iconify/icons-ic/my-location';
 // material
 import { Container, Tab, Box, Tabs, Stack } from '@material-ui/core';
 
@@ -19,7 +20,8 @@ import {
   AccountGeneral,
   AccountLocation,
   AccountSocialLinks,
-  AccountChangePassword
+  AccountChangePassword,
+  SchoolEmployee
 } from '../../../components/_dashboard/schoolSettings/school/account';
 
 // ----------------------------------------------------------------------
@@ -33,13 +35,13 @@ export default function SchoolAccount() {
     {
       value: 'general',
       title: 'عام',
-      icon: <Icon icon={roundAccountBox} width={20} height={20} />,
+      icon: <Icon icon={schoolIcon} width={20} height={20} />,
       component: <AccountGeneral schoolData={schoolData} setSchoolData={setSchoolData} />
     },
     {
       value: 'location',
       title: 'العنوان',
-      icon: <Icon icon={roundAccountBox} width={20} height={20} />,
+      icon: <Icon icon={locationIcon} width={20} height={20} />,
       component: <AccountLocation />
     },
     {
@@ -47,6 +49,13 @@ export default function SchoolAccount() {
       title: 'روابط اجتماعية',
       icon: <Icon icon={shareFill} width={20} height={20} />,
       component: <AccountSocialLinks />
+    },
+
+    {
+      value: 'school_employee',
+      title: 'موظفي المدرسة',
+      icon: <Icon icon={roundAccountBox} width={20} height={20} />,
+      component: <SchoolEmployee />
     },
     {
       value: 'change_password',

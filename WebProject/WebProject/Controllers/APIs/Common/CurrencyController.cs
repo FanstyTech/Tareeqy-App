@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Threading.Tasks;
 using System;
+using DAL.Dto.Common;
+using System.Collections.Generic;
 
 namespace WebProject.Controllers.APIs.Common
 {
@@ -20,12 +22,12 @@ namespace WebProject.Controllers.APIs.Common
         }
 
         [HttpGet("GetForSelect")]
-        public async Task<ResponseActions> GetForSelect()
+        public async Task<ResponseActions<List<SelectDto>>> GetForSelect()
         {
             try
             {
                 var data = await _currencyRepository.GetForSelect();
-                return new ResponseActions()
+                return new ResponseActions<List<SelectDto>>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -36,7 +38,7 @@ namespace WebProject.Controllers.APIs.Common
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<List<SelectDto>>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,

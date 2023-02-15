@@ -28,13 +28,13 @@ namespace WebProject.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<ResponseActions> Login([FromBody] LoginDto login)
+        public async Task<ResponseActions<UserDataDto>> Login([FromBody] LoginDto login)
         {
             try
             {
 
                 UserDataDto data = await _userRepository.Login(login);
-                return new ResponseActions()
+                return new ResponseActions<UserDataDto>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -45,7 +45,7 @@ namespace WebProject.Controllers
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<UserDataDto>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,
@@ -56,13 +56,13 @@ namespace WebProject.Controllers
         }
         [Authorize]
         [HttpGet("GetData")]
-        public async Task<ResponseActions> GetData()
+        public async Task<ResponseActions<List<String>>> GetData()
         {
             try
             {
 
                 var data = new List<String>() { "husam", "mohammed" };
-                return new ResponseActions()
+                return new ResponseActions<List<String>>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -73,7 +73,7 @@ namespace WebProject.Controllers
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<List<String>>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,
@@ -84,13 +84,13 @@ namespace WebProject.Controllers
         }
         [HttpPost("CreateAccount")]
 
-        public async Task<ResponseActions> CreateAccount(CreateAccountDto obj)
+        public async Task<ResponseActions<UserDataDto>> CreateAccount(CreateAccountDto obj)
         {
 
             try
             {
                 UserDataDto data = await _userRepository.CreateAccount(obj);
-                return new ResponseActions()
+                return new ResponseActions<UserDataDto>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -101,7 +101,7 @@ namespace WebProject.Controllers
             }
             catch (Exception e)
             {
-                return new ResponseActions
+                return new ResponseActions<UserDataDto>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,

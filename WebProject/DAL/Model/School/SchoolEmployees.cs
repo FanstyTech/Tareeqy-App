@@ -13,7 +13,7 @@ namespace DAL.Model.School
         public int SchoolID { get; set; }
         public int EmployeeTypeID { get; set; }
         [DataType("decimal(16 ,3)")]
-        public decimal Salary { get; set; }= Decimal.Zero;
+        public decimal Salary { get; set; } = Decimal.Zero;
         public bool IsAdmin { get; set; } = false;
 
     }

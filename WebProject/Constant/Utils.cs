@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -119,5 +120,32 @@ namespace Constant
         }
 
 
+        /// <summary>
+        /// Copies the non-null properties from a source object to a target object.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the source object.</typeparam>
+        /// <typeparam name="TTarget">The type of the target object.</typeparam>
+        /// <param name="source">The source object to copy properties from.</param>
+        /// <param name="target">The target object to copy properties to.</param>
+        /// <returns>The target object with the non-null properties copied from the source object.</returns>
+
+        public static TTarget CopyNonNullProperties<TSource, TTarget>(TSource source, TTarget target)
+        {
+            PropertyInfo[] sourceProperties = typeof(TSource).GetProperties();
+            PropertyInfo[] targetProperties = typeof(TTarget).GetProperties();
+
+            foreach (PropertyInfo sourceProperty in sourceProperties)
+            {
+                if (sourceProperty.GetValue(source) != null)
+                {
+                    PropertyInfo targetProperty = Array.Find(targetProperties, p => p.Name == sourceProperty.Name);
+                    if (targetProperty != null)
+                    {
+                        targetProperty.SetValue(target, sourceProperty.GetValue(source));
+                    }
+                }
+            }
+            return target;
+        }
     }
 }

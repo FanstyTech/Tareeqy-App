@@ -11,7 +11,8 @@ namespace DAL.Enum
         public enum AttatchmentTypeEnum
         {
             UserPhoto,
-            CountryFlag
+            CountryFlag,
+            SchoolLogo
         }
         public enum DurationTypeEnum
         {

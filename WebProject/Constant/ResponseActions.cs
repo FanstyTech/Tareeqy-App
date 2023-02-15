@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Constant
 {
-    public class ResponseActions
+    public class ResponseActions<T>
     {
         public HttpStatusCode code { get; set; }
         public string message { get; set; }
         public bool status { get; set; }
-        public object data { get; set; }
+        public T? data { get; set; }
     }
 }

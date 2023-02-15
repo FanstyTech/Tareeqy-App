@@ -21,12 +21,12 @@ namespace WebProject.Controllers.APIs.Common
             _locationRepository = locationRepository;
         }
         [HttpGet("GetAllCountry")]
-        public async Task<ResponseActions> GetAllCountry()
+        public async Task<ResponseActions<List<CountryDto>>> GetAllCountry()
         {
             try
             {
                 var data = await _locationRepository.GetAllCountry();
-                return new ResponseActions()
+                return new ResponseActions<List<CountryDto>>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -37,7 +37,7 @@ namespace WebProject.Controllers.APIs.Common
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<List<CountryDto>>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,
@@ -48,12 +48,12 @@ namespace WebProject.Controllers.APIs.Common
         }
 
         [HttpGet("GetCountryById")]
-        public async Task<ResponseActions> GetCountryById(int Id)
+        public async Task<ResponseActions<CountryDto>> GetCountryById(int Id)
         {
             try
             {
                 var data = await _locationRepository.GetCountryById(Id);
-                return new ResponseActions()
+                return new ResponseActions<CountryDto>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -64,7 +64,7 @@ namespace WebProject.Controllers.APIs.Common
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<CountryDto>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,
@@ -75,13 +75,13 @@ namespace WebProject.Controllers.APIs.Common
         }
 
         [HttpPost("SaveCountry")]
-        public async Task<ResponseActions> SaveCountry([FromForm] CountryDto obj)
+        public async Task<ResponseActions<int?>> SaveCountry([FromForm] CountryDto obj)
         {
             try
             {
                 //throw new Exception("حدثت مشكلة ما");
                 var data = await _locationRepository.SaveCountry(obj);
-                return new ResponseActions()
+                return new ResponseActions<int?>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -92,23 +92,23 @@ namespace WebProject.Controllers.APIs.Common
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<int?>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,
                     message = e.Message,
-                    data = { }
+                    data = null
                 };
             }
         }
 
         [HttpPost("DeleteCountry")]
-        public async Task<ResponseActions> DeleteCountry(List<int> Ids)
+        public async Task<ResponseActions<object>> DeleteCountry(List<int> Ids)
         {
             try
             {
                 await _locationRepository.DeleteCountry(Ids);
-                return new ResponseActions()
+                return new ResponseActions<object>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -119,7 +119,7 @@ namespace WebProject.Controllers.APIs.Common
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<object>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,
@@ -131,12 +131,12 @@ namespace WebProject.Controllers.APIs.Common
 
 
         [HttpPost("GetCountryForSelect")]
-        public async Task<ResponseActions> GetCountryForSelect([FromBody] GetForSelectFilterDto obj)
+        public async Task<ResponseActions<List<SelectDto>>> GetCountryForSelect([FromBody] GetForSelectFilterDto obj)
         {
             try
             {
                 var data = await _locationRepository.GetCountryForSelect(obj);
-                return new ResponseActions()
+                return new ResponseActions<List<SelectDto>>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -147,7 +147,7 @@ namespace WebProject.Controllers.APIs.Common
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<List<SelectDto>>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,
@@ -158,12 +158,12 @@ namespace WebProject.Controllers.APIs.Common
         }
 
         [HttpPost("GetCityForSelect")]
-        public async Task<ResponseActions> GetCityForSelect([FromBody] GetForSelectFilterDto obj)
+        public async Task<ResponseActions<List<SelectDto>>> GetCityForSelect([FromBody] GetForSelectFilterDto obj)
         {
             try
             {
                 var data = await _locationRepository.GetCityForSelect(obj);
-                return new ResponseActions()
+                return new ResponseActions<List<SelectDto>>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -174,7 +174,7 @@ namespace WebProject.Controllers.APIs.Common
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<List<SelectDto>>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,
@@ -185,12 +185,12 @@ namespace WebProject.Controllers.APIs.Common
         }
 
         [HttpPost("GetGovernorateForSelect")]
-        public async Task<ResponseActions> GetGovernorateForSelect([FromBody] GetForSelectFilterDto obj)
+        public async Task<ResponseActions<List<SelectDto>>> GetGovernorateForSelect([FromBody] GetForSelectFilterDto obj)
         {
             try
             {
                 var data = await _locationRepository.GetGovernorateForSelect(obj);
-                return new ResponseActions()
+                return new ResponseActions<List<SelectDto>>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -201,7 +201,7 @@ namespace WebProject.Controllers.APIs.Common
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<List<SelectDto>>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,

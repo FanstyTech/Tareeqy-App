@@ -6,6 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System;
 using MangeData.Interface.Agreement;
+using System.Collections.Generic;
 
 namespace WebProject.Controllers.APIs.Agreement
 {
@@ -19,12 +20,12 @@ namespace WebProject.Controllers.APIs.Agreement
             _agreementRepository = agreementRepository;
         }
         [HttpPost("GetAgreementForSelect")]
-        public async Task<ResponseActions> GetAgreementForSelect([FromForm] GetForSelectFilterDto obj)
+        public async Task<ResponseActions<List<SelectDto>>> GetAgreementForSelect([FromForm] GetForSelectFilterDto obj)
         {
             try
             {
                 var data = await _agreementRepository.GetAgreementForSelect(obj);
-                return new ResponseActions()
+                return new ResponseActions<List<SelectDto>>()
                 {
                     code = HttpStatusCode.OK,
                     message = "Sucsses",
@@ -35,7 +36,7 @@ namespace WebProject.Controllers.APIs.Agreement
             catch (Exception e)
             {
 
-                return new ResponseActions
+                return new ResponseActions<List<SelectDto>>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,

@@ -3,9 +3,19 @@ import { Icon } from '@iconify/react';
 import searchFill from '@iconify/icons-eva/search-fill';
 import trash2Fill from '@iconify/icons-eva/trash-2-fill';
 import roundFilterList from '@iconify/icons-ic/round-filter-list';
+import plusFill from '@iconify/icons-eva/plus-fill';
 // material
 import { useTheme, styled } from '@material-ui/core/styles';
-import { Box, Toolbar, Tooltip, IconButton, Typography, OutlinedInput, InputAdornment } from '@material-ui/core';
+import {
+  Box,
+  Toolbar,
+  Tooltip,
+  Button,
+  IconButton,
+  Typography,
+  OutlinedInput,
+  InputAdornment
+} from '@material-ui/core';
 
 // ----------------------------------------------------------------------
 
@@ -36,13 +46,54 @@ UserListToolbar.propTypes = {
   filterName: PropTypes.string,
   onFilterName: PropTypes.func,
   placeholder: PropTypes.string,
-  handleDelete: PropTypes.func
+  handleDelete: PropTypes.func,
+  hideFilterList: PropTypes.bool,
+  hasAddBtn: PropTypes.bool,
+  handleClickAddEvent: PropTypes.func
 };
 
-export default function UserListToolbar({ numSelected, filterName, onFilterName, placeholder, handleDelete }) {
+export default function UserListToolbar({
+  numSelected,
+  filterName,
+  onFilterName,
+  placeholder,
+  handleDelete,
+  hideFilterList,
+  hasAddBtn,
+  handleClickAddEvent
+}) {
   const theme = useTheme();
   const isLight = theme.palette.mode === 'light';
+  const Content = () => {
+    let content;
 
+    if (numSelected > 0) {
+      content = (
+        <Tooltip title="حذف">
+          <IconButton onClick={() => handleDelete()}>
+            <Icon icon={trash2Fill} />
+          </IconButton>
+        </Tooltip>
+      );
+    } else if (hasAddBtn) {
+      content = (
+        <Button variant="contained" startIcon={<Icon icon={plusFill} />} onClick={() => handleClickAddEvent()}>
+          إضافة
+        </Button>
+      );
+    } else if (hideFilterList) {
+      content = <></>;
+    } else {
+      content = (
+        <Tooltip title="قائمة الفلاتر">
+          <IconButton>
+            <Icon icon={roundFilterList} />
+          </IconButton>
+        </Tooltip>
+      );
+    }
+    return content;
+  };
   return (
     <RootStyle
       sx={{
@@ -69,19 +120,7 @@ export default function UserListToolbar({ numSelected, filterName, onFilterName,
         />
       )}
 
-      {numSelected > 0 ? (
-        <Tooltip title="حذف">
-          <IconButton onClick={() => handleDelete()}>
-            <Icon icon={trash2Fill} />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <Tooltip title="قائمة الفلاتر">
-          <IconButton>
-            <Icon icon={roundFilterList} />
-          </IconButton>
-        </Tooltip>
-      )}
+      <Content />
     </RootStyle>
   );
 }

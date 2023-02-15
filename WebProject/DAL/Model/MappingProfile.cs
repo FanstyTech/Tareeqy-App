@@ -13,6 +13,8 @@ using DAL.Dto.Common;
 using DAL.SeedData.Agreement;
 using DAL.SeedData.Comon;
 using DAL.Dto.Agreement;
+using DAL.Dto.School;
+using DAL.Model.School;
 
 namespace DAL.Model
 {
@@ -53,7 +55,10 @@ namespace DAL.Model
             CreateMap<Governorate, GovernorateDto>();
             #endregion
 
-
+            #region school
+            CreateMap<SchoolProfileDto, SchoolProfile>();
+            CreateMap<SchoolProfile, SchoolProfileDto>();
+            #endregion  
         }
     }
 }

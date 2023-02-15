@@ -37,7 +37,7 @@ namespace WebProject.Controllers
         /// <returns></returns>
         /// 
         [HttpPost("SendMessage")]
-        public async Task<ResponseActions> SendMessage([FromBody] MessageDto obj)
+        public async Task<ResponseActions<object>> SendMessage([FromBody] MessageDto obj)
         {
 
             obj.FromUserName = User.Identity.Name;
@@ -50,7 +50,7 @@ namespace WebProject.Controllers
                 if (!string.IsNullOrEmpty(connection.ConnectionKey))
                     await _hub.Clients.Client(connection.ConnectionKey).SendAsync("ReceiveMessage", connection.UserName, obj.MessageText);
             }
-            return new ResponseActions()
+            return new ResponseActions<object>()
             {
                 code = HttpStatusCode.OK,
                 message = "Sucsses",
