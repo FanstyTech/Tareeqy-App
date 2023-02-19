@@ -58,7 +58,7 @@ namespace MangeData.SQLRepository.Common
                 var exsistFile = await _context.Attachments.Where(c => c.PrimeryTableId == obj.PrimeryTableId && c.AttatchmentTypeId == obj.AttatchmentTypeId).ToListAsync();
                 if (exsistFile.Count > 0)
                 {
-                    foreach (var item in exsistFile.Select(c => Path.Combine(_env.WebRootPath, "FileUpload", c.Name).ToString()))
+                    foreach (var item in exsistFile.Select(c => Path.Combine(_env.WebRootPath, "FileUpload", c.AttatchmentTypeId.ToString(), c.Name).ToString()))
                     {
                         if (System.IO.File.Exists(item))
                         {
@@ -77,7 +77,7 @@ namespace MangeData.SQLRepository.Common
                     string fileName = Guid.NewGuid().ToString() + type;
 
 
-                    string rootPath = Path.Combine(_env.WebRootPath, "FileUpload", obj.AttatchmentTypeId.ToString(), fileName);
+                    string rootPath = Path.Combine(_env.WebRootPath, "FileUpload", obj.AttatchmentTypeId.ToString());
 
                     // If directory does not exist, create one
                     if (!Directory.Exists(rootPath))

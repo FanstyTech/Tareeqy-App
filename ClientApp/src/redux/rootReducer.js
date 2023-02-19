@@ -10,6 +10,7 @@ import productReducer from './slices/product';
 import calendarReducer from './slices/calendar';
 import kanbanReducer from './slices/kanban';
 import generalSettingReducer from './slices/generalSetting';
+import schoolReducer from './slices/school';
 
 // ----------------------------------------------------------------------
 
@@ -35,6 +36,7 @@ const rootReducer = combineReducers({
   calendar: calendarReducer,
   kanban: kanbanReducer,
   generalSetting: generalSettingReducer,
+  school: schoolReducer,
   product: persistReducer(productPersistConfig, productReducer)
 });
 

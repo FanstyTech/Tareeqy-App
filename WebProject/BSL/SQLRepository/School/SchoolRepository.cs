@@ -25,10 +25,11 @@ namespace MangeData.SQLRepository.School
         private readonly IMapper _mapper;
         private readonly IAttachmentRepository _attachmentRepository;
 
-        public SchoolRepository(ApplicationDbContext context, IAttachmentRepository attachmentRepository)
+        public SchoolRepository(ApplicationDbContext context, IAttachmentRepository attachmentRepository, IMapper mapper)
         {
             _context = context;
             _attachmentRepository = attachmentRepository;
+            _mapper = mapper;
         }
 
         public async Task DeleteSchoolProfileById(List<int> Ids)
@@ -40,7 +41,12 @@ namespace MangeData.SQLRepository.School
 
         public async Task<List<SchoolProfileDto>> GetAllSchoolProfile()
         {
-            var dbList = await _context.SchoolProfiles.Include(c => c.Currency).Select(c => _mapper.Map<SchoolProfileDto>(c)).ToListAsync();
+            var dbList = await _context.SchoolProfiles.Include(c => c.Currency)
+                .Include(c => c.Country)
+                .Include(c => c.Governorate)
+                .Include(c => c.City)
+                .Include(c => c.Agreement)
+                .Select(c => _mapper.Map<SchoolProfileDto>(c)).ToListAsync();
             return dbList;
         }
 
@@ -53,6 +59,7 @@ namespace MangeData.SQLRepository.School
 
         public async Task<int> SaveSchoolProfile(SchoolProfileDto obj)
         {
+            SchoolProfile sd = _mapper.Map<SchoolProfile>(obj);
             if (!obj.Id.HasValue)
                 return await CreateSchoolProfile(_mapper.Map<SchoolProfile>(obj), obj.File);
             else
@@ -67,6 +74,9 @@ namespace MangeData.SQLRepository.School
 
             try
             {
+                obj.SchoolIdentificationKey = obj.GenerateSchoolIdentificationKey();
+                obj.CreationTime = DateTime.Now;
+
                 await _context.SchoolProfiles.AddAsync(obj);
                 await _context.SaveChangesAsync();
                 await _attachmentRepository.SaveAttachment(new AttachmentDto { Files = new List<IFormFile> { file }, AttatchmentTypeId = AttatchmentTypeEnum.SchoolLogo, PrimeryTableId = obj.Id });
@@ -95,7 +105,7 @@ namespace MangeData.SQLRepository.School
 
                 if (file != null)
                 {
-                    await _attachmentRepository.SaveAttachment(new AttachmentDto { Files = new List<IFormFile> { file }, AttatchmentTypeId = AttatchmentTypeEnum.CountryFlag, PrimeryTableId = obj.Id });
+                    await _attachmentRepository.SaveAttachment(new AttachmentDto { Files = new List<IFormFile> { file }, AttatchmentTypeId = AttatchmentTypeEnum.SchoolLogo, PrimeryTableId = obj.Id });
                 }
                 trans.Commit();
 

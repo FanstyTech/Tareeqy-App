@@ -31,6 +31,7 @@ using MangeData.Interface.Agreement;
 using MangeData.SQLRepository.Agreement;
 using MangeData.Interface.School;
 using MangeData.SQLRepository.School;
+using Microsoft.Extensions.Options;
 
 namespace WebProject
 {
@@ -79,9 +80,12 @@ namespace WebProject
 
 
             services.AddControllers().AddNewtonsoftJson(options =>
-                 options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver()
+            {
+                options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
-             );
+            });
+
             services.AddSignalR();
             services.AddMvc();
             services.AddSwaggerGen(c =>

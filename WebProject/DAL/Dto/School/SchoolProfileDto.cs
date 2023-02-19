@@ -1,4 +1,6 @@
-﻿using DAL.Model.Common;
+﻿using DAL.Dto.Agreement;
+using DAL.Dto.Common;
+using DAL.Model.Common;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
@@ -37,11 +39,18 @@ namespace DAL.Dto.School
 
         // Address Details
         public int? CountryId { get; set; }
-        public Country Country { get; set; }
+        //public Country Country { get; set; }
         public int? GovernorateId { get; set; }
         public int? CityId { get; set; }
         public int? CurrencyId { get; set; }
+        public bool IsActive { get; set; }
 
+
+        public CountryDto? Country { get; set; }
+        public GovernorateDto? Governorate { get; set; }
+        public CityDto? City { get; set; }
+        public CurrencyDto? Currency { get; set; }
+        public AgreementDto? Agreement { get; set; }
 
         public IFormFile? File { get; set; }
     }

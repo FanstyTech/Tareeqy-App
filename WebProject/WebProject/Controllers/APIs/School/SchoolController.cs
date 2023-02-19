@@ -7,6 +7,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System;
 using DAL.Dto.School;
+using System.Collections.Generic;
 
 namespace WebProject.Controllers.APIs.School
 {
@@ -38,6 +39,34 @@ namespace WebProject.Controllers.APIs.School
             {
 
                 return new ResponseActions<int?>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = null
+                };
+            }
+        }
+
+
+        [HttpGet("GetAllSchoolProfile")]
+        public async Task<ResponseActions<List<SchoolProfileDto>>> GetAllSchoolProfile()
+        {
+            try
+            {
+                var data = await _schoolRepository.GetAllSchoolProfile();
+                return new ResponseActions<List<SchoolProfileDto>>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<List<SchoolProfileDto>>
                 {
                     code = HttpStatusCode.BadRequest,
                     status = false,

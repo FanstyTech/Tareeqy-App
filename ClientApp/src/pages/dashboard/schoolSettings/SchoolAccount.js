@@ -76,7 +76,7 @@ export default function SchoolAccount() {
           heading="حساب التعريفي للمدرسة"
           links={[
             { name: 'الرئيسية', href: PATH_DASHBOARD.root },
-            { name: 'إدارة المدارس', href: PATH_DASHBOARD.schoolSetting },
+            { name: 'إدارة المدارس', href: PATH_DASHBOARD.schoolSetting.list },
             { name: 'حساب التعريفي للمدرسة' }
           ]}
         />

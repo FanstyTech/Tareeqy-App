@@ -1,5 +1,4 @@
 import { filter } from 'lodash';
-import { sentenceCase } from 'change-case';
 import { useEffect, useState } from 'react';
 import plusFill from '@iconify/icons-eva/plus-fill';
 import { Icon } from '@iconify/react';

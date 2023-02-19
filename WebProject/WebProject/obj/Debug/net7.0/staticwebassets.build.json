@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Uc1zTZrpgq22d/3Wn0GeaHvG0MIu7k7rlyAJAfx5bcY=",
+  "Hash": "Ipw0fMes9YXJwLCIpa9kHBTszLQjQThCBGoHNCD19M0=",
   "Source": "WebProject",
   "BasePath": "_content/WebProject",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\FileUpload\\CountryFlag\\a98f0359-a4f3-49e6-a618-a93541d54874.png"
+    },
+    {
+      "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\FileUpload\\SchoolLogo\\6e2402d6-0e6d-4851-9d27-82a49defd506.jpg",
+      "SourceId": "WebProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\",
+      "BasePath": "_content/WebProject",
+      "RelativePath": "FileUpload/SchoolLogo/6e2402d6-0e6d-4851-9d27-82a49defd506.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\FileUpload\\SchoolLogo\\6e2402d6-0e6d-4851-9d27-82a49defd506.jpg"
     },
     {
       "Identity": "D:\\husam\\My Work\\Tareeqy-App\\WebProject\\WebProject\\wwwroot\\js\\chat.js",
