@@ -1,5 +1,5 @@
 import { filter } from 'lodash';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useHistory } from 'react';
 import plusFill from '@iconify/icons-eva/plus-fill';
 import { Icon } from '@iconify/react';
 import { Link as RouterLink } from 'react-router-dom';
@@ -40,8 +40,8 @@ import { UserListHead, UserListToolbar } from '../../../components/_dashboard/us
 import SearchNotFound from '../../../components/SearchNotFound';
 import Scrollbar from '../../../components/Scrollbar';
 import Label from '../../../components/Label';
-import { DialogAnimate } from '../../../components/animate';
-import { CountryForm, MoreMenu } from '../../../components/_dashboard/generalSettings/countries';
+import { MoreMenu } from '../../../components/_dashboard/generalSettings/countries';
+import LoadingScreen from '../../../components/LoadingScreen';
 
 // ----------------------------------------------------------------------
 const TABLE_HEAD = [
@@ -92,14 +92,12 @@ export default function () {
 
   const [selected, setSelected] = useState([]);
   const [filterName, setFilterName] = useState('');
-  const { schoolList } = useSelector((state) => state.school);
+  const { schoolList, isLoading } = useSelector((state) => state.school);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [page, setPage] = useState(0);
 
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState('Name');
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [itemForEdit, setItemForEdit] = useState(null);
   const { themeStretch } = useSettings();
 
   const dispatch = useDispatch();
@@ -108,9 +106,6 @@ export default function () {
     dispatch(getAllSchoolProfile());
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log('schoolList', schoolList);
-  }, [schoolList]);
   const handleFilterByName = (event) => {
     setFilterName(event.target.value);
   };
@@ -123,7 +118,6 @@ export default function () {
     setPage(0);
   };
   const handleDeleteItem = (Id) => {
-    setIsOpenModal(false);
     dispatch(deleteCountry([Id]));
   };
 
@@ -131,12 +125,10 @@ export default function () {
     dispatch(deleteCountry(selected));
     setSelected([]);
   };
-
-  const handleEditItem = (Id) => {
-    const country = schoolList.filter((item) => item.Id === Id);
-    setItemForEdit(country[0]);
-    setIsOpenModal(true);
-  };
+  // const history = useHistory();
+  // const handleEditItemhandleEditItem = (Id) => {
+  //   history.push(`${PATH_DASHBOARD.schoolSetting.root}/${Id}/edit`);
+  // };
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
@@ -166,16 +158,26 @@ export default function () {
     }
     setSelected(newSelected);
   };
-  const handleCloseModal = (e) => {
-    setItemForEdit(null);
-    setIsOpenModal(false);
-  };
+
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - schoolList.length) : 0;
   const filteredUsers = applySortFilter(schoolList, getComparator(order, orderBy), filterName);
   const isUserNotFound = filteredUsers.length === 0;
 
   return (
     <Page title="المدارس: إدارة المدارس | طريقي">
+      {isLoading && (
+        <LoadingScreen
+          sx={{
+            ...{
+              top: 0,
+              left: 0,
+              width: 1,
+              zIndex: 100,
+              position: 'fixed'
+            }
+          }}
+        />
+      )}
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
           heading="المدارس"
@@ -271,7 +273,11 @@ export default function () {
                         </TableCell>
 
                         <TableCell align="right">
-                          <MoreMenu onDelete={() => handleDeleteItem(Id)} onEdit={() => handleEditItem(Id)} />
+                          <MoreMenu
+                            forUrlPage={`${PATH_DASHBOARD.schoolSetting.root}/${Id}/edit`}
+                            onDelete={() => handleDeleteItem(Id)}
+                            // onEdit={() => handleEditItem(Id)}
+                          />
                         </TableCell>
                       </TableRow>
                     );

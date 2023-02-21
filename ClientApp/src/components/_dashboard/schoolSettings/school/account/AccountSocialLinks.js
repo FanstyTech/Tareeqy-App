@@ -6,65 +6,101 @@ import linkedinFill from '@iconify/icons-eva/linkedin-fill';
 import facebookFill from '@iconify/icons-eva/facebook-fill';
 import instagramFilled from '@iconify/icons-ant-design/instagram-filled';
 import whatsAppLink from '@iconify/icons-ant-design/whats-app';
+import PropTypes from 'prop-types';
+import { merge } from 'lodash';
+
 // material
 import { Stack, Card, TextField, InputAdornment } from '@material-ui/core';
 import { LoadingButton } from '@material-ui/lab';
 // redux
-import { useSelector } from '../../../../../redux/store';
+import { useDispatch } from '../../../../../redux/store';
+import { saveSchoolProfile } from '../../../../../redux/slices/school';
+// hooks
+import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
+
 // utils
 import fakeRequest from '../../../../../utils/fakeRequest';
 
 // ----------------------------------------------------------------------
-
+const getInitialValues = (event) => {
+  const _event = {
+    Id: null,
+    FacebookPageURL: '',
+    InstagramPageURL: '',
+    LinkedinPageURL: '',
+    TwitterPageURL: '',
+    WhatsAppNumber: ''
+  };
+  if (event !== null) {
+    const _newEevent = merge({}, _event, event);
+    return _newEevent;
+  }
+  return _event;
+};
 const SOCIAL_LINKS_OPTIONS = [
   {
-    value: 'facebookLink',
+    value: 'FacebookPageURL',
     label: 'رابط حساب الفيس بوك',
     icon: <Icon icon={facebookFill} height={24} />
   },
   {
-    value: 'instagramLink',
+    value: 'InstagramPageURL',
     label: 'رابط حساب انستغرام',
 
     icon: <Icon icon={instagramFilled} height={24} />
   },
   {
-    value: 'whatsAppLink',
+    value: 'WhatsAppNumber',
     label: 'رابط حساب الواتس اب',
 
     icon: <Icon icon={whatsAppLink} height={24} />
   },
   {
-    value: 'linkedinLink',
+    value: 'LinkedinPageURL',
     label: 'رابط حساب لينكد ان',
 
     icon: <Icon icon={linkedinFill} height={24} />
   },
   {
-    value: 'twitterLink',
+    value: 'TwitterPageURL',
     label: 'رابط حساب توتير',
     icon: <Icon icon={twitterFill} height={24} />
   }
 ];
 
 // ----------------------------------------------------------------------
-
-export default function AccountSocialLinks() {
+AccountSocialLinks.propTypes = {
+  schoolData: PropTypes.object
+};
+export default function AccountSocialLinks({ schoolData }) {
   const { enqueueSnackbar } = useSnackbar();
+  const isMountedRef = useIsMountedRef();
+
+  const dispatch = useDispatch();
 
   const formik = useFormik({
     enableReinitialize: true,
-    initialValues: {
-      facebookLink: '',
-      instagramLink: '',
-      linkedinLink: '',
-      twitterLink: ''
-    },
+    initialValues: getInitialValues(schoolData),
     onSubmit: async (values, { setSubmitting }) => {
-      await fakeRequest(500);
-      setSubmitting(false);
-      alert(JSON.stringify(values, null, 2));
-      enqueueSnackbar('Save success', { variant: 'success' });
+      const newEvent = {
+        FacebookPageURL: values.FacebookPageURL ? values.FacebookPageURL : '',
+        InstagramPageURL: values.InstagramPageURL ? values.InstagramPageURL : '',
+        LinkedinPageURL: values.LinkedinPageURL ? values.LinkedinPageURL : '',
+        TwitterPageURL: values.TwitterPageURL ? values.TwitterPageURL : '',
+        WhatsAppNumber: values.WhatsAppNumber ? values.WhatsAppNumber : '',
+        Id: schoolData?.Id
+      };
+      try {
+        dispatch(saveSchoolProfile(newEvent));
+        enqueueSnackbar('Update success', { variant: 'success' });
+        if (isMountedRef.current) {
+          setSubmitting(false);
+        }
+      } catch (error) {
+        if (isMountedRef.current) {
+          setSubmitting(false);
+        }
+      }
     }
   });
 

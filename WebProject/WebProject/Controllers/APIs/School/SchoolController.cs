@@ -75,5 +75,32 @@ namespace WebProject.Controllers.APIs.School
                 };
             }
         }
+
+        [HttpGet("GetSchoolProfileById")]
+        public async Task<ResponseActions<SchoolProfileDto>> GetSchoolProfileById(int Id)
+        {
+            try
+            {
+                var data = await _schoolRepository.GetSchoolProfileById(Id);
+                return new ResponseActions<SchoolProfileDto>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<SchoolProfileDto>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = null
+                };
+            }
+        }
     }
 }

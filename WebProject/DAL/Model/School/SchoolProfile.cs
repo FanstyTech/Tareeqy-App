@@ -34,7 +34,7 @@ namespace DAL.Model.School
         public DateTime? AgreementEndDate { get; set; }
         [Column(TypeName = "decimal(18,4)")]
         public decimal? AgreementPrice { get; set; }
-        public int AgreementId { get; set; }
+        public int? AgreementId { get; set; }
         [ForeignKey(nameof(AgreementId))]
         public DAL.Model.Agreement.Agreement Agreement { get; set; }
 
@@ -48,7 +48,7 @@ namespace DAL.Model.School
         public int? CityId { get; set; }
         [ForeignKey(nameof(CountryId))]
         public City City { get; set; }
-        public int CurrencyId { get; set; }
+        public int? CurrencyId { get; set; }
         [ForeignKey(nameof(CurrencyId))]
         public Currency Currency { get; set; }
 

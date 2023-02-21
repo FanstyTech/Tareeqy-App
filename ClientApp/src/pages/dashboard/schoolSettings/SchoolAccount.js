@@ -5,8 +5,14 @@ import roundVpnKey from '@iconify/icons-ic/round-vpn-key';
 import roundAccountBox from '@iconify/icons-ic/round-account-box';
 import schoolIcon from '@iconify/icons-ic/school';
 import locationIcon from '@iconify/icons-ic/my-location';
+
+import { useParams, useLocation } from 'react-router-dom';
+
 // material
 import { Container, Tab, Box, Tabs, Stack } from '@material-ui/core';
+// redux
+import { useDispatch, useSelector } from '../../../redux/store';
+import { getSchoolProfileById } from '../../../redux/slices/school';
 
 // routes
 import { PATH_DASHBOARD } from '../../../routes/paths';
@@ -15,7 +21,7 @@ import useSettings from '../../../hooks/useSettings';
 // components
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
-
+import LoadingScreen from '../../../components/LoadingScreen';
 import {
   AccountGeneral,
   AccountLocation,
@@ -29,26 +35,35 @@ import {
 export default function SchoolAccount() {
   const { themeStretch } = useSettings();
   const [currentTab, setCurrentTab] = useState('general');
-  const [schoolData, setSchoolData] = useState({ Id: 10 });
+  const { pathname } = useLocation();
+
+  const isEdit = pathname.includes('edit');
+  const { name } = useParams();
+  const { schoolProfileData, isLoading } = useSelector((state) => state.school);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isEdit) dispatch(getSchoolProfileById(name));
+  }, [dispatch]);
 
   const ACCOUNT_TABS = [
     {
       value: 'general',
       title: 'عام',
       icon: <Icon icon={schoolIcon} width={20} height={20} />,
-      component: <AccountGeneral schoolData={schoolData} setSchoolData={setSchoolData} />
+      component: <AccountGeneral schoolData={schoolProfileData} />
     },
     {
       value: 'location',
       title: 'العنوان',
       icon: <Icon icon={locationIcon} width={20} height={20} />,
-      component: <AccountLocation />
+      component: <AccountLocation schoolData={schoolProfileData} />
     },
     {
       value: 'social_links',
       title: 'روابط اجتماعية',
       icon: <Icon icon={shareFill} width={20} height={20} />,
-      component: <AccountSocialLinks />
+      component: <AccountSocialLinks schoolData={schoolProfileData} />
     },
 
     {
@@ -71,6 +86,19 @@ export default function SchoolAccount() {
 
   return (
     <Page title="المدارس: إدارة الملف التعريفي للمدرسة | طريقي">
+      {isLoading && (
+        <LoadingScreen
+          sx={{
+            ...{
+              top: 0,
+              left: 0,
+              width: 1,
+              zIndex: 100,
+              position: 'fixed'
+            }
+          }}
+        />
+      )}
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <HeaderBreadcrumbs
           heading="حساب التعريفي للمدرسة"
@@ -89,7 +117,7 @@ export default function SchoolAccount() {
             allowScrollButtonsMobile
             onChange={handleChangeTab}
           >
-            {schoolData?.Id == null ? (
+            {schoolProfileData?.Id == null ? (
               <Tab
                 disableRipple
                 key={ACCOUNT_TABS[0].value}

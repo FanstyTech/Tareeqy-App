@@ -76,7 +76,7 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6563),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3086),
                             CurrencyId = 1,
                             Description = "افتراضي",
                             Duration = 1,
@@ -172,17 +172,17 @@ namespace DAL.Migrations
                         {
                             Id = "02174cf0–9412–4cfe-afbf-59f706d72cf6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d14a408e-d14f-4a68-b18a-e734a2127d2d",
+                            ConcurrencyStamp = "1f4dd24f-5b1d-49a8-b760-ff84e4e07c09",
                             Email = "admin@admin.com",
                             EmailConfirmed = false,
                             IsActive = true,
                             LockoutEnabled = false,
                             NickName = "Admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDtzrSozOkBU7opX9u7WJS2H14r17bHwAkWIt4c+b0OVQhB8bkGqYbrVW0gRNSBb8Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKNou/qw/9BLcW94zMTDWg2iq5+p0jnirfxO6VUMx/1gqZYwUk8h2+JJ5/tzlI6HuQ==",
                             PhoneNumber = "",
                             PhoneNumberConfirmed = false,
                             RegisterDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SecurityStamp = "3093aa61-5351-48d5-ac21-a09a80c4ac85",
+                            SecurityStamp = "69ca1940-6a37-444a-aacd-7afb2aec182a",
                             TwoFactorEnabled = false,
                             UserName = "admin@admin.com",
                             UserType = 0
@@ -246,7 +246,7 @@ namespace DAL.Migrations
                             Id = 1,
                             AttatchmentTypeId = 1,
                             ContentType = "image/png",
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6521),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3070),
                             Extension = ".png",
                             FileSize = "1.8 KB",
                             IsActive = false,
@@ -260,7 +260,7 @@ namespace DAL.Migrations
                             Id = 2,
                             AttatchmentTypeId = 1,
                             ContentType = "image/png",
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6526),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3074),
                             Extension = ".png",
                             FileSize = "1.8 KB",
                             IsActive = false,
@@ -314,7 +314,7 @@ namespace DAL.Migrations
                         {
                             Id = 1,
                             CountryId = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6450),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(2999),
                             IsActive = true,
                             IsDeleted = false,
                             Name = "غزة"
@@ -323,7 +323,7 @@ namespace DAL.Migrations
                         {
                             Id = 2,
                             CountryId = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6452),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3001),
                             IsActive = true,
                             IsDeleted = false,
                             Name = "بيت لحم"
@@ -332,7 +332,7 @@ namespace DAL.Migrations
                         {
                             Id = 3,
                             CountryId = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6453),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3003),
                             IsActive = true,
                             IsDeleted = false,
                             Name = "بئر السبع"
@@ -341,7 +341,7 @@ namespace DAL.Migrations
                         {
                             Id = 4,
                             CountryId = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6454),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3003),
                             IsActive = true,
                             IsDeleted = false,
                             Name = "القدس"
@@ -350,7 +350,7 @@ namespace DAL.Migrations
                         {
                             Id = 5,
                             CountryId = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6455),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3004),
                             IsActive = true,
                             IsDeleted = false,
                             Name = "رام الله"
@@ -404,7 +404,7 @@ namespace DAL.Migrations
                         {
                             Id = 1,
                             Code = "00972",
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6443),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(2991),
                             CurrencyId = 1,
                             IsActive = true,
                             IsDeleted = false,
@@ -414,7 +414,7 @@ namespace DAL.Migrations
                         {
                             Id = 2,
                             Code = "00962",
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6446),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(2995),
                             CurrencyId = 4,
                             IsActive = true,
                             IsDeleted = false,
@@ -462,7 +462,7 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6402),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(2944),
                             CurrencySymbol = "₪",
                             IsActive = true,
                             IsDeleted = false,
@@ -471,7 +471,7 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 2,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6419),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(2962),
                             CurrencySymbol = "$",
                             IsActive = true,
                             IsDeleted = false,
@@ -480,7 +480,7 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 3,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6420),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(2963),
                             CurrencySymbol = "€",
                             IsActive = true,
                             IsDeleted = false,
@@ -489,7 +489,7 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 4,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6421),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(2964),
                             CurrencySymbol = "د",
                             IsActive = true,
                             IsDeleted = false,
@@ -540,7 +540,7 @@ namespace DAL.Migrations
                         {
                             Id = 1,
                             CityId = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6458),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3009),
                             IsActive = true,
                             IsDeleted = false,
                             Name = "غزة"
@@ -549,7 +549,7 @@ namespace DAL.Migrations
                         {
                             Id = 2,
                             CityId = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6461),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3010),
                             IsActive = true,
                             IsDeleted = false,
                             Name = "الوسطى"
@@ -558,7 +558,7 @@ namespace DAL.Migrations
                         {
                             Id = 3,
                             CityId = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6462),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3012),
                             IsActive = true,
                             IsDeleted = false,
                             Name = "شمال"
@@ -567,7 +567,7 @@ namespace DAL.Migrations
                         {
                             Id = 4,
                             CityId = 1,
-                            CreationTime = new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6462),
+                            CreationTime = new DateTime(2023, 2, 21, 9, 22, 52, 862, DateTimeKind.Local).AddTicks(3012),
                             IsActive = true,
                             IsDeleted = false,
                             Name = "جنوب"
@@ -691,7 +691,7 @@ namespace DAL.Migrations
                     b.Property<DateTime?>("AgreementEndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("AgreementId")
+                    b.Property<int?>("AgreementId")
                         .HasColumnType("int");
 
                     b.Property<decimal?>("AgreementPrice")
@@ -718,7 +718,7 @@ namespace DAL.Migrations
                     b.Property<string>("CreatorUserId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CurrencyId")
+                    b.Property<int?>("CurrencyId")
                         .HasColumnType("int");
 
                     b.Property<string>("DeleterUserId")
@@ -1030,9 +1030,7 @@ namespace DAL.Migrations
                 {
                     b.HasOne("DAL.Model.Agreement.Agreement", "Agreement")
                         .WithMany()
-                        .HasForeignKey("AgreementId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AgreementId");
 
                     b.HasOne("DAL.Model.Common.City", "City")
                         .WithMany()
@@ -1052,8 +1050,7 @@ namespace DAL.Migrations
                     b.HasOne("DAL.Model.Common.Currency", "Currency")
                         .WithMany()
                         .HasForeignKey("CurrencyId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Agreement");
 

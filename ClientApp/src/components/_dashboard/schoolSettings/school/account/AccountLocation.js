@@ -15,6 +15,8 @@ import {
   getCountryForSelect,
   getGovernorateForSelect
 } from '../../../../../redux/slices/generalSetting';
+import { saveSchoolProfile } from '../../../../../redux/slices/school';
+
 // hooks
 import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
 
@@ -64,8 +66,18 @@ export default function AccountLocation({ schoolData }) {
 
     validationSchema: SaveSchema,
     onSubmit: async (values, { setErrors, setSubmitting }) => {
+      const newEvent = {
+        CountryId: values.CountryId,
+        CityId: values.CityId,
+        GovernorateId: values.GovernorateId,
+        Latitude: values.Latitude,
+        Longitude: values.Longitude,
+        Address: values.Address,
+        Id: schoolData?.Id
+      };
       try {
-        //  await updateProfile({ ...values });
+        dispatch(saveSchoolProfile(newEvent));
+
         enqueueSnackbar('Update success', { variant: 'success' });
         if (isMountedRef.current) {
           setSubmitting(false);
@@ -81,6 +93,21 @@ export default function AccountLocation({ schoolData }) {
 
   const { values, errors, touched, isSubmitting, handleSubmit, getFieldProps, setFieldValue } = formik;
 
+  useEffect(() => {
+    if (schoolData && countryForSelect) {
+      setFieldValue('CountryId', schoolData.CountryId);
+      dispatch(getCityForSelect(schoolData.CountryId));
+      // dispatch(getGovernorateForSelect(schoolData.CityId));
+    }
+  }, [schoolData, countryForSelect]);
+
+  useEffect(() => {
+    if (schoolData && cityForSelect) {
+      setFieldValue('CityId', schoolData.CityId);
+      dispatch(getGovernorateForSelect(schoolData.CityId));
+      // dispatch(getGovernorateForSelect(schoolData.CityId));
+    }
+  }, [schoolData, cityForSelect]);
   const countryHandleChange = (e) => {
     setFieldValue('CountryId', e.target.value);
     setFieldValue('CityId', '');
@@ -100,7 +127,7 @@ export default function AccountLocation({ schoolData }) {
           <Stack spacing={{ xs: 2, md: 3 }}>
             {/* begin location seaction */}
             <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
-              {countryForSelect && (
+              {countryForSelect?.length && (
                 <TextField
                   select
                   fullWidth
@@ -120,46 +147,50 @@ export default function AccountLocation({ schoolData }) {
                   ))}
                 </TextField>
               )}
-
-              <TextField
-                select
-                fullWidth
-                label="المدينة"
-                placeholder="المدينة"
-                {...getFieldProps('CityId')}
-                SelectProps={{ native: true }}
-                onChange={(e) => cityHandleChange(e)}
-                error={Boolean(touched.CityId && errors.CityId)}
-                helperText={touched.CityId && errors.CityId}
-              >
-                <option value="" />
-                {cityForSelect?.map((option) => (
-                  <option key={option.Id} value={option.Id}>
-                    {option.Label}
-                  </option>
-                ))}
-              </TextField>
+              {cityForSelect?.length && (
+                <TextField
+                  select
+                  fullWidth
+                  label="المدينة"
+                  placeholder="المدينة"
+                  {...getFieldProps('CityId')}
+                  SelectProps={{ native: true }}
+                  onChange={(e) => cityHandleChange(e)}
+                  error={Boolean(touched.CityId && errors.CityId)}
+                  helperText={touched.CityId && errors.CityId}
+                >
+                  <option value="" />
+                  {cityForSelect?.map((option) => (
+                    <option key={option.Id} value={option.Id}>
+                      {option.Label}
+                    </option>
+                  ))}
+                </TextField>
+              )}
             </Stack>
 
             <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
-              <TextField
-                select
-                fullWidth
-                label="المحافظة"
-                placeholder="المحافظة"
-                {...getFieldProps('GovernorateId')}
-                SelectProps={{ native: true }}
-                error={Boolean(touched.GovernorateId && errors.GovernorateId)}
-                helperText={touched.GovernorateId && errors.GovernorateId}
-              >
-                <option value="" />
+              {governorateForSelect?.length && (
+                <TextField
+                  select
+                  fullWidth
+                  label="المحافظة"
+                  placeholder="المحافظة"
+                  {...getFieldProps('GovernorateId')}
+                  SelectProps={{ native: true }}
+                  error={Boolean(touched.GovernorateId && errors.GovernorateId)}
+                  helperText={touched.GovernorateId && errors.GovernorateId}
+                >
+                  <option value="" />
 
-                {governorateForSelect?.map((option) => (
-                  <option key={option.Id} value={option.Id}>
-                    {option.Label}
-                  </option>
-                ))}
-              </TextField>
+                  {governorateForSelect?.map((option) => (
+                    <option key={option.Id} value={option.Id}>
+                      {option.Label}
+                    </option>
+                  ))}
+                </TextField>
+              )}
+
               <TextField
                 fullWidth
                 label="العنوان"

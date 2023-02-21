@@ -23,6 +23,8 @@ import { LoadingButton, MobileDateTimePicker } from '@material-ui/lab';
 // redux
 import { useDispatch, useSelector } from '../../../../../redux/store';
 import { getAgreementForSelect, getCurrenciesSelectList } from '../../../../../redux/slices/generalSetting';
+import { saveSchoolProfile } from '../../../../../redux/slices/school';
+
 // hooks
 import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
 import { UploadAvatar } from '../../../../upload';
@@ -39,11 +41,20 @@ const getInitialValues = (event) => {
     AgreementId: '',
     ContactNumber: '',
     CurrencyId: '',
+    Bio: '',
     IsActive: false,
     photoURL: null
   };
+  //            start: range ? new Date(range.start) :,
+  // end: range ? new Date(range.end) : new Date()
   if (event !== null) {
+    if (event.Id != undefined) {
+      _event.photoURL = `${process.env.REACT_APP_LOCAL_BASE_URl}Attachment/AttachmentDownload?PrimeryTableId=${event.Id}&AttatchmentTypeId=2`;
+      _event.IsActive = event.IsActive;
+    }
+
     const _newEevent = merge({}, _event, event);
+    console.log('_newEevent', _newEevent);
     return _newEevent;
   }
   return _event;
@@ -52,10 +63,9 @@ const getInitialValues = (event) => {
 
 // ----------------------------------------------------------------------
 AccountGeneral.propTypes = {
-  schoolData: PropTypes.object,
-  setSchoolData: PropTypes.func
+  schoolData: PropTypes.object
 };
-export default function AccountGeneral({ schoolData, setSchoolData }) {
+export default function AccountGeneral({ schoolData }) {
   const isMountedRef = useIsMountedRef();
   const { enqueueSnackbar } = useSnackbar();
   const [uploadFile, SetUploadFile] = useState();
@@ -84,16 +94,46 @@ export default function AccountGeneral({ schoolData, setSchoolData }) {
     initialValues: getInitialValues(schoolData),
     validationSchema: SaveSchoolSchema,
     onSubmit: async (values, { setErrors, setSubmitting }) => {
+      setSubmitting(true);
+
       const newEvent = {
-        Id: 10
+        NameL: values.NameL,
+        NameF: values.NameF,
+        LicensedOperatorNumber: values.LicensedOperatorNumber,
+        AgreementPrice: values.AgreementPrice,
+        AgreementId: values.AgreementId,
+        ContactNumber: values.ContactNumber,
+        CurrencyId: values.CurrencyId,
+        IsActive: values.IsActive,
+        AgreementStartDate: '',
+        AgreementEndDate: '',
+        Bio: values.Bio?.length > 0 ? values.Bio : ' ',
+        Id: schoolData?.Id
       };
-      setSchoolData(newEvent);
-      try {
-        //  await updateProfile({ ...values });
-        enqueueSnackbar('Update success', { variant: 'success' });
-        if (isMountedRef.current) {
-          setSubmitting(false);
+      if (schoolData) {
+        try {
+          newEvent.AgreementStartDate = values.AgreementStartDate?.toLocaleDateString('en-GB');
+        } catch {
+          newEvent.AgreementStartDate = schoolData.AgreementStartDate;
         }
+
+        try {
+          newEvent.AgreementEndDate = values.AgreementEndDate?.toLocaleDateString('en-GB');
+        } catch {
+          newEvent.AgreementEndDate = schoolData.AgreementEndDate;
+        }
+      } else {
+        newEvent.AgreementStartDate = values.AgreementStartDate
+          ? values.AgreementStartDate?.toLocaleDateString('en-GB')
+          : new Date().toLocaleDateString('en-GB');
+        newEvent.AgreementEndDate = values.AgreementEndDate
+          ? values.AgreementEndDate?.toLocaleDateString('en-GB')
+          : new Date().toLocaleDateString('en-GB');
+      }
+      try {
+        dispatch(saveSchoolProfile(newEvent, uploadFile));
+
+        // enqueueSnackbar('Update success', { variant: 'success' });
       } catch (error) {
         if (isMountedRef.current) {
           setErrors({ afterSubmit: error.code });
@@ -159,7 +199,7 @@ export default function AccountGeneral({ schoolData, setSchoolData }) {
               </FormHelperText>
 
               <FormControlLabel
-                control={<Switch {...getFieldProps('IsActive')} color="primary" />}
+                control={<Switch checked={values.IsActive} {...getFieldProps('IsActive')} color="primary" />}
                 labelPlacement="start"
                 label="الحالة"
                 sx={{ mt: 5 }}
@@ -215,13 +255,7 @@ export default function AccountGeneral({ schoolData, setSchoolData }) {
                   >
                     <option value="" />
                     {agreementForSelect?.map((option) => (
-                      <option
-                        key={option.Id}
-                        value={option.Id}
-                        onClick={(e) => {
-                          console.log(e);
-                        }}
-                      >
+                      <option key={option.Id} value={option.Id} onClick={(e) => {}}>
                         {option.Label}
                       </option>
                     ))}
@@ -238,7 +272,7 @@ export default function AccountGeneral({ schoolData, setSchoolData }) {
                 <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
                   <MobileDateTimePicker
                     label="تاريخ بدء الاتفاقية"
-                    value={values.start}
+                    value={values.AgreementStartDate}
                     inputFormat="dd/MM/yyyy hh:mm a"
                     onChange={(date) => setFieldValue('AgreementStartDate', date)}
                     renderInput={(params) => <TextField {...params} fullWidth />}
@@ -246,7 +280,7 @@ export default function AccountGeneral({ schoolData, setSchoolData }) {
 
                   <MobileDateTimePicker
                     label="تاريخ انتهاء الاتفاقية"
-                    value={values.end}
+                    value={values.AgreementEndDate}
                     inputFormat="dd/MM/yyyy hh:mm a"
                     onChange={(date) => setFieldValue('AgreementEndDate', date)}
                     renderInput={(params) => (
@@ -272,9 +306,6 @@ export default function AccountGeneral({ schoolData, setSchoolData }) {
                     SelectProps={{ native: true }}
                     error={Boolean(touched.CurrencyId && errors.CurrencyId)}
                     helperText={touched.CurrencyId && errors.CurrencyId}
-                    onChange={(e) => {
-                      agreementHandleChange(e);
-                    }}
                   >
                     <option value="" />
                     {currenciesSelectList?.map((option) => (

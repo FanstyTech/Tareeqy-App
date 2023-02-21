@@ -64,7 +64,6 @@ namespace MangeData.SQLRepository.School
                 return await CreateSchoolProfile(_mapper.Map<SchoolProfile>(obj), obj.File);
             else
                 return await UpdateSchoolProfile(_mapper.Map<SchoolProfile>(obj), obj.File);
-
         }
 
         private async Task<int> CreateSchoolProfile(SchoolProfile obj, IFormFile file)
