@@ -43,6 +43,11 @@ namespace MangeData.SQLRepository.Common
             }
             catch
             {
+                string filePath = Path.Combine(_env.WebRootPath, "FileUpload", "blank.png");
+                using var stream = new MemoryStream(System.IO.File.ReadAllBytes(filePath).ToArray());
+                fileContent.ContentType = "image/png";
+                fileContent.FileContent = stream.ToArray();
+                fileContent.FileName = "blank.png";
             }
             return fileContent;
         }

@@ -102,5 +102,119 @@ namespace WebProject.Controllers.APIs.School
                 };
             }
         }
+
+        [HttpPost("DeleteSchoolProfileByIds")]
+        public async Task<ResponseActions<object>> DeleteSchoolProfileByIds(List<int> Ids)
+        {
+            try
+            {
+                await _schoolRepository.DeleteSchoolProfileByIds(Ids);
+                return new ResponseActions<object>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = { }
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<object>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = { }
+                };
+            }
+        }
+
+
+
+
+        [HttpPost("SaveSchoolEmployee")]
+        public async Task<ResponseActions<int?>> SaveSchoolEmployee([FromForm] SchoolEmployeeDto obj)
+        {
+            try
+            {
+                var data = await _schoolRepository.SaveSchoolEmployee(obj);
+                return new ResponseActions<int?>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<int?>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = null
+                };
+            }
+        }
+
+
+        [HttpGet("GetAllSchoolEmployee")]
+        public async Task<ResponseActions<List<SchoolEmployeeDto>>> GetAllSchoolEmployee(int? SchoolProfileId)
+        {
+            try
+            {
+                var data = await _schoolRepository.GetAllSchoolEmployee(SchoolProfileId);
+                return new ResponseActions<List<SchoolEmployeeDto>>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<List<SchoolEmployeeDto>>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = null
+                };
+            }
+        }
+
+        [HttpPost("DeleteSchoolEmployeeeByIds")]
+        public async Task<ResponseActions<object>> DeleteSchoolEmployeeeByIds(List<int> Ids)
+        {
+            try
+            {
+                await _schoolRepository.DeleteSchoolEmployeeeByIds(Ids);
+                return new ResponseActions<object>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = { }
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<object>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = { }
+                };
+            }
+        }
+
+
     }
 }

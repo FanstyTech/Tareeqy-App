@@ -26,8 +26,7 @@ import {
 // redux
 
 import { useDispatch, useSelector } from '../../../redux/store';
-import { deleteCountry } from '../../../redux/slices/generalSetting';
-import { getAllSchoolProfile } from '../../../redux/slices/school';
+import { getAllSchoolProfile, deleteSchoolProfileByIds } from '../../../redux/slices/school';
 
 // routes
 import { PATH_DASHBOARD } from '../../../routes/paths';
@@ -118,11 +117,11 @@ export default function () {
     setPage(0);
   };
   const handleDeleteItem = (Id) => {
-    dispatch(deleteCountry([Id]));
+    dispatch(deleteSchoolProfileByIds([Id]));
   };
 
   const handleDeleteSelected = () => {
-    dispatch(deleteCountry(selected));
+    dispatch(deleteSchoolProfileByIds(selected));
     setSelected([]);
   };
   // const history = useHistory();

@@ -14,6 +14,17 @@ namespace DAL.Enum
             CountryFlag,
             SchoolLogo
         }
+        public enum SchoolEmployeeTypeEnum
+        {
+            Admin = 1,
+            Trainer = 2,
+            FinancialManager = 3
+        }
+        public enum GenderEnum
+        {
+            Female = 1,
+            Male = 2
+        }
         public enum DurationTypeEnum
         {
             Year,

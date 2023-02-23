@@ -31,8 +31,12 @@ namespace MangeData.SQLRepository.Common
         public async Task DeleteCountry(List<int> Ids)
         {
             var Countries = await _context.Countries.Where(c => Ids.Contains(c.Id)).ToListAsync();
-
-            _context.Countries.RemoveRange(Countries);
+            Countries.ForEach(c =>
+            {
+                c.IsDeleted = true;
+                c.DeletionTime = DateTime.Now;
+            });
+            _context.Countries.UpdateRange(Countries);
             _context.SaveChanges();
         }
 

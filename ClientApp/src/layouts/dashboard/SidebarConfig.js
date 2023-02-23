@@ -3,11 +3,11 @@ import { PATH_DASHBOARD } from '../../routes/paths';
 // components
 import Label from '../../components/Label';
 import SvgIconStyle from '../../components/SvgIconStyle';
-
+import { toAbsoluteUrl } from '../../utils/generalUtils';
 // ----------------------------------------------------------------------
 
 const getIcon = (name) => (
-  <SvgIconStyle src={`/static/icons/navbar/${name}.svg`} sx={{ width: '100%', height: '100%' }} />
+  <SvgIconStyle src={toAbsoluteUrl(`static/icons/navbar/${name}.svg`)} sx={{ width: '100%', height: '100%' }} />
 );
 
 const ICONS = {
@@ -22,7 +22,8 @@ const ICONS = {
   ecommerce: getIcon('ic_ecommerce'),
   analytics: getIcon('ic_analytics'),
   dashboard: getIcon('ic_dashboard'),
-  booking: getIcon('ic_booking')
+  booking: getIcon('ic_booking'),
+  school: getIcon('school')
 };
 
 const sidebarConfig = [
@@ -66,7 +67,7 @@ const sidebarConfig = [
       {
         title: 'إدارة المدارس',
         path: PATH_DASHBOARD.schoolSetting.root,
-        icon: ICONS.user,
+        icon: ICONS.school,
         children: [
           { title: 'المدارس', path: PATH_DASHBOARD.schoolSetting.list },
           { title: 'إضافة', path: PATH_DASHBOARD.schoolSetting.newSchool }

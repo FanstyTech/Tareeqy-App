@@ -35,6 +35,10 @@ namespace DAL.Migrations
                     NickName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TokenKey = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RegisterDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IdNum = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gender = table.Column<int>(type: "int", nullable: false),
                     UserType = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -45,7 +49,6 @@ namespace DAL.Migrations
                     PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
                     TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
@@ -425,11 +428,11 @@ namespace DAL.Migrations
                     AgreementStartDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     AgreementEndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     AgreementPrice = table.Column<decimal>(type: "decimal(18,4)", nullable: true),
-                    AgreementId = table.Column<int>(type: "int", nullable: false),
+                    AgreementId = table.Column<int>(type: "int", nullable: true),
                     CountryId = table.Column<int>(type: "int", nullable: true),
                     GovernorateId = table.Column<int>(type: "int", nullable: true),
                     CityId = table.Column<int>(type: "int", nullable: true),
-                    CurrencyId = table.Column<int>(type: "int", nullable: false),
+                    CurrencyId = table.Column<int>(type: "int", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     DeleterUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -444,8 +447,7 @@ namespace DAL.Migrations
                         name: "FK_SchoolProfiles_Agreements_AgreementId",
                         column: x => x.AgreementId,
                         principalTable: "Agreements",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_SchoolProfiles_Cities_CountryId",
                         column: x => x.CountryId,
@@ -468,6 +470,40 @@ namespace DAL.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "SchoolEmployees",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Salary = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    SchoolUserType = table.Column<int>(type: "int", nullable: false),
+                    DateOfHiring = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    SchoolProfileId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeleterUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DeletionTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatorUserId = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SchoolEmployees", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SchoolEmployees_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_SchoolEmployees_SchoolProfiles_SchoolProfileId",
+                        column: x => x.SchoolProfileId,
+                        principalTable: "SchoolProfiles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
@@ -479,16 +515,16 @@ namespace DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "IsActive", "LockoutEnabled", "LockoutEnd", "NickName", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "RegisterDate", "SecurityStamp", "TokenKey", "TwoFactorEnabled", "UserName", "UserType" },
-                values: new object[] { "02174cf0–9412–4cfe-afbf-59f706d72cf6", 0, "d14a408e-d14f-4a68-b18a-e734a2127d2d", "admin@admin.com", false, true, false, null, "Admin", null, null, "AQAAAAIAAYagAAAAEDtzrSozOkBU7opX9u7WJS2H14r17bHwAkWIt4c+b0OVQhB8bkGqYbrVW0gRNSBb8Q==", "", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "3093aa61-5351-48d5-ac21-a09a80c4ac85", null, false, "admin@admin.com", 0 });
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateOfBirth", "Email", "EmailConfirmed", "Gender", "IdNum", "IsActive", "LockoutEnabled", "LockoutEnd", "NickName", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "RegisterDate", "SecurityStamp", "TokenKey", "TwoFactorEnabled", "UserName", "UserType" },
+                values: new object[] { "02174cf0–9412–4cfe-afbf-59f706d72cf6", 0, "aa8d05e2-ac84-489d-9301-df0988aa5c2e", null, "admin@admin.com", false, 0, null, true, false, null, "Admin", null, null, "AQAAAAIAAYagAAAAEMgwvHW1fX6kUpVEqGuuyq3QbRd1Oh+JYQZiB73OqcJnOkLUklup0vH/jYhux4g1/Q==", "", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "ad5d8904-4a7c-47be-af3c-05dc46582aa9", null, false, "admin@admin.com", 0 });
 
             migrationBuilder.InsertData(
                 table: "Attachments",
                 columns: new[] { "Id", "AttatchmentTypeId", "ContentType", "CreationTime", "CreatorUserId", "DeleterUserId", "DeletionTime", "Extension", "FileSize", "IsActive", "IsDeleted", "Name", "OriginalName", "PrimeryTableId" },
                 values: new object[,]
                 {
-                    { 1, 1, "image/png", new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6521), null, null, null, ".png", "1.8 KB", false, false, "62d277a3-3bf5-4daf-ae23-a733d2049233.png", "palestine_flag.png", 1 },
-                    { 2, 1, "image/png", new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6526), null, null, null, ".png", "1.8 KB", false, false, "a98f0359-a4f3-49e6-a618-a93541d54874.png", "jordan_flag.png", 2 }
+                    { 1, 1, "image/png", new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5737), null, null, null, ".png", "1.8 KB", false, false, "62d277a3-3bf5-4daf-ae23-a733d2049233.png", "palestine_flag.png", 1 },
+                    { 2, 1, "image/png", new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5741), null, null, null, ".png", "1.8 KB", false, false, "a98f0359-a4f3-49e6-a618-a93541d54874.png", "jordan_flag.png", 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -496,16 +532,16 @@ namespace DAL.Migrations
                 columns: new[] { "Id", "CreationTime", "CreatorUserId", "CurrencySymbol", "DeleterUserId", "DeletionTime", "IsActive", "IsDeleted", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6402), null, "₪", null, null, true, false, "شيكل" },
-                    { 2, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6419), null, "$", null, null, true, false, "دولار" },
-                    { 3, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6420), null, "€", null, null, true, false, "يورو" },
-                    { 4, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6421), null, "د", null, null, true, false, "دينار" }
+                    { 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5633), null, "₪", null, null, true, false, "شيكل" },
+                    { 2, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5646), null, "$", null, null, true, false, "دولار" },
+                    { 3, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5648), null, "€", null, null, true, false, "يورو" },
+                    { 4, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5649), null, "د", null, null, true, false, "دينار" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Agreements",
                 columns: new[] { "Id", "CreationTime", "CreatorUserId", "CurrencyId", "DeleterUserId", "DeletionTime", "Description", "Duration", "DurationType", "IsActive", "IsDeleted", "Price", "Title" },
-                values: new object[] { 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6563), null, 1, null, null, "افتراضي", 1, 0, true, false, 100m, "افتراضي" });
+                values: new object[] { 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5756), null, 1, null, null, "افتراضي", 1, 0, true, false, 100m, "افتراضي" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -517,8 +553,8 @@ namespace DAL.Migrations
                 columns: new[] { "Id", "Code", "CreationTime", "CreatorUserId", "CurrencyId", "DeleterUserId", "DeletionTime", "IsActive", "IsDeleted", "Name" },
                 values: new object[,]
                 {
-                    { 1, "00972", new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6443), null, 1, null, null, true, false, "فلسطين" },
-                    { 2, "00962", new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6446), null, 4, null, null, true, false, "الاردن" }
+                    { 1, "00972", new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5673), null, 1, null, null, true, false, "فلسطين" },
+                    { 2, "00962", new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5677), null, 4, null, null, true, false, "الاردن" }
                 });
 
             migrationBuilder.InsertData(
@@ -526,11 +562,11 @@ namespace DAL.Migrations
                 columns: new[] { "Id", "CountryId", "CreationTime", "CreatorUserId", "DeleterUserId", "DeletionTime", "IsActive", "IsDeleted", "Name" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6450), null, null, null, true, false, "غزة" },
-                    { 2, 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6452), null, null, null, true, false, "بيت لحم" },
-                    { 3, 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6453), null, null, null, true, false, "بئر السبع" },
-                    { 4, 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6454), null, null, null, true, false, "القدس" },
-                    { 5, 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6455), null, null, null, true, false, "رام الله" }
+                    { 1, 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5680), null, null, null, true, false, "غزة" },
+                    { 2, 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5682), null, null, null, true, false, "بيت لحم" },
+                    { 3, 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5684), null, null, null, true, false, "بئر السبع" },
+                    { 4, 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5685), null, null, null, true, false, "القدس" },
+                    { 5, 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5686), null, null, null, true, false, "رام الله" }
                 });
 
             migrationBuilder.InsertData(
@@ -538,10 +574,10 @@ namespace DAL.Migrations
                 columns: new[] { "Id", "CityId", "CreationTime", "CreatorUserId", "DeleterUserId", "DeletionTime", "IsActive", "IsDeleted", "Name" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6458), null, null, null, true, false, "غزة" },
-                    { 2, 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6461), null, null, null, true, false, "الوسطى" },
-                    { 3, 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6462), null, null, null, true, false, "شمال" },
-                    { 4, 1, new DateTime(2023, 2, 16, 13, 27, 31, 872, DateTimeKind.Local).AddTicks(6462), null, null, null, true, false, "جنوب" }
+                    { 1, 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5695), null, null, null, true, false, "غزة" },
+                    { 2, 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5698), null, null, null, true, false, "الوسطى" },
+                    { 3, 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5699), null, null, null, true, false, "شمال" },
+                    { 4, 1, new DateTime(2023, 2, 21, 19, 47, 57, 474, DateTimeKind.Local).AddTicks(5700), null, null, null, true, false, "جنوب" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -629,6 +665,16 @@ namespace DAL.Migrations
                 column: "ToUserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SchoolEmployees_SchoolProfileId",
+                table: "SchoolEmployees",
+                column: "SchoolProfileId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SchoolEmployees_UserId",
+                table: "SchoolEmployees",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SchoolProfiles_AgreementId",
                 table: "SchoolProfiles",
                 column: "AgreementId");
@@ -675,13 +721,16 @@ namespace DAL.Migrations
                 name: "Notifications");
 
             migrationBuilder.DropTable(
-                name: "SchoolProfiles");
+                name: "SchoolEmployees");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "SchoolProfiles");
 
             migrationBuilder.DropTable(
                 name: "Agreements");

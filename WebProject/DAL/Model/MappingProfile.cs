@@ -15,6 +15,7 @@ using DAL.SeedData.Comon;
 using DAL.Dto.Agreement;
 using DAL.Dto.School;
 using DAL.Model.School;
+using DAL.Dto;
 
 namespace DAL.Model
 {
@@ -25,6 +26,10 @@ namespace DAL.Model
             // Add as many of these lines as you need to map your objects
             CreateMap<ApplicationUser, UserDataDto>();
             CreateMap<UserDataDto, ApplicationUser>();
+
+            CreateMap<ApplicationUser, UserDto>();
+            CreateMap<UserDto, ApplicationUser>();
+
 
             CreateMap<Connection, UserConnectionDto>();
             CreateMap<UserConnectionDto, Connection>();
@@ -58,6 +63,9 @@ namespace DAL.Model
             #region school
             CreateMap<SchoolProfileDto, SchoolProfile>();
             CreateMap<SchoolProfile, SchoolProfileDto>();
+
+            CreateMap<SchoolEmployeeDto, SchoolEmployee>();
+            CreateMap<SchoolEmployee, SchoolEmployeeDto>();
             #endregion  
         }
     }

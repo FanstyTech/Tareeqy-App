@@ -70,14 +70,14 @@ export default function SchoolAccount() {
       value: 'school_employee',
       title: 'موظفي المدرسة',
       icon: <Icon icon={roundAccountBox} width={20} height={20} />,
-      component: <SchoolEmployee />
-    },
-    {
-      value: 'change_password',
-      title: 'كلمة المرور',
-      icon: <Icon icon={roundVpnKey} width={20} height={20} />,
-      component: <AccountChangePassword />
+      component: <SchoolEmployee schoolData={schoolProfileData} />
     }
+    // {
+    //   value: 'change_password',
+    //   title: 'كلمة المرور',
+    //   icon: <Icon icon={roundVpnKey} width={20} height={20} />,
+    //   component: <AccountChangePassword />
+    // }
   ];
 
   const handleChangeTab = (event, newValue) => {

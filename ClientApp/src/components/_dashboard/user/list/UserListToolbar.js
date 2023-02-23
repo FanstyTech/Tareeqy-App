@@ -47,8 +47,8 @@ UserListToolbar.propTypes = {
   onFilterName: PropTypes.func,
   placeholder: PropTypes.string,
   handleDelete: PropTypes.func,
-  hideFilterList: PropTypes.bool,
-  hasAddBtn: PropTypes.bool,
+  hideFilterList: PropTypes.number,
+  hasAddBtn: PropTypes.number,
   handleClickAddEvent: PropTypes.func
 };
 
@@ -75,13 +75,13 @@ export default function UserListToolbar({
           </IconButton>
         </Tooltip>
       );
-    } else if (hasAddBtn) {
+    } else if (hasAddBtn == 1) {
       content = (
         <Button variant="contained" startIcon={<Icon icon={plusFill} />} onClick={() => handleClickAddEvent()}>
           إضافة
         </Button>
       );
-    } else if (hideFilterList) {
+    } else if (hideFilterList == 1) {
       content = <></>;
     } else {
       content = (

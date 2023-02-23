@@ -13,9 +13,10 @@ namespace MangeData.Interface
     {
         Task<UserDataDto> Login(LoginDto obj);
         Task<UserDataDto> CreateAccount(CreateAccountDto newuser);
+        Task UpdateAccount(CreateAccountDto newuser);
         Task<List<UserConnectionDto>> GetUserConnection(string toUserId, string fromUserName);
         void SaveUserConnection(UserConnectionDto dto);
-        ApplicationUser  GetUserFromName (string name);
-    
+        ApplicationUser GetUserFromName(string name);
+
     }
 }

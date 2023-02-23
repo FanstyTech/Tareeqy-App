@@ -31,12 +31,10 @@ namespace DAL.Context
                             .HasOne(c => c.Country)
                             .WithMany()
                             .OnDelete(DeleteBehavior.NoAction);
-
             builder.Entity<SchoolProfile>()
                      .HasOne(c => c.City)
                      .WithMany()
                      .OnDelete(DeleteBehavior.NoAction);
-
             builder.Entity<SchoolProfile>()
                      .HasOne(c => c.Governorate)
                      .WithMany()
@@ -45,6 +43,37 @@ namespace DAL.Context
                      .HasOne(c => c.Currency)
                      .WithMany()
                      .OnDelete(DeleteBehavior.NoAction);
+
+            builder.Entity<Agreement>(b =>
+            {
+                b.HasQueryFilter(x => !x.IsDeleted);
+            });
+            builder.Entity<Currency>(b =>
+            {
+                b.HasQueryFilter(x => !x.IsDeleted);
+            });
+            builder.Entity<Country>(b =>
+            {
+                b.HasQueryFilter(x => !x.IsDeleted);
+            });
+            builder.Entity<City>(b =>
+            {
+                b.HasQueryFilter(x => !x.IsDeleted);
+            });
+            builder.Entity<Governorate>(b =>
+            {
+                b.HasQueryFilter(x => !x.IsDeleted);
+            });
+            builder.Entity<SchoolEmployee>(b =>
+            {
+                b.HasQueryFilter(x => !x.IsDeleted);
+            });
+            builder.Entity<SchoolProfile>(b =>
+            {
+                b.HasQueryFilter(x => !x.IsDeleted);
+            });
+
+
             new DAL.SeedData.SeedData(builder);
 
         }
@@ -67,6 +96,7 @@ namespace DAL.Context
 
         #region School
         public DbSet<SchoolProfile> SchoolProfiles { get; set; }
+        public DbSet<SchoolEmployee> SchoolEmployees { get; set; }
         #endregion
 
 

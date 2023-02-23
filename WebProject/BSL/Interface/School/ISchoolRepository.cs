@@ -1,4 +1,5 @@
 ﻿using DAL.Dto.School;
+using DAL.Model.School;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,12 @@ namespace MangeData.Interface.School
         Task<int> SaveSchoolProfile(SchoolProfileDto obj);
         Task<List<SchoolProfileDto>> GetAllSchoolProfile();
         Task<SchoolProfileDto> GetSchoolProfileById(int Id);
-        Task DeleteSchoolProfileById(List<int> Ids);
+        Task DeleteSchoolProfileByIds(List<int> Ids);
+
+        Task<int> SaveSchoolEmployee(SchoolEmployeeDto obj);
+        Task<List<SchoolEmployeeDto>> GetAllSchoolEmployee(int? SchoolProfileId);
+        Task<SchoolEmployee> GetSchoolEmployeeById(int Id);
+        Task DeleteSchoolEmployeeeByIds(List<int> Ids);
 
     }
 }

@@ -54,7 +54,6 @@ const getInitialValues = (event) => {
     }
 
     const _newEevent = merge({}, _event, event);
-    console.log('_newEevent', _newEevent);
     return _newEevent;
   }
   return _event;
@@ -107,10 +106,10 @@ export default function AccountGeneral({ schoolData }) {
         IsActive: values.IsActive,
         AgreementStartDate: '',
         AgreementEndDate: '',
-        Bio: values.Bio?.length > 0 ? values.Bio : ' ',
-        Id: schoolData?.Id
+        Bio: values.Bio?.length > 0 ? values.Bio : ' '
       };
-      if (schoolData) {
+      if (schoolData?.Id) {
+        newEvent.Id = schoolData?.Id;
         try {
           newEvent.AgreementStartDate = values.AgreementStartDate?.toLocaleDateString('en-GB');
         } catch {
@@ -132,8 +131,7 @@ export default function AccountGeneral({ schoolData }) {
       }
       try {
         dispatch(saveSchoolProfile(newEvent, uploadFile));
-
-        // enqueueSnackbar('Update success', { variant: 'success' });
+        enqueueSnackbar('Update success', { variant: 'success' });
       } catch (error) {
         if (isMountedRef.current) {
           setErrors({ afterSubmit: error.code });

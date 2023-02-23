@@ -51,7 +51,7 @@ namespace DAL.Model.School
         public int? CurrencyId { get; set; }
         [ForeignKey(nameof(CurrencyId))]
         public Currency Currency { get; set; }
-
+        public ICollection<SchoolEmployee> SchoolEmployees { get; set; }
         public string GenerateSchoolIdentificationKey()
         {
             if (string.IsNullOrEmpty(NameF) || NameF.Length < 2)

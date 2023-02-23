@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 // material
 import { styled } from '@material-ui/core/styles';
 
-// ----------------------------------------------------------------------
+// --------------------
 
 const RootStyle = styled('span')(({ theme, styleProps }) => {
   const { size, status } = styleProps;
