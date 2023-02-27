@@ -66,6 +66,9 @@ namespace DAL.Model
 
             CreateMap<SchoolEmployeeDto, SchoolEmployee>();
             CreateMap<SchoolEmployee, SchoolEmployeeDto>();
+
+            CreateMap<SchoolWorkingTime, SchoolWorkingTimeDto>();
+            CreateMap<SchoolWorkingTimeDto, SchoolWorkingTime>();
             #endregion  
         }
     }

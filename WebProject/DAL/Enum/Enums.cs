@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,13 +34,7 @@ namespace DAL.Enum
             Day,
             Hour
         }
-        public enum licenseTypeEnum
-        {
-            Oral_staff,
-            oral_commercial,
-            editorial_staff,
-            editorial_commercial
-        }
+
         public enum DayEnum
         {
             Saturday,

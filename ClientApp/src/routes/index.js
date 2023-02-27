@@ -116,6 +116,7 @@ export default function Router() {
             { path: '/', element: <Navigate to="/dashboard/school-setting/list" replace /> },
             { path: 'list', element: <SchoolList /> },
             { path: 'new', element: <SchoolCreate /> },
+            { path: 'newStudent', element: <Countries /> },
             { path: '/:name/edit', element: <SchoolCreate /> }
           ]
         },

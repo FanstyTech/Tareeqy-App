@@ -1,5 +1,6 @@
 ﻿using DAL.SeedData.Agreement;
 using DAL.SeedData.Comon;
+using DAL.SeedData.School;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,10 @@ namespace DAL.SeedData
             #region user seed data
             new UserSeedData(builder);
             #endregion
+            #region school seed data
+            new LicenseTypeSeedData(builder);
+            #endregion
+
         }
     }
 }

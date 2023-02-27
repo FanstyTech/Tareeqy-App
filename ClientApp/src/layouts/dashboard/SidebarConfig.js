@@ -49,28 +49,15 @@ const sidebarConfig = [
   {
     subheader: 'إدارة',
     items: [
-      // MANAGEMENT : USER
-      {
-        title: 'المستخدمين',
-        path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
-        children: [
-          { title: 'profile', path: PATH_DASHBOARD.user.profile },
-          { title: 'cards', path: PATH_DASHBOARD.user.cards },
-          { title: 'list', path: PATH_DASHBOARD.user.list },
-          { title: 'create', path: PATH_DASHBOARD.user.newUser },
-          { title: 'edit', path: PATH_DASHBOARD.user.editById },
-          { title: 'account', path: PATH_DASHBOARD.user.account }
-        ]
-      },
       // MANAGEMENT : School setting
       {
         title: 'إدارة المدارس',
         path: PATH_DASHBOARD.schoolSetting.root,
         icon: ICONS.school,
         children: [
+          { title: 'إضافة طالب', path: PATH_DASHBOARD.schoolSetting.newStudent },
           { title: 'المدارس', path: PATH_DASHBOARD.schoolSetting.list },
-          { title: 'إضافة', path: PATH_DASHBOARD.schoolSetting.newSchool }
+          { title: 'إضافة مدرسة', path: PATH_DASHBOARD.schoolSetting.newSchool }
         ]
       },
       // MANAGEMENT : General settings

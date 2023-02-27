@@ -2,6 +2,7 @@ import { Icon } from '@iconify/react';
 import { useState, useEffect } from 'react';
 import shareFill from '@iconify/icons-eva/share-fill';
 import roundVpnKey from '@iconify/icons-ic/round-vpn-key';
+import clock from '@iconify/icons-ic/round-lock-clock';
 import roundAccountBox from '@iconify/icons-ic/round-account-box';
 import schoolIcon from '@iconify/icons-ic/school';
 import locationIcon from '@iconify/icons-ic/my-location';
@@ -27,6 +28,7 @@ import {
   AccountLocation,
   AccountSocialLinks,
   AccountChangePassword,
+  WorkingTime,
   SchoolEmployee
 } from '../../../components/_dashboard/schoolSettings/school/account';
 
@@ -71,6 +73,12 @@ export default function SchoolAccount() {
       title: 'موظفي المدرسة',
       icon: <Icon icon={roundAccountBox} width={20} height={20} />,
       component: <SchoolEmployee schoolData={schoolProfileData} />
+    },
+    {
+      value: 'work_time',
+      title: 'اوقات العمل',
+      icon: <Icon icon={clock} width={20} height={20} />,
+      component: <WorkingTime schoolData={schoolProfileData} />
     }
     // {
     //   value: 'change_password',

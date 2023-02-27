@@ -268,5 +268,69 @@ namespace MangeData.SQLRepository.School
             _context.SchoolEmployees.UpdateRange(schoolEmployees);
             _context.SaveChanges();
         }
+
+        public async Task<List<SchoolWorkingTimeDto>> GetSchoolWorkingTime(int SchoolProfileId)
+        {
+
+            var schoolWorkingTimes = await _context.SchoolWorkingTimes.Where(c => c.SchoolProfileId == SchoolProfileId).ToListAsync();
+
+            List<DayEnum> days = Enum.GetValues(typeof(DayEnum))
+                          .Cast<DayEnum>()
+                          .ToList();
+
+            DateTime DefualtStartTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 0, 0);
+            DateTime DefualtEndTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 17, 0, 0);
+            var dbLst =
+                    (from day in days
+                     join workingTime in schoolWorkingTimes
+                     on day equals workingTime.Day into workJoinResult
+                     from workItem in workJoinResult.DefaultIfEmpty()
+                     select new SchoolWorkingTimeDto
+                     {
+                         Day = day,
+                         DayName = day.ToString(),
+                         StartTime = workItem?.StartTime == null ? DefualtStartTime : workItem.StartTime,
+                         EndTime = workItem?.EndTime == null ? DefualtEndTime : workItem.EndTime,
+                         IsSelected = workItem?.Id != null ? true : false,
+                         Id = null,
+                         SchoolProfileId = SchoolProfileId
+                     }).ToList();
+            return dbLst;
+        }
+
+        public async Task<List<SchoolWorkingTimeDto>> SaveSchoolWorkingTime(List<SchoolWorkingTimeDto> lst)
+        {
+
+            int SchoolProfileId = lst.FirstOrDefault().SchoolProfileId;
+            // Get All Scool Working Time 
+            var schoolWorkingTimes = await _context.SchoolWorkingTimes.Where(c => c.SchoolProfileId == SchoolProfileId).ToListAsync();
+
+            var workingLst = lst.Where(c => c.IsSelected == true);
+
+            if (schoolWorkingTimes.Any())
+            {
+                _context.RemoveRange(schoolWorkingTimes);
+                _context.SaveChanges();
+            }
+
+            if (workingLst.Any())
+            {
+                var working = _mapper.Map<List<SchoolWorkingTime>>(workingLst);
+                await _context.AddRangeAsync(working);
+                await _context.SaveChangesAsync();
+            }
+            return await GetSchoolWorkingTime(SchoolProfileId);
+        }
+
+        // Student
+        public async Task<List<SelectDto>> GetLicenseTypeForSelect()
+        {
+            return await _context.LicenseTypes.Select(c => new SelectDto
+            {
+                Id = c.Id,
+                Label = c.Name,
+                Value = c.Cost.ToString(),
+            }).ToListAsync();
+        }
     }
 }

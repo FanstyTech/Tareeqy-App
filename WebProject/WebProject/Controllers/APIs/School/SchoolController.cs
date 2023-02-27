@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System;
 using DAL.Dto.School;
 using System.Collections.Generic;
+using DAL.Dto.Common;
 
 namespace WebProject.Controllers.APIs.School
 {
@@ -47,7 +48,6 @@ namespace WebProject.Controllers.APIs.School
                 };
             }
         }
-
 
         [HttpGet("GetAllSchoolProfile")]
         public async Task<ResponseActions<List<SchoolProfileDto>>> GetAllSchoolProfile()
@@ -129,9 +129,6 @@ namespace WebProject.Controllers.APIs.School
                 };
             }
         }
-
-
-
 
         [HttpPost("SaveSchoolEmployee")]
         public async Task<ResponseActions<int?>> SaveSchoolEmployee([FromForm] SchoolEmployeeDto obj)
@@ -215,6 +212,89 @@ namespace WebProject.Controllers.APIs.School
             }
         }
 
+        [HttpGet("GetSchoolWorkingTime")]
+        public async Task<ResponseActions<List<SchoolWorkingTimeDto>>> GetSchoolWorkingTime(int SchoolProfileId)
+        {
+            try
+            {
+                var data = await _schoolRepository.GetSchoolWorkingTime(SchoolProfileId);
+                return new ResponseActions<List<SchoolWorkingTimeDto>>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<List<SchoolWorkingTimeDto>>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = null
+                };
+            }
+        }
+
+        [HttpPost("SaveSchoolWorkingTime")]
+        public async Task<ResponseActions<List<SchoolWorkingTimeDto>>> SaveSchoolWorkingTime([FromBody] List<SchoolWorkingTimeDto> lst)
+        {
+            try
+            {
+                var data = await _schoolRepository.SaveSchoolWorkingTime(lst);
+                return new ResponseActions<List<SchoolWorkingTimeDto>>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<List<SchoolWorkingTimeDto>>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = null
+                };
+            }
+        }
+
+
+
+
+        [HttpGet("GetLicenseTypeForSelect")]
+        public async Task<ResponseActions<List<SelectDto>>> GetLicenseTypeForSelect()
+        {
+            try
+            {
+                var data = await _schoolRepository.GetLicenseTypeForSelect();
+                return new ResponseActions<List<SelectDto>>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<List<SelectDto>>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = null
+                };
+            }
+        }
 
     }
 }

@@ -72,8 +72,19 @@ namespace DAL.Context
             {
                 b.HasQueryFilter(x => !x.IsDeleted);
             });
-
-
+            builder.Entity<SchoolWorkingTime>(b =>
+            {
+                b.HasQueryFilter(x => !x.IsDeleted);
+            });
+            builder.Entity<SchoolStudent>(b =>
+            {
+                b.HasQueryFilter(x => !x.IsDeleted);
+            });
+            builder.Entity<LicenseType>(b =>
+            {
+                b.HasQueryFilter(x => !x.IsDeleted);
+            });
+            // initialize seed data
             new DAL.SeedData.SeedData(builder);
 
         }
@@ -97,6 +108,9 @@ namespace DAL.Context
         #region School
         public DbSet<SchoolProfile> SchoolProfiles { get; set; }
         public DbSet<SchoolEmployee> SchoolEmployees { get; set; }
+        public DbSet<SchoolWorkingTime> SchoolWorkingTimes { get; set; }
+        public DbSet<LicenseType> LicenseTypes { get; set; }
+        public DbSet<SchoolStudent> SchoolStudents { get; set; }
         #endregion
 
 

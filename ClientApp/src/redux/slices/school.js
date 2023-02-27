@@ -10,6 +10,7 @@ const initialState = {
   error: false,
   schoolList: [],
   schoolEmployeeList: [],
+  schoolWorkingTimeList: [],
   schoolProfileData: {}
 };
 
@@ -39,6 +40,11 @@ const slice = createSlice({
     getAllSchoolEmployeeSuccess(state, action) {
       state.isLoading = false;
       state.schoolEmployeeList = action.payload;
+    },
+    // SCHOOL WORKING TIME
+    getSchoolWorkingTimeSuccess(state, action) {
+      state.isLoading = false;
+      state.schoolWorkingTimeList = action.payload;
     },
 
     // GET SCHOOL PROFILE
@@ -179,6 +185,30 @@ export function deleteSchoolEmployeeeByIds(Ids, SchoolProfileId) {
       } else {
         dispatch(getAllSchoolEmployee(SchoolProfileId));
       }
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+// ----------------------------------School Working Time------------------------------------
+
+export function getSchoolWorkingTime(Id) {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.get(`School/GetSchoolWorkingTime?SchoolProfileId=${Id}`);
+      dispatch(slice.actions.getSchoolWorkingTimeSuccess(response.data.data));
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+export function saveSchoolWorkingTime(data) {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.post(`School/SaveSchoolWorkingTime`, data);
+      dispatch(slice.actions.getSchoolWorkingTimeSuccess(response.data.data));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }
