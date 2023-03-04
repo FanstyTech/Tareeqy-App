@@ -55,7 +55,7 @@ const sidebarConfig = [
         path: PATH_DASHBOARD.schoolSetting.root,
         icon: ICONS.school,
         children: [
-          { title: 'إضافة طالب', path: PATH_DASHBOARD.schoolSetting.newStudent },
+          { title: 'إضافة طالب', path: PATH_DASHBOARD.schoolSetting.createStudent },
           { title: 'المدارس', path: PATH_DASHBOARD.schoolSetting.list },
           { title: 'إضافة مدرسة', path: PATH_DASHBOARD.schoolSetting.newSchool }
         ]

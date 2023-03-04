@@ -116,7 +116,7 @@ export default function Router() {
             { path: '/', element: <Navigate to="/dashboard/school-setting/list" replace /> },
             { path: 'list', element: <SchoolList /> },
             { path: 'new', element: <SchoolCreate /> },
-            { path: 'newStudent', element: <Countries /> },
+            { path: 'createStudent', element: <StudentAccount /> },
             { path: '/:name/edit', element: <SchoolCreate /> }
           ]
         },
@@ -276,6 +276,7 @@ const Kanban = Loadable(lazy(() => import('../pages/dashboard/Kanban')));
 // School setting
 const SchoolList = Loadable(lazy(() => import('../pages/dashboard/schoolSettings/SchoolList')));
 const SchoolCreate = Loadable(lazy(() => import('../pages/dashboard/schoolSettings/SchoolAccount')));
+const StudentAccount = Loadable(lazy(() => import('../pages/dashboard/schoolSettings/StudentAccount')));
 // GeneralSetting;
 const Countries = Loadable(lazy(() => import('../pages/dashboard/generalSettings/Countries')));
 

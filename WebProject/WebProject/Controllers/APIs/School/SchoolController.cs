@@ -157,7 +157,6 @@ namespace WebProject.Controllers.APIs.School
             }
         }
 
-
         [HttpGet("GetAllSchoolEmployee")]
         public async Task<ResponseActions<List<SchoolEmployeeDto>>> GetAllSchoolEmployee(int? SchoolProfileId)
         {
@@ -268,7 +267,7 @@ namespace WebProject.Controllers.APIs.School
 
 
 
-
+        // Student
         [HttpGet("GetLicenseTypeForSelect")]
         public async Task<ResponseActions<List<SelectDto>>> GetLicenseTypeForSelect()
         {
@@ -292,6 +291,88 @@ namespace WebProject.Controllers.APIs.School
                     status = false,
                     message = e.Message,
                     data = null
+                };
+            }
+        }
+
+
+        [HttpPost("SaveSchooStudent")]
+        public async Task<ResponseActions<int?>> SaveSchooStudent([FromForm] SchoolStudentDto obj)
+        {
+            try
+            {
+                var data = await _schoolRepository.SaveSchooStudent(obj);
+                return new ResponseActions<int?>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<int?>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = null
+                };
+            }
+        }
+
+        [HttpGet("GetAllSchoolStudent")]
+        public async Task<ResponseActions<List<SchoolStudentDto>>> GetAllSchoolStudent(int? SchoolProfileId)
+        {
+            try
+            {
+                var data = await _schoolRepository.GetAllSchoolStudent(SchoolProfileId);
+                return new ResponseActions<List<SchoolStudentDto>>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<List<SchoolStudentDto>>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = null
+                };
+            }
+        }
+
+        [HttpPost("DeleteSchoolStudentByIds")]
+        public async Task<ResponseActions<object>> DeleteSchoolStudentByIds(List<int> Ids)
+        {
+            try
+            {
+                await _schoolRepository.DeleteSchoolStudentByIds(Ids);
+                return new ResponseActions<object>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = { }
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<object>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = { }
                 };
             }
         }

@@ -14,9 +14,9 @@ namespace DAL.Model.School
     {
         [DataType("decimal(16 ,3)")]
         public decimal Cost { get; set; } = decimal.Zero;
-        public int licenseTypeId { get; set; }
-        [ForeignKey(nameof(licenseTypeId))]
-        public LicenseType licenseType { get; set; }
+        public int LicenseTypeId { get; set; }
+        [ForeignKey(nameof(LicenseTypeId))]
+        public LicenseType LicenseType { get; set; }
         public string UserId { get; set; }
         [ForeignKey(nameof(UserId))]
         public ApplicationUser User { get; set; }

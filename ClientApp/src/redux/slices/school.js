@@ -11,7 +11,9 @@ const initialState = {
   schoolList: [],
   schoolEmployeeList: [],
   schoolWorkingTimeList: [],
-  schoolProfileData: {}
+  schoolProfileData: {},
+  licenseTypeForSelect: [],
+  schoolStudentList: []
 };
 
 const slice = createSlice({
@@ -47,6 +49,15 @@ const slice = createSlice({
       state.schoolWorkingTimeList = action.payload;
     },
 
+    // SCHOOL STUDENT
+    getLicenseTypeForSelectSuccess(state, action) {
+      state.isLoading = false;
+      state.licenseTypeForSelect = action.payload;
+    },
+    getAllSchoolStudentSuccess(state, action) {
+      state.isLoading = false;
+      state.schoolStudentList = action.payload;
+    },
     // GET SCHOOL PROFILE
     getSchoolProfileByIdSuccess(state, action) {
       state.isLoading = false;
@@ -173,7 +184,6 @@ export function saveSchoolEmployee(newEvent, file) {
     }
   };
 }
-
 export function deleteSchoolEmployeeeByIds(Ids, SchoolProfileId) {
   return async (dispatch) => {
     dispatch(slice.actions.startLoading());
@@ -209,6 +219,73 @@ export function saveSchoolWorkingTime(data) {
     try {
       const response = await axios.post(`School/SaveSchoolWorkingTime`, data);
       dispatch(slice.actions.getSchoolWorkingTimeSuccess(response.data.data));
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+// ----------------------------------School Student------------------------------------
+export function getLicenseTypeForSelect() {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.get('School/GetLicenseTypeForSelect');
+      dispatch(slice.actions.getLicenseTypeForSelectSuccess(response.data.data));
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+
+export function getAllSchoolStudent(Id) {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.get(`School/GetAllSchoolStudent?SchoolProfileId=${Id}`);
+      dispatch(slice.actions.getAllSchoolStudentSuccess(response.data.data));
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+export function saveSchooStudent(newEvent, file) {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const formdata = new FormData();
+      const objProps = Object.getOwnPropertyNames(newEvent);
+
+      objProps.forEach((item) => {
+        formdata.append(`${item}`, newEvent[item]);
+      });
+
+      if (file !== undefined) formdata.append('File', file);
+
+      const response = await axios.post('School/SaveSchooStudent', formdata, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      const { code, data, message, status } = response.data;
+      if (!status) {
+        throw new Error(message);
+      } else {
+        console.log('message', message);
+      }
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+export function deleteSchoolStudentByIds(Ids, SchoolProfileId) {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.post('School/DeleteSchoolStudentByIds', Ids);
+      const { code, data, message, status } = response.data;
+      if (!status) {
+        throw new Error(message);
+      } else {
+        console.log('message', message);
+      }
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }

@@ -332,5 +332,140 @@ namespace MangeData.SQLRepository.School
                 Value = c.Cost.ToString(),
             }).ToListAsync();
         }
+        public async Task<int> SaveSchooStudent(SchoolStudentDto obj)
+        {
+            int result = 0;
+            if (obj.Id.HasValue)
+                result = await UpdateSchoolStudent(obj);
+            else
+                result = await CreateSchoolStudent(obj);
+
+            return result;
+        }
+        private async Task<int> CreateSchoolStudent(SchoolStudentDto obj)
+        {
+            // Begin context transaction
+            using var trans = _context.Database.BeginTransaction();
+
+            try
+            {
+                CreateAccountDto newuser = new CreateAccountDto()
+                {
+                    Email = obj.Email,
+                    NickName = obj.NickName,
+                    PhoneNumber = obj.PhoneNumber,
+                    DateOfBirth = obj.DateOfBirth,
+                    Gender = obj.Gender,
+                    IsActive = obj.IsActive,
+                    UserType = DAL.Model.ApplicationUserType.Client,
+                    IdNum = obj.IdNum,
+                    Password = obj.Email
+                };
+
+                var UserData = await _userRepository.CreateAccount(newuser);
+
+                SchoolStudent schoolStudent = new SchoolStudent()
+                {
+                    CreationTime = DateTime.Now,
+                    IsActive = obj.IsActive,
+                    Cost = obj.Cost,
+                    SchoolProfileId = obj.SchoolProfileId,
+                    UserId = UserData.Id,
+                    LicenseTypeId = obj.LicenseTypeId.Value
+                };
+
+                await _context.SchoolStudents.AddAsync(schoolStudent);
+                await _context.SaveChangesAsync();
+                obj.Id = schoolStudent.Id;
+                if (obj.File != null)
+                    await _attachmentRepository.SaveAttachment(new AttachmentDto { Files = new List<IFormFile> { obj.File }, AttatchmentTypeId = AttatchmentTypeEnum.UserPhoto, PrimeryTableId = obj.Id });
+                trans.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                trans.Rollback();
+                throw new Exception(ex.Message);
+            }
+            return obj.Id.Value;
+        }
+        private async Task<int> UpdateSchoolStudent(SchoolStudentDto obj)
+        {
+            // Begin context transaction
+            using var trans = _context.Database.BeginTransaction();
+
+            try
+            {
+
+                CreateAccountDto newuser = new CreateAccountDto()
+                {
+                    Email = obj.Email,
+                    NickName = obj.NickName,
+                    PhoneNumber = obj.PhoneNumber,
+                    DateOfBirth = obj.DateOfBirth,
+                    Gender = obj.Gender,
+                    IsActive = obj.IsActive,
+                    IdNum = obj.IdNum,
+                    UserId = obj.UserId,
+                };
+                await _userRepository.UpdateAccount(newuser);
+
+                var oldStudent = await _context.SchoolStudents.AsNoTracking().FirstOrDefaultAsync(c => c.Id == obj.Id); //await GetSchoolEmployeeById(obj.Id.Value);
+                oldStudent.IsActive = obj.IsActive;
+                oldStudent.Cost = obj.Cost;
+                oldStudent.LicenseTypeId = obj.LicenseTypeId.Value;
+                _context.SchoolStudents.Update(oldStudent);
+                await _context.SaveChangesAsync();
+
+                if (obj.File != null)
+                    await _attachmentRepository.SaveAttachment(new AttachmentDto { Files = new List<IFormFile> { obj.File }, AttatchmentTypeId = AttatchmentTypeEnum.UserPhoto, PrimeryTableId = obj.Id });
+                trans.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                trans.Rollback();
+                throw new Exception(ex.Message);
+            }
+            return obj.Id.Value;
+        }
+        public async Task<List<SchoolStudentDto>> GetAllSchoolStudent(int? SchoolProfileId)
+        {
+            return await _context.SchoolStudents
+                              .Include(c => c.User)
+                              .WhereIf(SchoolProfileId.HasValue, c => c.SchoolProfileId == SchoolProfileId)
+                              .Select(c => new SchoolStudentDto
+                              {
+                                  DateOfBirth = c.User.DateOfBirth,
+                                  Email = c.User.Email,
+                                  Gender = c.User.Gender,
+                                  IdNum = c.User.IdNum,
+                                  NickName = c.User.NickName,
+                                  PhoneNumber = c.User.PhoneNumber,
+                                  Cost = c.Cost,
+                                  IsActive = c.User.IsActive,
+                                  SchoolProfileId = c.SchoolProfileId,
+                                  LicenseTypeId = c.LicenseTypeId,
+                                  Id = c.Id,
+                                  UserId = c.UserId,
+                                  DateOfBirthString = c.User.DateOfBirth.Value.ToShortDateString(),
+                                  RegisterDateString = c.User.RegisterDate.ToShortDateString(),
+                              }).ToListAsync();
+        }
+        public async Task<SchoolStudent> GetSchoolStudentById(int Id)
+        {
+            return await _context.SchoolStudents.Include(c => c.User).AsNoTracking().FirstOrDefaultAsync(c => c.Id == Id);
+        }
+        public async Task DeleteSchoolStudentByIds(List<int> Ids)
+        {
+            var schoolStudents = await _context.SchoolStudents.Where(c => Ids.Contains(c.Id)).ToListAsync();
+            schoolStudents.ForEach(c =>
+            {
+                c.IsDeleted = true;
+                c.DeletionTime = DateTime.Now;
+            });
+            _context.SchoolStudents.UpdateRange(schoolStudents);
+            _context.SaveChanges();
+        }
     }
 }
