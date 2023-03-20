@@ -323,6 +323,33 @@ namespace WebProject.Controllers.APIs.School
             }
         }
 
+
+        [HttpGet("GetSchoolStudentById")]
+        public async Task<ResponseActions<SchoolStudentDto>> GetSchoolStudentById(int Id)
+        {
+            try
+            {
+                var data = await _schoolRepository.GetSchoolStudentById(Id);
+                return new ResponseActions<SchoolStudentDto>()
+                {
+                    code = HttpStatusCode.OK,
+                    message = "Sucsses",
+                    status = true,
+                    data = data
+                };
+            }
+            catch (Exception e)
+            {
+
+                return new ResponseActions<SchoolStudentDto>
+                {
+                    code = HttpStatusCode.BadRequest,
+                    status = false,
+                    message = e.Message,
+                    data = null
+                };
+            }
+        }
         [HttpGet("GetAllSchoolStudent")]
         public async Task<ResponseActions<List<SchoolStudentDto>>> GetAllSchoolStudent(int? SchoolProfileId)
         {

@@ -1,11 +1,7 @@
 import { Icon } from '@iconify/react';
 import { useState, useEffect } from 'react';
-import shareFill from '@iconify/icons-eva/share-fill';
-import roundVpnKey from '@iconify/icons-ic/round-vpn-key';
-import clock from '@iconify/icons-ic/round-lock-clock';
 import roundAccountBox from '@iconify/icons-ic/round-account-box';
 import schoolIcon from '@iconify/icons-ic/school';
-import locationIcon from '@iconify/icons-ic/my-location';
 
 import { useParams, useLocation } from 'react-router-dom';
 
@@ -13,7 +9,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import { Container, Tab, Box, Tabs, Stack } from '@material-ui/core';
 // redux
 import { useDispatch, useSelector } from '../../../redux/store';
-import { getSchoolProfileById } from '../../../redux/slices/school';
+import { getSchoolStudentById } from '../../../redux/slices/school';
 
 // routes
 import { PATH_DASHBOARD } from '../../../routes/paths';
@@ -23,22 +19,22 @@ import useSettings from '../../../hooks/useSettings';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 import LoadingScreen from '../../../components/LoadingScreen';
-import { AccountGeneral, SchoolEmployee } from '../../../components/_dashboard/schoolSettings/school/studentAccount';
+import { AccountGeneral } from '../../../components/_dashboard/schoolSettings/school/studentAccount';
 
 // ----------------------------------------------------------------------
 
-export default function SchoolAccount() {
+export default function StudentAccount() {
   const { themeStretch } = useSettings();
   const [currentTab, setCurrentTab] = useState('general');
   const { pathname } = useLocation();
 
-  const isEdit = pathname.includes('edit');
+  const isEdit = pathname.includes('editStudent');
   const { name } = useParams();
-  const { schoolProfileData, isLoading } = useSelector((state) => state.school);
+  const { schoolStudentData, isLoading } = useSelector((state) => state.school);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isEdit) dispatch(getSchoolProfileById(name));
+    if (isEdit) dispatch(getSchoolStudentById(name));
   }, [dispatch]);
 
   const ACCOUNT_TABS = [
@@ -46,14 +42,7 @@ export default function SchoolAccount() {
       value: 'general',
       title: 'عام',
       icon: <Icon icon={schoolIcon} width={20} height={20} />,
-      component: <AccountGeneral schoolData={schoolProfileData} />
-    },
-
-    {
-      value: 'school_employee',
-      title: 'موظفي المدرسة',
-      icon: <Icon icon={roundAccountBox} width={20} height={20} />,
-      component: <SchoolEmployee schoolData={schoolProfileData} />
+      component: <AccountGeneral studentData={schoolStudentData} />
     }
   ];
 
@@ -62,7 +51,7 @@ export default function SchoolAccount() {
   };
 
   return (
-    <Page title="المدارس: إدارة الملف التعريفي للطالب | طريقي">
+    <Page title="إدارة الملف التعريفي للطالب | طريقي">
       {isLoading && (
         <LoadingScreen
           sx={{
@@ -81,7 +70,7 @@ export default function SchoolAccount() {
           heading="حساب التعريفي للطالب"
           links={[
             { name: 'الرئيسية', href: PATH_DASHBOARD.root },
-            { name: 'إدارة الطلاب', href: PATH_DASHBOARD.schoolSetting.list },
+            { name: 'إدارة المدارس', href: PATH_DASHBOARD.schoolSetting.list },
             { name: 'حساب التعريفي للطالب' }
           ]}
         />
@@ -94,7 +83,7 @@ export default function SchoolAccount() {
             allowScrollButtonsMobile
             onChange={handleChangeTab}
           >
-            {schoolProfileData?.Id == null ? (
+            {schoolStudentData?.Id == null ? (
               <Tab
                 disableRipple
                 key={ACCOUNT_TABS[0].value}

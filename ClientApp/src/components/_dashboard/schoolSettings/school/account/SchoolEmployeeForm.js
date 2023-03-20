@@ -31,6 +31,7 @@ import { saveSchoolEmployee } from '../../../../../redux/slices/school';
 import { UploadAvatar } from '../../../../upload';
 // utils
 import { fData } from '../../../../../utils/formatNumber';
+import { genderSelectList, employeeTypeSelectList } from '../../../../../utils/generalUtils';
 //
 const getInitialValues = (event) => {
   const _event = {
@@ -69,15 +70,7 @@ export default function SchoolEmployeeForm({ event, onCancel, handleDelete, scho
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const [uploadFile, SetUploadFile] = useState();
-  const genderSelectList = [
-    { Id: 1, Label: 'ذكر' },
-    { Id: 2, Label: 'أنثى' }
-  ];
-  const employeeTypeSelectList = [
-    { Id: 1, Label: 'مدير' },
-    { Id: 2, Label: 'مدرب' },
-    { Id: 3, Label: 'موظف مالي' }
-  ];
+
   const EventSchema = Yup.object().shape({
     NickName: Yup.string().max(255).required('حقل الاسم اجباري'),
     Email: Yup.string().max(255).required('حقل البريد الالكتروني اجباري'),

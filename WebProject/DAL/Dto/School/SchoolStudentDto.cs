@@ -16,10 +16,12 @@ namespace DAL.Dto.School
     {
         public int? Id { get; set; }
         public int? LicenseTypeId { get; set; }
+        public string? LicenseName { get; set; }
         public decimal Cost { get; set; } = Decimal.Zero;
         public string? UserId { get; set; }
         public string Email { get; set; }
         public string NickName { get; set; }
+        public string? SchoolCurrency { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string? IdNum { get; set; }
         public string? PhoneNumber { get; set; }

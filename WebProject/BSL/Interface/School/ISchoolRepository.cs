@@ -27,7 +27,7 @@ namespace MangeData.Interface.School
         Task<List<SelectDto>> GetLicenseTypeForSelect();
         Task<int> SaveSchooStudent(SchoolStudentDto obj);
         Task<List<SchoolStudentDto>> GetAllSchoolStudent(int? SchoolProfileId);
-        Task<SchoolStudent> GetSchoolStudentById(int Id);
+        Task<SchoolStudentDto> GetSchoolStudentById(int Id);
         Task DeleteSchoolStudentByIds(List<int> Ids);
     }
 }

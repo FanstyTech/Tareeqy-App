@@ -433,6 +433,8 @@ namespace MangeData.SQLRepository.School
         {
             return await _context.SchoolStudents
                               .Include(c => c.User)
+                              .Include(c => c.LicenseType)
+                              .Include(c => c.SchoolProfile).ThenInclude(c => c.Currency)
                               .WhereIf(SchoolProfileId.HasValue, c => c.SchoolProfileId == SchoolProfileId)
                               .Select(c => new SchoolStudentDto
                               {
@@ -446,15 +448,37 @@ namespace MangeData.SQLRepository.School
                                   IsActive = c.User.IsActive,
                                   SchoolProfileId = c.SchoolProfileId,
                                   LicenseTypeId = c.LicenseTypeId,
+                                  LicenseName = c.LicenseType.Name,
                                   Id = c.Id,
                                   UserId = c.UserId,
+                                  SchoolCurrency = c.SchoolProfile.Currency.Name,
                                   DateOfBirthString = c.User.DateOfBirth.Value.ToShortDateString(),
                                   RegisterDateString = c.User.RegisterDate.ToShortDateString(),
                               }).ToListAsync();
         }
-        public async Task<SchoolStudent> GetSchoolStudentById(int Id)
+        public async Task<SchoolStudentDto> GetSchoolStudentById(int Id)
         {
-            return await _context.SchoolStudents.Include(c => c.User).AsNoTracking().FirstOrDefaultAsync(c => c.Id == Id);
+            var result = await _context.SchoolStudents.Include(c => c.User).AsNoTracking().Select(c => new SchoolStudentDto
+            {
+                DateOfBirth = c.User.DateOfBirth,
+                Email = c.User.Email,
+                Gender = c.User.Gender,
+                IdNum = c.User.IdNum,
+                NickName = c.User.NickName,
+                PhoneNumber = c.User.PhoneNumber,
+                Cost = c.Cost,
+                IsActive = c.User.IsActive,
+                SchoolProfileId = c.SchoolProfileId,
+                LicenseTypeId = c.LicenseTypeId,
+                LicenseName = c.LicenseType.Name,
+                Id = c.Id,
+                UserId = c.UserId,
+                SchoolCurrency = c.SchoolProfile.Currency.Name,
+                DateOfBirthString = c.User.DateOfBirth.Value.ToShortDateString(),
+                RegisterDateString = c.User.RegisterDate.ToShortDateString(),
+            }).FirstOrDefaultAsync(c => c.Id == Id);
+
+            return result;
         }
         public async Task DeleteSchoolStudentByIds(List<int> Ids)
         {

@@ -29,6 +29,7 @@ import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
 import { UploadAvatar } from '../../../../upload';
 // utils
 import { fData } from '../../../../../utils/formatNumber';
+import { genderSelectList } from '../../../../../utils/generalUtils';
 
 const getInitialValues = (event) => {
   const _event = {
@@ -59,9 +60,9 @@ const getInitialValues = (event) => {
 
 // ----------------------------------------------------------------------
 AccountGeneral.propTypes = {
-  schoolData: PropTypes.object
+  studentData: PropTypes.object
 };
-export default function AccountGeneral({ schoolData }) {
+export default function AccountGeneral({ studentData }) {
   const isMountedRef = useIsMountedRef();
   const { enqueueSnackbar } = useSnackbar();
   const [uploadFile, SetUploadFile] = useState();
@@ -86,7 +87,7 @@ export default function AccountGeneral({ schoolData }) {
 
   const formik = useFormik({
     enableReinitialize: true,
-    initialValues: getInitialValues(schoolData),
+    initialValues: getInitialValues(studentData),
     validationSchema: SaveSchoolSchema,
     onSubmit: async (values, { setErrors, setSubmitting }) => {
       setSubmitting(true);
@@ -104,13 +105,13 @@ export default function AccountGeneral({ schoolData }) {
         SchoolProfileId: 1
       };
 
-      if (schoolData?.Id) {
-        newEvent.Id = schoolData?.Id;
-        newEvent.UserId = schoolData?.UserId;
+      if (studentData?.Id) {
+        newEvent.Id = studentData?.Id;
+        newEvent.UserId = studentData?.UserId;
         try {
           newEvent.DateOfBirth = values.DateOfBirth?.toLocaleDateString('en-GB');
         } catch {
-          newEvent.DateOfBirth = schoolData.DateOfBirth;
+          newEvent.DateOfBirth = studentData.DateOfBirth;
         }
       } else {
         newEvent.DateOfBirth = values.DateOfBirth
@@ -146,10 +147,7 @@ export default function AccountGeneral({ schoolData }) {
     },
     [setFieldValue]
   );
-  const genderSelectList = [
-    { Id: 1, Label: 'ذكر' },
-    { Id: 2, Label: 'أنثى' }
-  ];
+
   const licenseTypeHandleChange = (e) => {
     setFieldValue('LicenseTypeId', e.target.value);
     const LicenseType = licenseTypeForSelect?.filter((item) => item.Id == e.target.value)[0];

@@ -13,7 +13,8 @@ const initialState = {
   schoolWorkingTimeList: [],
   schoolProfileData: {},
   licenseTypeForSelect: [],
-  schoolStudentList: []
+  schoolStudentList: [],
+  schoolStudentData: {}
 };
 
 const slice = createSlice({
@@ -37,6 +38,11 @@ const slice = createSlice({
       state.isLoading = false;
       state.schoolList = action.payload;
     },
+    // GET SCHOOL PROFILE
+    getSchoolProfileByIdSuccess(state, action) {
+      state.isLoading = false;
+      state.schoolProfileData = action.payload;
+    },
 
     // SCHOOL EMPLOYEE
     getAllSchoolEmployeeSuccess(state, action) {
@@ -58,10 +64,9 @@ const slice = createSlice({
       state.isLoading = false;
       state.schoolStudentList = action.payload;
     },
-    // GET SCHOOL PROFILE
-    getSchoolProfileByIdSuccess(state, action) {
+    getSchoolStudentByIdSuccess(state, action) {
       state.isLoading = false;
-      state.schoolProfileData = action.payload;
+      state.schoolStudentData = action.payload;
     }
   }
 });
@@ -236,7 +241,17 @@ export function getLicenseTypeForSelect() {
     }
   };
 }
-
+export function getSchoolStudentById(Id) {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.get(`School/GetSchoolStudentById?Id=${Id}`);
+      dispatch(slice.actions.getSchoolStudentByIdSuccess(response.data.data));
+    } catch (error) {
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
 export function getAllSchoolStudent(Id) {
   return async (dispatch) => {
     dispatch(slice.actions.startLoading());
@@ -268,7 +283,7 @@ export function saveSchooStudent(newEvent, file) {
       if (!status) {
         throw new Error(message);
       } else {
-        console.log('message', message);
+        dispatch(getSchoolStudentById(data));
       }
     } catch (error) {
       dispatch(slice.actions.hasError(error));
